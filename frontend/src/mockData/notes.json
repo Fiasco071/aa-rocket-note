@@ -1,0 +1,30 @@
+[
+    {
+      "id": "1",
+      "title": "title 1",
+      "content": "Random string of text filling up the content box so I can test with some data in it!",
+      "viewCount": "10",
+      "createAt": "1 hr ago"
+    },
+    {
+        "id": "2",
+        "title": "title 2",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus. Maecenas volutpat blandit aliquam etiam erat. Neque viverra justo nec ultrices dui est. Nibh tortor id aliquet lectus proin nibh nisl condimentum. Neque aliquam vestibulum morbi blandit cursus. Habitant morbi tristique senectus et. Velit scelerisque in dictum non.",
+        "viewCount": "1",
+        "createAt": "4 hr ago"
+    },
+    {
+        "id": "3",
+        "title": "title 3",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus. Maecenas volutpat blandit aliquam etiam erat. Neque viverra justo nec ultricstibulum morbi blandit cursus. Habitant morbi tristique senectus et. Velit scelerisque in dictum non. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus. Maecenas volutpat blandit aliquam etiam erat. Neque viverra justo nec ultrices dui sapien eget mi proin. Etiam non quam lacus suspendisse faucibus interdum posuere lorem. Massa ultricies mi quis hendrerit dolor magna eget est. Nibh tortor id aliquet lectus proin nibh nisl condimentum. Neque aliquam vestibulum morbi blandit cursus. Habitant morbi tristique senectus et. Velit scelerisque in dictum non.",
+        "viewCount": "2",
+        "createAt": "12 hr ago"
+    },
+    {
+        "id": "4",
+        "title": "title 4",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam sit amet nisl purus. Maecenas volutpat blandit aliquam etiam erat. Neque viverra justo nec ultrices dui sapien eget mi proin. Etiam non quam lacus suspendisse faucibus interdum posuere lorem. Massa ultricies mi quis hendrerit dolor magna eget est. Nibh tortor id aliquet lectus proin nibh nisl condimentum. Neque aliquam vestibulum morbi blandit cursus. Habitant morbi tristique senectus et. Velit scelerisque in dictum non.",
+        "viewCount": "5",
+        "createAt": "March 25 2022"
+    }
+  ]

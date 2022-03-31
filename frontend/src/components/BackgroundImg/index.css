@@ -1,0 +1,15 @@
+
+
+.rocket-head {
+    box-sizing: border-box;
+    clip-path: ellipse(21% 17% at 50% 50%);
+    height: 65px;
+    width: 65px;
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #03bcf4;
+    filter: blur(40px);
+    z-index: 0;
+}

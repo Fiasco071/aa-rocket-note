@@ -1,0 +1,27 @@
+textarea {
+    height: 270px;
+    width:370px; 
+    background-color:transparent; 
+    border-radius:10px; 
+    color:rgb(126, 126, 126); 
+    border: none;
+    font-size: 1.3em;
+}
+
+textarea:focus {
+    outline: none;
+    color: white;
+    text-shadow: 0 0 10px rgb(146, 248, 218), 0 0 40px rgb(82, 248, 207), 0 0 100px rgb(46, 245, 212);
+}
+
+.scratchpad-title {
+    margin: 0;
+}
+
+.scratchpad-head-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+}
+

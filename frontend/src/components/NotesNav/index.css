@@ -1,0 +1,95 @@
+.notes-box-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #060c21;
+}
+
+.notes-box {
+    display: flex;
+    height:100%;
+    width: 100%;
+}
+.notes-nav-bar {
+    box-sizing: border-box;
+    background-color: #070e2c;
+    width:279px;
+    word-wrap: break-word;
+    height:1000px;
+}
+.notes-content-box {
+    width: 100%;
+}
+
+.notes-nav-control-box {
+    box-sizing: border-box;
+    width: 279px;
+    height: 96px;
+    background-color: #060c21;
+    padding: 18px 16px 0 24px;
+    color: white;
+    border-bottom: solid rgb(146, 248,218) 0.5px;
+}
+
+.notes-nav-control-box-head {
+    display:flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    text-shadow: 0 0 10px rgb(146, 248, 218), 0 0 40px rgb(65, 235, 192), 0 0 100px rgb(30, 119, 104);
+}
+
+.notes-nav-text {
+    padding: 0;
+    margin: 0;
+}
+.notes-nav-control-box-buttons-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: 0 0 10px rgb(146, 248, 218), 0 0 40px rgb(65, 235, 192), 0 0 100px rgb(30, 119, 104);
+}
+
+.notes-nav-control-box-buttons > :nth-child(1) {
+    margin-right:15px;
+}
+
+.note {
+    box-sizing: border-box;
+    width: 279px;
+    height: 119px;
+    overflow: hidden;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: solid rgb(146, 248,218) 0.5px;
+}
+
+/* .note:nth-child(2n) {
+    background-color: blue;
+} */
+
+.note-title-text, .note-content-text, .note-createat-text {
+    margin: 0;
+}
+.note-title-text {
+    color: white;
+    font-size: 1em;
+    text-shadow: 0 0 10px rgb(231, 255, 248), 0 0 50px rgb(170, 255, 234), 0 0 100px rgb(47, 250, 216);
+}
+.note-content-text {
+    color: white;
+    font-size: 0.7em;
+    text-shadow: 0 0 10px rgb(46, 199, 153), 0 0 40px rgb(14, 97, 76), 0 0 100px rgrgb(4, 39, 33)
+}
+
+.note-createat-text {
+    color: rgb(177, 177, 177);
+    font-size: 0.7em;
+}
+
+.filter-icon {
+    
+}
+

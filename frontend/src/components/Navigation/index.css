@@ -1,0 +1,74 @@
+nav > .nav-links {
+    margin: 5px 10px 10px 5px;
+    color:rgb(253, 253, 253);
+    text-decoration: none;
+    text-shadow: 0 0 10px rgb(146, 248, 218), 0 0 40px rgb(65, 235, 192), 0 0 100px rgb(30, 119, 104);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 240px;
+    background-color: 060c21;
+    font-size: 0.9em;
+    padding-left: 10px;
+}
+
+input {
+    box-sizing: border-box;
+    border-radius: 30px;
+    width: 200px;
+    height: 37px;
+    margin-bottom: 10px;
+    background: rgb(73, 73, 73);
+    color:#fff;
+    border: none;
+    margin-left: 15px;
+}
+
+input:focus {
+    outline: none;
+}
+
+select {
+    box-sizing: border-box;
+    border-radius: 30px;
+    width: 200px;
+    height: 37px;
+    margin-bottom: 10px;
+    background: rgb(5, 158, 5);
+    color:#fff;
+    margin-left: 15px;
+}
+
+.nav-link  {
+    margin: 0 5px;
+}
+
+FontAwesomeIcon {
+    margin: 5px 0;
+}
+
+.nav-profileImg-box {
+    height:25px;
+    width: 25px;
+    border-radius:50%;
+    border: 2px solid white;
+    background-size: 100% 100%;
+    background-image: url("../../assets/img/userImg.JPG");
+}
+
+.nav-profileImg {
+    width: 50px;
+}
+
+.nav-profile-head-box {
+    margin: 10px 0 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    font-size: 0.9em;
+    text-shadow: 0 0 10px rgb(146, 248, 218), 0 0 40px rgb(65, 235, 192), 0 0 100px rgb(30, 119, 104);
+}

@@ -1,0 +1,111 @@
+.content {
+    width:100%;
+    height: 100%;
+    padding: 15px 0 0 0;
+}
+
+.note-slider-header {
+    display:flex;
+    justify-content: space-between;
+    margin-top: 0px;
+    text-shadow: 0 0 10px rgb(146, 248, 218), 0 0 40px rgb(65, 235, 192), 0 0 100px rgb(30, 119, 104);
+}
+
+.note-slider-tags {
+    display: flex;
+    gap: 1.5em;
+    margin-bottom: 0.1em;
+}
+
+.note-slider-tags > p {
+    color: rgb(126, 126, 126);
+    text-transform: uppercase;
+}
+
+.note-slider-tags > p.selectedFilter {
+    color: white;
+    text-shadow: 0 0 10px rgb(146, 248, 218), 0 0 40px rgb(65, 235, 192), 0 0 100px rgb(30, 119, 104);
+    text-decoration: underline 3px;
+}
+
+
+.note-slider {
+    display: flex;
+    gap:10px;
+}
+
+.note-card {
+    background-color: #131a36;
+    border-radius: 10px;
+    color: white;
+    width: 172px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgb(206, 238, 248), 0 0 10px rgb(71, 173, 204), 0 0 500px rgb(23, 77, 94);
+}
+
+h2.card-title {
+    font-size:1em;
+    margin-left: 15px;
+    text-shadow: 0 0 10px rgb(146, 248, 218), 0 0 40px rgb(65, 235, 192), 0 0 100px rgb(30, 119, 104);
+}
+
+.note-card-content-box {
+    height: 200px;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.note-card-content-box > p {
+    font-size: 0.1em;
+}
+.note-card-add {
+    background-color: #131a36;
+    border-radius: 10px;
+    color: white;
+    width: 172px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0 10px rgb(146, 248, 218), 0 0 40px rgb(65, 235, 192), 0 0 100px rgb(30, 119, 104);
+    box-shadow: 0 0 5px rgb(206, 238, 248), 0 0 10px rgb(182, 237, 253), 0 0 500px rgb(44, 141, 170);
+}
+
+.note-card-add > p {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+div.note-card-add > p:nth-child(1) {
+
+    font-size: 5em;
+}
+
+.note-card-add > p:nth-child(2) {
+    font-size: 1.3em;
+}
+
+.note-card-createAt-text {
+    margin-left: 15px;
+    color: rgb(167, 167, 167);
+    font-size: 0.7em;
+}
+
+.appear {
+    animation: appear 1s;
+}
+
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
