@@ -1,21 +1,38 @@
 
 import { NavLink } from 'react-router-dom'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faStar, faNoteSticky, faBook, faSquareCheck, faTag, faUserGroup, faTrash, faCaretRight } from '@fortawesome/free-solid-svg-icons';
-import userImg from "../../assets/img/userImg.JPG"
+import { useSelector } from "react-redux";
+import LoginFormModal from '../LoginFormModal'
+import ProfileButton from './ProfileButton';
 
 
-const Navigation = () => {
+const Navigation = ({isLoaded}) => {
     const [linkClicked, setLinkClicked] = useState('home');
+    const user = useSelector(state => state.session.user);
+    
+    let sessionLinks;
+    if (user) {
+        sessionLinks = (
+            <ProfileButton user={user} />
+        );
+    } else {
+        sessionLinks = (
+            <>
+                <LoginFormModal />
+                <NavLink to="/signup">Sign Up</NavLink>
+            </>
+        );
+    }
     return (
         <div>
             <div>
                 <div className='nav-profile-head-box'>
                     <div className='nav-profileImg-box'>
                     </div>
-                    <p>UserName </p>
+                    {isLoaded && sessionLinks}
                 </div>
             </div>
 

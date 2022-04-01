@@ -8,9 +8,10 @@ import Notes from './components/NotesNav';
 import NoteDetail from './components/NoteDetail';
 import NewNote from './components/NewNote'
 import notes from './mockData/notes.json';
-import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
+
+
 
 window.addEventListener('DOMContentLoaded', () => {
   let scrollbarset = document.getElementById('mainBox')
@@ -27,15 +28,12 @@ function App() {
 
 
   return isLoaded && (
-
+    
     <div className="App" id="mainBox">
       <div className="nav-bar">
-        <Navigation />
+        <Navigation isLoaded={isLoaded} />
       </div>
       <Switch>
-        <Route path="/login">
-          <LoginFormPage />
-        </Route>
         <Route path="/signup">
           <SignupFormPage />
         </Route>

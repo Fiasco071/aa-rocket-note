@@ -6,6 +6,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ScratchNoteProvider from "./context/ScratchNoteContext";
+import  ModalProvider  from "./context/Modal";
+
 import configureStore from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
 import * as sessionActions from './store/session';
@@ -23,11 +25,13 @@ if (process.env.NODE_ENV !== 'production') {
 const Root = () => {
   return (
     <Provider store={store}>
-      <ScratchNoteProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </ScratchNoteProvider>
+      <ModalProvider>
+        <ScratchNoteProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ScratchNoteProvider>
+      </ModalProvider>
     </Provider>
   );
 };
