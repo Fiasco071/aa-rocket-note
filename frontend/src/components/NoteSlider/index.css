@@ -99,7 +99,9 @@ div.note-card-add > p:nth-child(1) {
     animation: appear 1s;
 }
 
-
+.note-slider-tags> p:hover {
+    animation : textglow infinite 1s;
+}
 
 @keyframes appear {
     0% {
@@ -109,3 +111,22 @@ div.note-card-add > p:nth-child(1) {
         opacity: 1;
     }
   }
+
+  @keyframes textglow 
+{
+    33%
+    {
+        text-shadow: 0 0 5px rgb(255, 254, 224), 0 0 10px rgb(243, 255, 134), 0 0 500px rgb(228, 250, 34);
+        opacity: 0.7;
+    }
+    66%
+    {
+        text-shadow: 0 0 5px rgb(255, 254, 224), 0 0 10px rgb(243, 255, 134), 0 0 500px rgb(228, 250, 34);
+        opacity: 1;
+    }
+    100%
+    {
+        text-shadow: 0 0 5px rgb(255, 254, 224), 0 0 10px rgb(243, 255, 134), 0 0 500px rgb(228, 250, 34);
+        opacity: 0.7;
+    }
+}

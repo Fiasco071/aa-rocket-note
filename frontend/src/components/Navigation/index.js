@@ -8,7 +8,7 @@ import userImg from "../../assets/img/userImg.JPG"
 
 
 const Navigation = () => {
-    const [linkClicked,setLinkClicked] = useState('home');
+    const [linkClicked, setLinkClicked] = useState('home');
     return (
         <div>
             <div>
@@ -21,7 +21,7 @@ const Navigation = () => {
 
             <div>
                 <div>
-                    <input type="text" placeholder='Search Bar...'/>
+                    <input type="text" placeholder='Search Bar...' />
                 </div>
             </div>
 
@@ -36,104 +36,104 @@ const Navigation = () => {
             </div>
 
             <nav>
-            <NavLink 
-                    className="nav-links" 
+                <NavLink
+                    className="nav-links"
                     to="/"
                     onClick={() => setLinkClicked('home')}
                 >
                     {linkClicked === 'home' && (
-                        <FontAwesomeIcon 
-                            icon={faCaretRight} 
+                        <FontAwesomeIcon
+                            icon={faCaretRight}
                             className="nav-link"
-                            />
+                        />
                     )}
-                    <FontAwesomeIcon icon={faHome}/> Home
+                    <FontAwesomeIcon icon={faHome} /> Home
                 </NavLink>
-                <NavLink 
-                    className="nav-links" 
+                <NavLink
+                    className="nav-links"
                     to="/shortcuts"
                     onClick={() => setLinkClicked('shortCuts')}
                 >
                     {linkClicked === 'shortCuts' && (
-                        <FontAwesomeIcon 
-                            icon={faCaretRight} 
+                        <FontAwesomeIcon
+                            icon={faCaretRight}
                             className="nav-link"
                         />
                     )}
                     <FontAwesomeIcon icon={faStar} /> Shortcuts
                 </NavLink>
-                <NavLink 
-                    className="nav-links" 
+                <NavLink
+                    className="nav-links"
                     to="/notes"
                     onClick={() => setLinkClicked('notes')}
                 >
                     {linkClicked === 'notes' && (
-                        <FontAwesomeIcon 
-                            icon={faCaretRight} 
+                        <FontAwesomeIcon
+                            icon={faCaretRight}
                             className="nav-link"
                         />
                     )}
                     <FontAwesomeIcon icon={faNoteSticky} /> Notes
                 </NavLink>
-                <NavLink 
-                    className="nav-links" 
+                <NavLink
+                    className="nav-links"
                     to="/tasks"
                     onClick={() => setLinkClicked('tasks')}
                 >
                     {linkClicked === 'tasks' && (
-                        <FontAwesomeIcon 
-                            icon={faCaretRight} 
+                        <FontAwesomeIcon
+                            icon={faCaretRight}
                             className="nav-link"
                         />
                     )}
                     <FontAwesomeIcon icon={faSquareCheck} /> Tasks
                 </NavLink>
-                <NavLink 
-                    className="nav-links" 
+                <NavLink
+                    className="nav-links"
                     to="/notesbooks"
                     onClick={() => setLinkClicked('noteBooks')}
                 >
                     {linkClicked === 'noteBooks' && (
-                        <FontAwesomeIcon 
-                            icon={faCaretRight} 
+                        <FontAwesomeIcon
+                            icon={faCaretRight}
                             className="nav-link"
                         />
                     )}
                     <FontAwesomeIcon icon={faBook} /> Notebooks
                 </NavLink>
-                <NavLink 
-                    className="nav-links" 
+                <NavLink
+                    className="nav-links"
                     to="/tags"
                     onClick={() => setLinkClicked('tags')}
                 >
                     {linkClicked === 'tags' && (
-                        <FontAwesomeIcon 
-                            icon={faCaretRight} 
+                        <FontAwesomeIcon
+                            icon={faCaretRight}
                             className="nav-link"
                         />
                     )}
                     <FontAwesomeIcon icon={faTag} /> Tags
                 </NavLink>
-                <NavLink 
-                    className="nav-links" 
+                <NavLink
+                    className="nav-links"
                     to="/shared"
                     onClick={() => setLinkClicked('shared')}
-                 >
+                >
                     {linkClicked === 'shared' && (
-                        <FontAwesomeIcon 
-                            icon={faCaretRight} 
+                        <FontAwesomeIcon
+                            icon={faCaretRight}
                             className="nav-link"
                         />
                     )}
                     <FontAwesomeIcon icon={faUserGroup} /> Shared with Me
                 </NavLink>
-                <NavLink 
-                    className="nav-links" 
+                <NavLink
+                    className="nav-links"
                     to="/trash"
                     onClick={() => setLinkClicked('trash')}
                 >
                     {linkClicked === 'trash' && (
-                        <FontAwesomeIcon icon={faCaretRight} className="nav-link selected"/>
+                        <FontAwesomeIcon icon={faCaretRight} className="nav-link selected" />
                     )}
                     <FontAwesomeIcon icon={faTrash} /> Trash
                 </NavLink>

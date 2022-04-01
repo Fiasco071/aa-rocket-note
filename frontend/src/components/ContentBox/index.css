@@ -64,7 +64,7 @@ border-radius: 10px;
 
 .box:before,
 .box:after {
-    background: linear-gradient(235deg, #89ff00, #060c21, #00bcd4);
+    background: linear-gradient(200deg, #bdf84f, #060c21, #00bcd4);
 }
 
 .content{

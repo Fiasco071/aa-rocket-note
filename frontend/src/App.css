@@ -42,7 +42,12 @@
   z-index: -5;
 }
 .greeting-message {
-  text-shadow: 0 0 10px rgb(146, 248, 218), 0 0 40px rgb(82, 248, 207), 0 0 100px rgb(46, 245, 212);
+  color: #fff;
+        text-shadow: 0 0 10px #03bcf4,
+        0 0 20px #03bcf4,
+        0 0 40px #03bcf4,
+        0 0 80px #03bcf4,
+        0 0 160px #03bcf4;
 }
 
 @keyframes App-logo-spin {

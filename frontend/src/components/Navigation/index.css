@@ -1,6 +1,6 @@
-nav > .nav-links {
+nav>.nav-links {
     margin: 5px 10px 10px 5px;
-    color:rgb(253, 253, 253);
+    color: rgb(253, 253, 253);
     text-decoration: none;
     text-shadow: 0 0 10px rgb(146, 248, 218), 0 0 40px rgb(65, 235, 192), 0 0 100px rgb(30, 119, 104);
 }
@@ -11,7 +11,7 @@ nav {
     height: 100%;
     width: 240px;
     background-color: 060c21;
-    font-size: 0.9em;
+    font-size: 1.0em;
     padding-left: 10px;
 }
 
@@ -22,7 +22,7 @@ input {
     height: 37px;
     margin-bottom: 10px;
     background: rgb(73, 73, 73);
-    color:#fff;
+    color: #fff;
     border: none;
     margin-left: 15px;
 }
@@ -38,12 +38,41 @@ select {
     height: 37px;
     margin-bottom: 10px;
     background: rgb(5, 158, 5);
-    color:#fff;
+    color: #fff;
     margin-left: 15px;
 }
 
-.nav-link  {
+.nav-link {
     margin: 0 5px;
+}
+
+a:hover {
+    position: relative;
+    top:-2px;
+    left:1px;
+    color:#2bc8f8;
+    font-size: 1.1em;
+}
+
+@keyframes flicker 
+{
+    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92% 
+    {
+        color: #0e3742;
+        text-shadow: none;
+        opacity: 0;
+    }
+
+    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%
+    {
+        color: #fff;
+        text-shadow: 0 0 10px #03bcf4,
+        0 0 20px #03bcf4,
+        0 0 40px #03bcf4,
+        0 0 80px #03bcf4,
+        0 0 160px #03bcf4;
+        opacity: 1;
+    }
 }
 
 FontAwesomeIcon {
@@ -51,9 +80,9 @@ FontAwesomeIcon {
 }
 
 .nav-profileImg-box {
-    height:25px;
+    height: 25px;
     width: 25px;
-    border-radius:50%;
+    border-radius: 50%;
     border: 2px solid white;
     background-size: 100% 100%;
     background-image: url("../../assets/img/userImg.JPG");
