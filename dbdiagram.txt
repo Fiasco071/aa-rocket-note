@@ -1,0 +1,42 @@
+//// -- LEVEL 1
+//// -- Tables and References
+
+// Creating tables
+Table Users {
+  id int [pk, increment] // auto-increment
+  username varchar
+  email varchar
+  hashedpassword varchar
+}
+
+Table Notes {
+  id int [pk, increment] // auto-increment
+  content varchar
+  noteBookId varchar  [ref: > Notebooks.id]
+  userId varchar
+}
+
+Table Notebooks {
+  id int [pk, increment] // auto-increment
+  userId varchar  [ref: > Users.id]
+}
+
+Table Shortcuts {
+  id int [pk, increment] // auto-increment
+  noteId varchar  [ref: > Notes.id]
+  userId varchar  [ref: > Users.id]
+}
+
+Table Tasks {
+  id int [pk, increment] // auto-increment
+  name varchar
+  noteId varchar  [ref: > Notes.id]
+  userId varchar  [ref: > Users.id]
+}
+
+Table Tags {
+  id int [pk, increment] // auto-increment
+  name varchar
+  noteId varchar  [ref: > Notes.id]
+  userId varchar  [ref: > Users.id]
+}

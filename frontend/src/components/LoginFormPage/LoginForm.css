@@ -1,0 +1,80 @@
+.login-box {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(15, 15, 31);
+    box-shadow: 0 0 10px rgb(230, 248, 250), 0 0 30px rgb(191, 241, 247), 0 0 60px rgb(132, 240, 252), 0 0 100px rgb(44, 234, 255);
+    border-radius: 10px;
+}
+
+.login-box > h2 {
+    text-align: center;
+    padding: 0;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color:white;
+    margin: 15px 0 0 0;
+    font-size: 30px;
+}
+
+.login-box > form {
+    padding: 0 15px;
+}
+
+.input-box-fields {
+    display: flex;
+    color: white;
+    text-transform:uppercase;
+    font-weight: bolder;
+    
+}
+
+.input-box-fields > label {
+    text-transform:uppercase;
+}
+.input-box-fields > label > input {
+    padding-left: 10px;
+}
+.input-box-fields:nth-child(2) > label > input {
+    position: relative;
+    left: 11px;
+    color: white;
+    text-shadow: 0 0 10px rgb(255, 249, 237), 0 0 30px rgb(250, 229, 188);
+    background-color: rgb(55, 55, 78);
+}
+.input-box-fields:nth-child(3) > label > input {
+    position: relative;
+    left: 69px;
+    color: white;
+    text-shadow: 0 0 10px rgb(255, 249, 237), 0 0 30px rgb(250, 229, 188);
+    background-color: rgb(55, 55, 78);
+}
+
+.login-box > form > ul {
+    color: crimson;
+    font-weight: bold;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.y-button {
+    background-color: rgb(15, 15, 31);
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border: 0.5px grey solid;
+    font-weight: 900;
+    margin: 5px 0 0 220px;
+    font-size: 1.2em;
+    width: 150px;
+}
+
+.y-button:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    box-shadow: 0 0 10px rgb(243, 249, 253),0 0 30px rgb(199, 228, 248),0 0 60px rgb(129, 205, 255);
+}

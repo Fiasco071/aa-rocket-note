@@ -1,7 +1,10 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faEllipsis, faCircleExclamation, faTrash, faClock, faUpRightAndDownLeftFromCenter, faTag, faBook } from '@fortawesome/free-solid-svg-icons';
-import {useState, useEffect} from 'react';
+import React, { Component, useState, useEffect } from 'react';
+import { Editor } from 'react-draft-wysiwyg';
+import './index.css';
+import { withRouter } from 'react-router-dom';
 
 
 const NewNote = () => {
@@ -11,8 +14,8 @@ const NewNote = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-      };
+
+    };
 
 
     return (
@@ -21,7 +24,7 @@ const NewNote = () => {
                 <div className='single-note-header'>
                     <div className='single-note-header-button-box'>
                         <FontAwesomeIcon icon={faClock} />
-                        
+
                         <FontAwesomeIcon icon={faStar} />
                         <FontAwesomeIcon icon={faCircleExclamation} />
                         <FontAwesomeIcon icon={faTrash} />
@@ -36,7 +39,7 @@ const NewNote = () => {
                     <div className='single-note-content'>
                         <div className='single-note-content-header'>
                             {/* gonna have to make this dynamic once focused we load menu bar out of focus load two buttons*/}
-                            <FontAwesomeIcon  className="notebook-icon" icon={faBook} />
+                            <FontAwesomeIcon className="notebook-icon" icon={faBook} />
                             {/*Name of the notebook will go here*/}
                             <FontAwesomeIcon icon={faTag} />
                             {/*list of tags will be here*/}
@@ -56,6 +59,20 @@ const NewNote = () => {
                                     onChange={(e) => setContent(e.target.value)}
                                 />
                             </form>
+
+                                {/* <Editor
+                                    toolbarHidden
+                                    wrapperClassName="wrapper-class"
+                                    editorClassName="editor-class"
+                                    toolbarClassName="toolbar-class"
+                                    toolbar={{
+                                        inline: { inDropdown: true },
+                                        list: { inDropdown: true },
+                                        textAlign: { inDropdown: true },
+                                        link: { inDropdown: true },
+                                        history: { inDropdown: true },
+                                    }}
+                                /> */}
                         </div>
                     </div>
                 </div>

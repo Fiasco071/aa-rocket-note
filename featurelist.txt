@@ -1,0 +1,27 @@
+Evernote
+
+
+Feature: Notes - Required 1st feature with Full CRUD
+        Create - Create a note with contents (Default [[Notebook 1]])
+        Read - Page to select from a list of notes and to view detailed information of the selected note
+        Update - Also allow for the update on the same detailed viewing Page
+        Delete - Allow for a deletion of a note.
+
+Feature: Notebooks - Required 2nd feature with minumum Create, Read, and Delete
+        Create - Create a notebook that contains notes that a user can created
+        Read - Read a list of notebooks that user created to choose from
+        Update - Allow to change the name of the notebook
+        Delete - Allow for a deletion of a notebook
+
+
+
+Features: Tags (cannot be created without first creating Notebooks and Notes)
+        Create Tag that will create a category of user's specification that will be avilable in the future to categorize different notes
+        Read - Read a list of tags that can be clicked to show notes that belong to the tag
+        Update - Allow for an update of the name of the tag
+        Delete - Allow for a deletion of the tag 
+
+Bonus: Search Notebooks
+Bonus: Rich-text editing
+Bonus: Reminders
+Bonus: Auto save
