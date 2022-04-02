@@ -1,21 +1,20 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faEllipsis, faCircleExclamation, faTrash, faClock, faUpRightAndDownLeftFromCenter, faTag, faBook } from '@fortawesome/free-solid-svg-icons';
-import React, { Component, useState, useEffect } from 'react';
-import { Editor } from 'react-draft-wysiwyg';
+import React, { useState } from 'react';
 import './index.css';
-import { withRouter } from 'react-router-dom';
+import ControlledEditor from '../RichTxtEditor';
 
 
 const NewNote = () => {
 
-    const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
+    // const [title, setTitle] = useState('');
+    // const [content, setContent] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
 
-    };
+    // };
 
 
     return (
@@ -45,7 +44,7 @@ const NewNote = () => {
                             {/*list of tags will be here*/}
                         </div>
                         <div className='single-note-content-box'>
-                            <form onSubmit={handleSubmit}>
+                            {/* <form onSubmit={handleSubmit}>
                                 <textarea 
                                     className='single-page-title-input'
                                     placeholder='Title here...'
@@ -58,21 +57,8 @@ const NewNote = () => {
                                     value={content} 
                                     onChange={(e) => setContent(e.target.value)}
                                 />
-                            </form>
-
-                                {/* <Editor
-                                    toolbarHidden
-                                    wrapperClassName="wrapper-class"
-                                    editorClassName="editor-class"
-                                    toolbarClassName="toolbar-class"
-                                    toolbar={{
-                                        inline: { inDropdown: true },
-                                        list: { inDropdown: true },
-                                        textAlign: { inDropdown: true },
-                                        link: { inDropdown: true },
-                                        history: { inDropdown: true },
-                                    }}
-                                /> */}
+                            </form> */}
+                                <ControlledEditor />
                         </div>
                     </div>
                 </div>
