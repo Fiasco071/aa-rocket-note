@@ -8,10 +8,10 @@
 - [Tags](#Tags)
 - [Rich Text Editor](#Rich Text Editor)
 
-   
+   ![alt text](httpshttps://github.com/abranhe/programming-languages-logos/tree/master/src/java/java.svg?raw=true)
 
 ## Safe Space for all your thoughts(#Notes)
-Input is a site where you share stories, post reviews, and read walkthroughs.
+Rocket Notes is where you can save all your thoughts in a note that exists in space!
 
 #### Key Features
 - Create stories
@@ -27,7 +27,7 @@ Input is a site where you share stories, post reviews, and read walkthroughs.
 - Node.Js 
    - Express
    - Sequelize
-   - Pug
+   - React
    - bcrypt
   
   
