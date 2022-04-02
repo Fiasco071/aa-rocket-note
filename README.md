@@ -8,8 +8,9 @@
 - [Tags](#Tags)
 - [Rich Text Editor](#Rich Text Editor)
 
+   
 
-## Safe Space for all your thoughts
+## Safe Space for all your thoughts(#Notes)
 Input is a site where you share stories, post reviews, and read walkthroughs.
 
 #### Key Features
