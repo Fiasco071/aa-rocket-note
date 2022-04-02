@@ -1,15 +1,15 @@
-<h1 align="center"> :rocket: RocketNotes 🚀: </h1>
+<h1 align="center"> :rocket: RocketNotes 🚀 </h1>
 
-<h5 align="center">  By: <a href="https://github.com/Fiasco071">Steve Choi</a>, <a href="https://github.com/thstar79">Taehoon Kim</a>, <a href="https://github.com/haywood-d-johnson"> Haywood D. Johnson</a>, <a href="https://github.com/Jared-Kunhart">Jared Kunhart</a> - <a href="https://input-app.herokuapp.com/"><i>Live site</i></h5>
+<h5 align="center">  By: <a href="https://github.com/Fiasco071">Steve Choi</a> - <a href="https://rocket-note-app.herokuapp.com/"><i>Live site</i></h5>
 
 ### Table of Contents
-- [We value your Input](#stories)
-- [Comments](#comments)
-- [Coins](#coins)
-- [Conclusion](#conclusion)
+- [Safe Space for all your thoughts](#Notes)
+- [Notebooks](#Notebooks)
+- [Tags](#Tags)
+- [Rich Text Editor](#Rich Text Editor)
 
 
-## We value your Input
+## Safe Space for all your thoughts
 Input is a site where you share stories, post reviews, and read walkthroughs.
 
 #### Key Features
