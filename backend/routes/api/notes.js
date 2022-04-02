@@ -15,15 +15,10 @@ router.get('/:id', asyncHandler(async (req, res) => {
     return res.json(response);
 }));
 
-router.post('/new', asyncHandler(async (req, res) => {
+router.post('/', asyncHandler(async (req, res) => {
     /// req.body will be changed to a redux value that will be pulled from useSelector and dispatch and thunk acition creator
-    const {
-        title,          // redux
-        content,        // redux
-        noteBookId,     // pull this from redux
-        userId          // pull this from session value
-    } = req.body;       // req.body will change to redux state value
     const id = await NoteRepository.create(req.body);
+    res.json(id);
     return id;
 }));
 

@@ -7,16 +7,6 @@ import ControlledEditor from '../RichTxtEditor';
 
 
 const NewNote = () => {
-
-    // const [title, setTitle] = useState('');
-    // const [content, setContent] = useState('');
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-
-    // };
-
-
     return (
         <div className='single-note-wrapper'>
             <div className='single-note'>

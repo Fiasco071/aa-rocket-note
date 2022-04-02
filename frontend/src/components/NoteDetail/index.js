@@ -17,8 +17,8 @@ const NoteDetail = () => {
 
     useEffect(() => {
         /// need to fix below because when queries are id 4,5,6 vs in array 0,1,2
-        setTitle(notesObj[noteId].title);
-        setContent(notesObj[noteId].content);
+        setTitle(notesObj[noteId]?.title);
+        setContent(notesObj[noteId]?.content);
     }, [noteId])
 
     return (

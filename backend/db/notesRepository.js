@@ -11,21 +11,21 @@ async function one(id) {
 
 async function create(details) {
   const note = await Note.create(details);
-  return note.id;
+  return note;
 }
 
 async function update(details) {
-  const id = details.id;
-  delete details.id;
-  await Pokemon.update(
-    details,
-    {
-      where: { id },
-      returning: true,
-      plain: true,
-    }
-  );
-  return id;
+  // const id = details.id;
+  // delete details.id;
+  // await Pokemon.update(
+  //   details,
+  //   {
+  //     where: { id },
+  //     returning: true,
+  //     plain: true,
+  //   }
+  // );
+  // return id;
 }
 
 // async function delete {
@@ -34,4 +34,7 @@ async function update(details) {
 
 module.exports = {
   list,
+  one,
+  create,
+  update
 };
