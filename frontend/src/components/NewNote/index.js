@@ -44,20 +44,6 @@ const NewNote = () => {
                             {/*list of tags will be here*/}
                         </div>
                         <div className='single-note-content-box'>
-                            {/* <form onSubmit={handleSubmit}>
-                                <textarea 
-                                    className='single-page-title-input'
-                                    placeholder='Title here...'
-                                    value={title}
-                                    onChange={(e) => setTitle(e.target.value)}
-                                />
-                                <textarea
-                                    className='single-page-content-input'
-                                    placeholder='Contents here...'
-                                    value={content} 
-                                    onChange={(e) => setContent(e.target.value)}
-                                />
-                            </form> */}
                                 <ControlledEditor />
                         </div>
                     </div>

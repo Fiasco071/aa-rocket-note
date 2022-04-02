@@ -3,9 +3,14 @@ import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDownWideShort, faNoteSticky, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-const NotesNav = ({ notes }) => {
+
+const NotesNav = () => {
     const history = useHistory();
+
+    const notesObj = useSelector(state => state.notes.entries);
+    const notes = Object.values(notesObj);
 
     return (
         <div className="notes-nav-bar">

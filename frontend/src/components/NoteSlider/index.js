@@ -1,9 +1,20 @@
-import notes from "../../mockData/notes.json"
 import "./index.css"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory  } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchNotes } from "../../store/noteReducer";
+
 
 const NoteSlider = () => {
+    const dispatch = useDispatch();
+
+    const notesObj = useSelector(state => state.notes.entries);
+    const notes = Object.values(notesObj);
+
+    useEffect(() => {
+        dispatch(fetchNotes());
+    }, [dispatch]);
+
     const [notesfilterClicked, setNotesFilterClicked] = useState('Recent');
 
     let history = useHistory ();

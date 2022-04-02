@@ -2,13 +2,13 @@ import './index.css';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faEllipsis, faCircleExclamation, faTrash, faClock, faUpRightAndDownLeftFromCenter, faTag, faBook } from '@fortawesome/free-solid-svg-icons';
-import notes from '../../mockData/notes.json';
 import {useState, useEffect} from 'react';
+import { useSelector } from 'react-redux';
 
 
 const NoteDetail = () => {
     const { noteId } = useParams();
-
+    const notesObj = useSelector(state => state.notes.entries);
     ///below will need to be queried and matched and data initialized
     
     //////////////
@@ -16,8 +16,9 @@ const NoteDetail = () => {
     const [content, setContent] = useState('');
 
     useEffect(() => {
-        setTitle(notes[noteId-1].title);
-        setContent(notes[noteId-1].content)
+        /// need to fix below because when queries are id 4,5,6 vs in array 0,1,2
+        setTitle(notesObj[noteId].title);
+        setContent(notesObj[noteId].content);
     }, [noteId])
 
     return (

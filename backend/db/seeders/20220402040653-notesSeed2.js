@@ -5,7 +5,7 @@ module.exports = {
       return queryInterface.bulkInsert('Notes', [{ 
         title: 'test',
         content: 'testsetstset',
-        noteBookId: 2,
+        noteBookId: 1,
         userId: 10,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -13,7 +13,7 @@ module.exports = {
       { 
         title: 'test2',
         content: 'testsetstset',
-        noteBookId: 2,
+        noteBookId: 1,
         userId: 10,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -22,7 +22,7 @@ module.exports = {
         title: 'test3',
         content: 'testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset testsetstset',
         noteBookId: 1,
-        userId: 1,
+        userId: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       }], {});
