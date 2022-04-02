@@ -8,8 +8,12 @@
 - [Tags](#Tags)
 - [Rich Text Editor](#Rich Text Editor)
 
-   ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/java/java64x64.png)
-
+   ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/javascript/javascript_64x64.png)
+   ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/html/html_64x64.png)
+   ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/css/css_64x64.png)
+   ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/react/react_64x64.png)
+   ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/java/java_64x64.png)
+   
 ## Safe Space for all your thoughts(#Notes)
 Rocket Notes is where you can save all your thoughts in a note that exists in space!
 
