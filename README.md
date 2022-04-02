@@ -6,7 +6,7 @@
 - [Safe Space for all your thoughts](#Notes)
 - [Notebooks](#Notebooks)
 - [Tags](#Tags)
-- [Rich Text Editor](#Rich Text Editor)
+- [Rich Text Editor](#RichTextEditor)
 
    ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/javascript/javascript_64x64.png)
    ![alt text](https://github.com/abranhe/programming-languages-logos/blob/master/src/html/html_64x64.png)
