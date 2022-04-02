@@ -5,8 +5,9 @@
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
     background-color: rgb(15, 15, 31);
-    box-shadow: 0 0 10px rgb(230, 248, 250), 0 0 30px rgb(191, 241, 247), 0 0 60px rgb(132, 240, 252), 0 0 100px rgb(44, 234, 255);
+    box-shadow: 0 0 10px rgb(230, 248, 250), 0 0 30px rgb(191, 241, 247), 0 0 60px rgb(132, 240, 252);
     border-radius: 10px;
+    z-index: 1;
 }
 
 .login-box > h2 {
@@ -39,14 +40,14 @@
 }
 .input-box-fields:nth-child(2) > label > input {
     position: relative;
-    left: 11px;
+    left: 5px;
     color: white;
     text-shadow: 0 0 10px rgb(255, 249, 237), 0 0 30px rgb(250, 229, 188);
     background-color: rgb(55, 55, 78);
 }
 .input-box-fields:nth-child(3) > label > input {
     position: relative;
-    left: 69px;
+    left: 65px;
     color: white;
     text-shadow: 0 0 10px rgb(255, 249, 237), 0 0 30px rgb(250, 229, 188);
     background-color: rgb(55, 55, 78);
@@ -77,4 +78,11 @@
     background-color: rgb(255, 255, 255);
     color: black;
     box-shadow: 0 0 10px rgb(243, 249, 253),0 0 30px rgb(199, 228, 248),0 0 60px rgb(129, 205, 255);
+}
+
+.orbit-box {
+    position: absolute;
+    z-index:-1; 
+    top:-120px;
+    left: -150px;
 }

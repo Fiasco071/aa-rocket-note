@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import ScratchPad from "../ScratchPad";
 import NoteSlider from "../NoteSlider";
 import SummaryBox from '../SummaryBox';
+import Orbits from '../Orbits'
 
 const ContentBox = () => {
     const [title, setTitle] = useState("Main Page");

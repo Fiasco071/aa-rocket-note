@@ -1,0 +1,41 @@
+.inner-orbit {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background: transparent;
+    border: 5px grey dashed;
+    animation: spin 20s linear infinite;
+}
+
+.rocketImg {
+    position: absolute;
+    top: 40px;
+    left: 5px;
+    transform: rotate(-7deg) ;
+}
+
+.houseImg {
+    transform: rotate(-46deg) ;
+    position: relative;
+    top: 20px;
+}
+
+.middle-orbit {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background: transparent;
+    border: 5px rgb(228, 186, 186) dashed;
+    position: relative;
+    left: 50px;
+    top: 50px;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

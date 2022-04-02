@@ -2,6 +2,7 @@ import './LoginForm.css';
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+import Orbits from '../Orbits';
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -53,6 +54,9 @@ function LoginForm() {
         </div>
         <button className="y-button" type="submit">Log In</button>
       </form>
+      <div className='orbit-box'>
+        <Orbits />
+      </div>
     </div>
   );
 }
