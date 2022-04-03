@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { useHistory  } from "react-router-dom";
+//import { useHistory  } from "react-router-dom";
 
 
 const SummaryBox = () => {
     const [notesfilterClicked, setNotesFilterClicked] = useState('Tasks');
-    let history = useHistory (); 
+    //let history = useHistory (); 
 
     return (
         <div className="box">

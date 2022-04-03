@@ -1,8 +1,8 @@
-import {csrfFetch} from '../store/csrf';
+import { csrfFetch } from '../store/csrf';
 
 const LOAD_NOTES = 'notes/loadNotes';
 const ADD_NOTE = 'notes/addNote';
-
+const REMOVE_NOTE = 'notes/removeNote';
 
 export const loadNotes = (notes) => {
     return {
@@ -13,30 +13,64 @@ export const loadNotes = (notes) => {
 
 export const addNote = (note) => {
     return {
-      type: ADD_NOTE,
-      note
+        type: ADD_NOTE,
+        note
     };
-  };
+};
 
-export const fetchNotes = () => async (dispatch) => {
+
+export const deleteNote = (id) => {
+    return {
+        type: REMOVE_NOTE,
+        id
+    }
+}
+
+export const fetchNotes = (userId) => async (dispatch) => {
     const response = await csrfFetch('/api/notes');
     const notes = await response.json();
     dispatch(loadNotes(notes));
 };
 
 export const createNewNote = (payload) => async (dispatch) => {
-    const response = await csrfFetch('/api/notes/', {
+    const response = await csrfFetch('/api/notes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
-      });
-    
-      if (response.ok) {
+    });
+
+    if (response.ok) {
         const note = await response.json();
         dispatch(addNote(note));
         return note;
-      }
+    }
 }
+
+export const updateNote = (id, payload) => async dispatch => {
+    const response = await csrfFetch(`/api/notes/${id}`, {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    })
+    if(response.ok){
+      const updateNote = await response.json()
+      dispatch(addNote(updateNote)) //action passed in
+      return updateNote
+    }
+    }
+    
+
+
+
+export const deleteOneNote = (id) => async (dispatch) => {
+    const response = await csrfFetch(`/api/notes/${id}`, {
+        method: 'DELETE'
+    });
+
+    if (response.ok) {
+        dispatch(deleteNote(id));
+    }
+};
 
 const initialState = { entries: {}, isLoading: true };
 
@@ -49,10 +83,17 @@ const noteReducer = (state = initialState, action) => {
             newState.entries = entries
             return newState;
         }
-        case ADD_NOTE : { 
-            const newState = {...state}
-            const entries = {...state.entries}
+        case ADD_NOTE: {
+            const newState = { ...state }
+            const entries = { ...state.entries }
             entries[action.note.id] = action.note;
+            newState.entries = entries;
+            return newState;
+        }
+        case REMOVE_NOTE: {
+            const newState = { ...state };
+            const entries = { ...state.entries }
+            delete entries[action.id];
             newState.entries = entries;
             return newState;
         }

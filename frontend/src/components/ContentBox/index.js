@@ -1,16 +1,14 @@
 import './index.css';
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import ScratchPad from "../ScratchPad";
 import NoteSlider from "../NoteSlider";
 import SummaryBox from '../SummaryBox';
 
 const ContentBox = () => {
-  const [title, setTitle] = useState("Main Page");
-
   useEffect(() => {
-    document.title = title;
-  }, [title]);
+    document.title = 'Main Page';
+  }, []);
 
   const pageBottomRef = useRef(null)
   const scrollToBottom = () => {

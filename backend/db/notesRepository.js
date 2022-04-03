@@ -1,8 +1,7 @@
-
 const { Note } = require("./models");
 
 async function list() {
-    return await Note.findAll();
+  return await Note.findAll();
 }
 
 async function one(id) {
@@ -14,27 +13,30 @@ async function create(details) {
   return note;
 }
 
-async function update(details) {
-  // const id = details.id;
-  // delete details.id;
-  // await Pokemon.update(
-  //   details,
-  //   {
-  //     where: { id },
-  //     returning: true,
-  //     plain: true,
-  //   }
-  // );
-  // return id;
+async function update(id, details) {
+  await Note.update(
+    {
+      title: details.title,
+      content: details.content
+    },
+    {
+      where: { id },
+      returning: true,
+      plain: true,
+    }
+  );
+  return details.id;
 }
 
-// async function delete {
-//   const id = 
-// }
+async function deleteNote(id) {
+  const note = await Note.findByPk(id)
+  await note.destroy();
+}
 
 module.exports = {
   list,
   one,
   create,
-  update
+  update,
+  deleteNote
 };

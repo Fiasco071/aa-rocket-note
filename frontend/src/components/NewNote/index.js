@@ -1,7 +1,7 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faEllipsis, faCircleExclamation, faTrash, faClock, faUpRightAndDownLeftFromCenter, faTag, faBook } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react';
+import React from 'react';
 import './index.css';
 import ControlledEditor from '../RichTxtEditor';
 
@@ -34,7 +34,7 @@ const NewNote = () => {
                             {/*list of tags will be here*/}
                         </div>
                         <div className='single-note-content-box'>
-                                <ControlledEditor />
+                                <ControlledEditor noteId={null}/>
                         </div>
                     </div>
                 </div>

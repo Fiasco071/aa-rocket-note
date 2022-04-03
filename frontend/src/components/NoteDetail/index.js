@@ -1,25 +1,35 @@
 import './index.css';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faEllipsis, faCircleExclamation, faTrash, faClock, faUpRightAndDownLeftFromCenter, faTag, faBook } from '@fortawesome/free-solid-svg-icons';
-import {useState, useEffect} from 'react';
-import { useSelector } from 'react-redux';
+import UpdateFormEditor from '../RichTxtEditor/updateFormEditor';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteOneNote } from '../../store/noteReducer';
 
 
 const NoteDetail = () => {
     const { noteId } = useParams();
+    const dispatch = useDispatch();
     const notesObj = useSelector(state => state.notes.entries);
+    const history = useHistory();
     ///below will need to be queried and matched and data initialized
     
-    //////////////
-    const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
+    // //////////////
+    // const [title, setTitle] = useState('');
+    // const [content, setContent] = useState('');
 
-    useEffect(() => {
-        /// need to fix below because when queries are id 4,5,6 vs in array 0,1,2
-        setTitle(notesObj[noteId]?.title);
-        setContent(notesObj[noteId]?.content);
-    }, [noteId])
+    // useEffect(() => {
+    //     /// need to fix below because when queries are id 4,5,6 vs in array 0,1,2
+    //     let content = notesObj[noteId]?.content
+    //     let converted = htmlToDraft(content);
+    //     setTitle(notesObj[noteId]?.title);
+    //     setContent(converted);
+    // }, [noteId])
+
+    const handleDelete = (id) => {
+        dispatch(deleteOneNote(noteId));
+        history.push('/notes')
+      };
 
     return (
         <div className='single-note-wrapper'>
@@ -30,7 +40,9 @@ const NoteDetail = () => {
                         
                         <FontAwesomeIcon icon={faStar} />
                         <FontAwesomeIcon icon={faCircleExclamation} />
-                        <FontAwesomeIcon icon={faTrash} />
+                        <FontAwesomeIcon icon={faTrash} 
+                        onClick={handleDelete}
+                        />
                         <FontAwesomeIcon icon={faEllipsis} />
                     </div>
                     <div className='single-note-header-button-box-right'>
@@ -48,18 +60,8 @@ const NoteDetail = () => {
                             {/*list of tags will be here*/}
                         </div>
                         <div className='single-note-content-box'>
-                            <textarea 
-                                className='single-page-title-input'
-                                placeholder='Title here...'
-                                value={title}
-                                onChange={(e) => setTitle(e.target.value)}
-                            />
-                            <textarea
-                                className='single-page-content-input'
-                                placeholder='Contents here...'
-                                value={content} 
-                                onChange={(e) => setContent(e.target.value)}
-                            />
+                                <UpdateFormEditor noteId={noteId} />
+
                         </div>
                     </div>
                 </div>

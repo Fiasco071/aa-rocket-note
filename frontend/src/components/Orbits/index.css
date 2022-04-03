@@ -1,10 +1,12 @@
 .inner-orbit {
     position: absolute;
-    height: 400px;
-    width: 400px;
+    height: 450px;
+    width: 450px;
+    top: -8px;
+    left: -17px;
     border-radius: 50%;
     background: transparent;
-    border: 5px grey dashed;
+    border: 3px rgb(253, 135, 228) dashed;
     animation: spin 20s linear infinite;
 }
 
@@ -21,12 +23,19 @@
     top: 20px;
 }
 
+.sateliteImg {
+    transform: rotate(125deg) ;
+    position: relative;
+    top: 100px;
+    left: 40px;
+}
+
 .middle-orbit {
     height: 300px;
     width: 300px;
     border-radius: 50%;
     background: transparent;
-    border: 5px rgb(228, 186, 186) dashed;
+    border: 5px rgb(240, 179, 230) dashed;
     position: relative;
     left: 50px;
     top: 50px;
@@ -39,3 +48,52 @@
     }
 }
 
+.outter-orbit {
+    position: relative;
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    border: 1px rgb(57, 126, 228) dashed;
+    top: -400px;
+    left: -100px;
+    animation: spin 15s linear infinite;
+    animation-delay: 1.8s;
+}
+
+.notesImg1 {
+    position: relative;
+    top:110px;
+    left:45px;
+    animation: blink 2s linear infinite;
+}
+.notesImg2 {
+    position: relative;
+    top:130px;
+    left:60px;
+    animation: blink 2s linear infinite;
+    animation-delay: 4s;
+}
+.notesImg3 {
+    position: relative;
+    top:155px;
+    left:80px;
+    animation: blink 2s linear infinite;
+    animation-delay: 8s;
+}
+.planetImg {
+    position: absolute;
+    top:45px;
+    left:50px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

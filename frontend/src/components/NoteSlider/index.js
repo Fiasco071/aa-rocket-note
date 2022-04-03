@@ -7,12 +7,13 @@ import { fetchNotes } from "../../store/noteReducer";
 
 const NoteSlider = () => {
     const dispatch = useDispatch();
-
+    const user = useSelector(state => state.session.user);
+    // console.log(user)
     const notesObj = useSelector(state => state.notes.entries);
-    const notes = Object.values(notesObj);
+    const notes = Object.values(notesObj).slice(-4);
 
     useEffect(() => {
-        dispatch(fetchNotes());
+        dispatch(fetchNotes(user.id));
     }, [dispatch]);
 
     const [notesfilterClicked, setNotesFilterClicked] = useState('Recent');
@@ -31,7 +32,7 @@ const NoteSlider = () => {
         div.classList.toggle('appear');
     }
 
-    return (
+    return notes && (
         <div className="box">
             <div className="content">
                 <div className="note-slider-header">
@@ -56,17 +57,17 @@ const NoteSlider = () => {
                 <div ref={ref}  className="note-slider">
                     {notesfilterClicked === 'Recent' && (
                         notes.map((note) => (
-                            <div key={note.id} className="note-card" onClick={() => {
-                                history.push(`/notes/${note.id}`)
+                            <div key={note?.id} className="note-card" onClick={() => {
+                                history.push(`/notes/${note?.id}`)
                            }}>
                                 <div>
-                                    <h2 className="card-title">{note.title}</h2>
+                                    <h2 className="card-title">{note?.title}</h2>
                                 </div>
                                 <div className="note-card-content-box">
-                                    <p>{note.content}</p>
+                                    <p>{note?.content}</p>
                                 </div>
                                 <div>
-                                    <p className="note-card-createAt-text">{note.createAt}</p>
+                                    <p className="note-card-createAt-text">{note?.createAt}</p>
                                 </div>
                             </div>
                         ))  
