@@ -47,6 +47,11 @@
         transform: rotate(360deg);
     }
 }
+@keyframes spinO {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
 
 .outter-orbit {
     position: relative;
@@ -56,7 +61,7 @@
     border: 3px rgb(209, 22, 131) dashed;
     top: -420px;
     left: -120px;
-    animation: spin 15s linear infinite;
+    animation: spinO 30s linear infinite;
 }
 
 .notesImg1 {
