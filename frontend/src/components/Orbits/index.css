@@ -63,21 +63,23 @@
     position: relative;
     top:110px;
     left:45px;
-    animation: blink 2s linear infinite;
+    animation: blink 3s linear infinite;
 }
 .notesImg2 {
     position: relative;
     top:130px;
     left:60px;
-    animation: blink 2s linear infinite;
-    animation-delay: 4s;
+    opacity: 0;
+    animation: blink 3s linear infinite;
+    animation-delay: 1s;
 }
 .notesImg3 {
     position: relative;
     top:155px;
     left:80px;
-    animation: blink 2s linear infinite;
-    animation-delay: 8s;
+    opacity: 0;
+    animation: blink 3s linear infinite;
+    animation-delay: 2s;
 }
 .planetImg {
     position: absolute;

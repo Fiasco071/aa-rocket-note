@@ -1,9 +1,10 @@
 import { useState } from 'react';
 //import { useHistory  } from "react-router-dom";
+import NotebookSlider from '../ContentBox/NotebookSlider';
 
 
 const SummaryBox = () => {
-    const [notesfilterClicked, setNotesFilterClicked] = useState('Tasks');
+    const [notesfilterClicked, setNotesFilterClicked] = useState('Notebooks');
     //let history = useHistory (); 
 
     return (
@@ -37,23 +38,9 @@ const SummaryBox = () => {
                 </div>
 
                 <div className="note-slider">
-                    {/* {notesfilterClicked === 'Notebooks' && (
-                        notes.map((note) => (
-                            <div key={note.id} className="note-card" onClick={() => {
-                                history.push(`/notes/${note.id}`)
-                           }}>
-                                <div>
-                                    <h2 className="card-title">{note.title}</h2>
-                                </div>
-                                <div className="note-card-content-box">
-                                    <p>{note.content}</p>
-                                </div>
-                                <div>
-                                    <p className="note-card-createAt-text">{note.createAt}</p>
-                                </div>
-                            </div>
-                        ))  
-                    )} */}
+                    {notesfilterClicked === 'Notebooks' && (
+                        <NotebookSlider />
+                    )}
                 {/* Gonna need to repeat above with different filtering rule */}
 
 

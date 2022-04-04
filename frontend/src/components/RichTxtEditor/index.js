@@ -15,6 +15,7 @@ const ControlledEditor = ({ noteId }) => {
   const dispatch = useDispatch();
   const ScratchNoteCon = useContext(ScratchNoteContext);
   const notesObj = useSelector(state => state.notes.entries);
+  const user = useSelector(state => state.session.user);
   const [editorState, setEditorState] = useState(EditorState.createWithContent(ContentState.createFromBlockArray(
     convertFromHTML(noteId ? notesObj[noteId].content : '')
   )))
@@ -55,7 +56,7 @@ const ControlledEditor = ({ noteId }) => {
       title: 'untitled',
       content: rawData,
       noteBookId: 1,      // needs to turn dynamic with notebook
-      userId: 10          // grab from session value
+      userId: user.id          // grab from session value
     }
     await dispatch(createNewNote(data));
   };

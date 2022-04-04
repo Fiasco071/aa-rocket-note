@@ -10,6 +10,7 @@ import NewNote from './components/NewNote'
 import notes from './mockData/notes.json';
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
+import DigitalClock from './components/DigitalClock';
 
 
 
@@ -28,7 +29,7 @@ function App() {
 
 
   return isLoaded && (
-    
+
     <div className="App" id="mainBox">
       <div className="nav-bar">
         <Navigation isLoaded={isLoaded} />
@@ -40,7 +41,12 @@ function App() {
         <Route path="/" exact>
           <div className='main-content-box'>
             <div className='main-image-box' />
-            <h1 className='greeting-message'>Good afternoon, {user?.username}</h1>
+            <div className='greet-clock-bar'>
+              <h1 className='greeting-message'>Good afternoon, {user?.username}</h1>
+              <div>
+                <DigitalClock />
+              </div>
+            </div>
             <ContentBox />
           </div>
         </Route>
@@ -54,6 +60,7 @@ function App() {
         </Route>
         <Route>
           <h1 style={{ color: "white", fontSize: "3em", position: "absolute", left: "700px", top: "300px", }}>Currently Under Construction</h1>
+          <DigitalClock />
         </Route>
       </Switch>
     </div>

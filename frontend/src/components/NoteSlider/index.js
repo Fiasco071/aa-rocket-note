@@ -16,7 +16,7 @@ const NoteSlider = () => {
         if (user) {
             dispatch(fetchNotes(user.id));
         }
-    }, [dispatch]);
+    }, [dispatch, user]);
 
     const [notesfilterClicked, setNotesFilterClicked] = useState('Recent');
 

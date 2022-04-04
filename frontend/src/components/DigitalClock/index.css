@@ -1,0 +1,50 @@
+.digital-clock {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid rgb(236, 206, 255);
+    border-radius: 5px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #fce9ff,
+        0 0 20px #f4c5fc,
+        0 0 40px #f4adff;
+        box-shadow: 0 0 10px #f6d2fc;
+    padding-top:5px;
+}
+
+.clock-date-bar {
+    font-size: 15px;
+}
+
+.clock-hour-bar {
+    display: flex;
+    font-size: 30px;
+}
+
+.clock-hour-bar>span {
+    padding: 0;
+    margin: 0;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.clock-hour-bar>span:nth-child(4) {
+    font-size: 20px;
+    background-color: rgb(161, 118, 187);
+    border-radius: 5px;
+    height: 25px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 0 5px;
+}
+
+div.digital-clock :hover {
+    color: black;
+    background-color: white;
+}

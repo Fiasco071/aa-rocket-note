@@ -12,11 +12,10 @@ router.get('/', asyncHandler(async (_req, res) => {
 
 router.post('/', asyncHandler(async (req, res) => {
     /// req.body will be changed to a redux value that will be pulled from useSelector and dispatch and thunk acition creator
-    const id = await NoteRepository.create(req.body);
-    res.json(id);
-    return id;
+    const newNote = await NoteRepository.create(req.body);
+    return res.json(newNote);
 }));
-  
+
 router.put(
     '/:id',
     asyncHandler(async (req, res) => {

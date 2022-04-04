@@ -1,0 +1,58 @@
+.notebook-slider {
+    display: flex;
+} 
+
+.book1 {
+    height:230px;
+    width: 172px;
+    background-color: #1e2646;
+    margin-right: 15px;
+    border-radius: 2px 10px 10px 2px;
+    color: black;
+    box-shadow: 0 0 5px rgb(206, 238, 248), 0 0 10px rgb(71, 173, 204), 0 0 500px rgb(23, 77, 94);
+    overflow: hidden;
+}
+.notebook-info-box {
+    position: relative;
+    left: 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+.divider {
+    position: relative;
+    height: 230px;
+    width: 20px;
+    top: -230px;
+    background-color: #0d1127;
+    border-radius: 5px 0 0 5px;
+}
+
+.divider2 {
+    position: relative;
+    left: 20px;
+    top: -460px;
+    height: 230px;
+    width: 5px;
+    background-color: black;
+}
+
+.notebook-info-box > div > p{
+    font-size: 13px;
+    color: rgb(163, 163, 163);
+    margin: 0;
+    padding:0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.notebook-info-box > p:nth-child(1) {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+    margin-top: 30px;
+}
