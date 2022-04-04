@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteOneNote } from '../../store/noteReducer';
 
 
+
 const NoteDetail = () => {
     const { noteId } = useParams();
     const dispatch = useDispatch();

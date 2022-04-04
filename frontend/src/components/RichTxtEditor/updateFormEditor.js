@@ -6,6 +6,8 @@ import { EditorState, convertToRaw, ContentState, convertFromHTML } from 'draft-
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import draftToHtml from 'draftjs-to-html';
+import htmlToDraft from 'html-to-draftjs';
+
 /// gonna use this to covert queried string into displayable info.
 /// however lets also consider displaying directly onto the richtext editor
 //import htmlToDraft from 'html-to-draftjs';
@@ -14,7 +16,7 @@ const UpdateFormEditor = ({ noteId }) => {
   const dispatch = useDispatch();
   const notesObj = useSelector(state => state.notes.entries);
   const [editorState, setEditorState] = useState(EditorState.createWithContent(ContentState.createFromBlockArray(
-    convertFromHTML(noteId ? notesObj[noteId].content : '')
+    htmlToDraft(noteId ? notesObj[noteId].content : '')
   )))
 
   const onEditorStateChange = (editorState) => {
