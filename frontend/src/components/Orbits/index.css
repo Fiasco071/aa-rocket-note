@@ -1,18 +1,18 @@
 .inner-orbit {
     position: absolute;
-    height: 450px;
-    width: 450px;
-    top: -8px;
-    left: -17px;
+    height: 500px;
+    width: 500px;
+    top: -40px;
+    left: -40px;
     border-radius: 50%;
     background: transparent;
-    border: 3px rgb(253, 135, 228) dashed;
+    border: 5px rgb(196, 14, 165) dashed;
     animation: spin 20s linear infinite;
 }
 
 .rocketImg {
     position: absolute;
-    top: 40px;
+    top: 70px;
     left: 5px;
     transform: rotate(-7deg) ;
 }
@@ -35,7 +35,7 @@
     width: 300px;
     border-radius: 50%;
     background: transparent;
-    border: 5px rgb(240, 179, 230) dashed;
+    border: 5px rgb(253, 69, 244) dashed;
     position: relative;
     left: 50px;
     top: 50px;
@@ -50,14 +50,13 @@
 
 .outter-orbit {
     position: relative;
-    height: 600px;
-    width: 600px;
+    height: 650px;
+    width: 650px;
     border-radius: 50%;
-    border: 1px rgb(57, 126, 228) dashed;
-    top: -400px;
-    left: -100px;
+    border: 3px rgb(57, 228, 219) dashed;
+    top: -420px;
+    left: -120px;
     animation: spin 15s linear infinite;
-    animation-delay: 1.8s;
 }
 
 .notesImg1 {

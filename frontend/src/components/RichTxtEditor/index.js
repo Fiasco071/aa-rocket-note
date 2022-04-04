@@ -28,6 +28,12 @@ const ControlledEditor = ({ noteId }) => {
   //   let rawData = draftToHtml(convertToRaw(editorState.getCurrentContent()));
   // }, [editorState])
   useEffect(() => {
+    setEditorState(EditorState.createWithContent(ContentState.createFromBlockArray(
+      convertFromHTML(noteId ? notesObj[noteId].content : '')
+    )))
+  }, [])
+  
+  useEffect(() => {
     const rawData = draftToHtml(convertToRaw(editorState.getCurrentContent()));
     const autoSave = setTimeout(async () => {
       if (editorState !== '') {
