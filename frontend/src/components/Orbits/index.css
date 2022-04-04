@@ -6,7 +6,7 @@
     left: -40px;
     border-radius: 50%;
     background: transparent;
-    border: 5px rgb(196, 14, 165) dashed;
+    border: 5px rgb(245, 233, 62) dashed;
     animation: spin 20s linear infinite;
 }
 
@@ -35,7 +35,7 @@
     width: 300px;
     border-radius: 50%;
     background: transparent;
-    border: 5px rgb(253, 69, 244) dashed;
+    border: 5px rgb(231, 91, 145) dashed;
     position: relative;
     left: 50px;
     top: 50px;
@@ -53,7 +53,7 @@
     height: 650px;
     width: 650px;
     border-radius: 50%;
-    border: 3px rgb(57, 228, 219) dashed;
+    border: 3px rgb(209, 22, 131) dashed;
     top: -420px;
     left: -120px;
     animation: spin 15s linear infinite;
@@ -97,4 +97,10 @@
     100% {
         opacity: 0;
     }
+}
+
+.orbit-wrapper {
+    position: relative;
+    left: -30px;
+    top: -30px;
 }

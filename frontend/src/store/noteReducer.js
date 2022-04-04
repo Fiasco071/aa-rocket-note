@@ -27,7 +27,7 @@ export const deleteNote = (id) => {
 }
 
 export const fetchNotes = (userId) => async (dispatch) => {
-    const response = await csrfFetch('/api/notes');
+    const response = await csrfFetch(`/api/notes/${userId}`);
     const notes = await response.json();
     dispatch(loadNotes(notes));
 };

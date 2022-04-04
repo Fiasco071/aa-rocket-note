@@ -4,8 +4,8 @@ const router = express.Router();
 const NoteRepository = require('../../db/notesRepository');
 // const { requireAuth } = require('../../utils/auth');
 
-router.get('/', asyncHandler(async (_req, res) => {
-    const response = await NoteRepository.list();
+router.get('/:userId', asyncHandler(async (req, res) => {
+    const response = await NoteRepository.list(req.params.userId);
     return res.json(response);
 }));
 

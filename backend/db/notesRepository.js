@@ -1,7 +1,11 @@
 const { Note } = require("./models");
 
-async function list() {
-  return await Note.findAll();
+async function list(userId) {
+  return await Note.findAll({
+    where: {
+      userId
+    }
+  });
 }
 
 async function one(id) {

@@ -7,7 +7,7 @@ import planetImg from '../../assets/img/planet.png'
 
 const Orbits = () => {
     return (
-        <div>
+        <div className='orbit-wrapper'>
             <div className="inner-orbit">
                 <img className="rocketImg" src={rocketImg} alt={rocketImg} style={{ width: "80px" }} />
             </div>
