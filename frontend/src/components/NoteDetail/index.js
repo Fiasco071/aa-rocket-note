@@ -36,7 +36,7 @@ const NoteDetail = () => {
 
     const handleDelete = (id) => {
         dispatch(deleteOneNote(noteId));
-        history.push('/notes/notebooks/')
+        history.push('/')
       };
 
     return (

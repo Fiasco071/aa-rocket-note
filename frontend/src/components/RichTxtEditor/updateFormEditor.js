@@ -20,17 +20,17 @@ const UpdateFormEditor = () => {
   const [editorState, setEditorState] = useState(EditorState.createWithContent(ContentState.createFromBlockArray(
     htmlToDraft(noteId ? notesObj[noteId].content : '')
   )))
-  const [title, setTitle] = useState(notesObj[noteId].title);
+  const [title, setTitle] = useState(notesObj[noteId]?.title);
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState)
   }
 
   useEffect(() => {
     setEditorState(EditorState.createWithContent(ContentState.createFromBlockArray(
-      htmlToDraft(noteId ? notesObj[noteId].content : '')
+      htmlToDraft(noteId ? notesObj[noteId]?.content : '')
     )))
 
-    setTitle(notesObj[noteId].title);
+    setTitle(notesObj[noteId]?.title);
   },[noteId])
 
 

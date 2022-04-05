@@ -26,7 +26,7 @@ const ControlledEditor = ({ noteId }) => {
   }
  
   const [title, setTitle] = useState('untitled');
-  const [notebook, setNotebook] = useState(Object.values(notebooks)[0].id)
+  const [notebook, setNotebook] = useState(Object.values(notebooks)[0]?.id)
 
   useEffect(() => {
     setEditorState(EditorState.createWithContent(ContentState.createFromBlockArray(
