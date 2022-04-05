@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import Orbits from '../Orbits';
+import { useHistory } from 'react-router-dom';
+
 
 function LoginForm() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -20,6 +23,12 @@ function LoginForm() {
       }
     );
   };
+
+  const signUpLink = (e) => {
+    e.preventDefault();
+    history.push("/signup");
+  }
+
 
   return (
     <div className='login-box'>
@@ -52,6 +61,7 @@ function LoginForm() {
             />
           </label>
         </div>
+        <button className="y-button" onClick={signUpLink} type="submit">Sign Up</button>
         <button className="y-button" type="submit">Log In</button>
       </form>
       <div className='orbit-box'>

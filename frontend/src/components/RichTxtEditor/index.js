@@ -22,18 +22,16 @@ const ControlledEditor = ({ noteId }) => {
 
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState)
-    //console.log(editorState.getCurrentContent());
   }
-  // this extracts value out of it. now on to saving it to DB.
-  // useEffect(()=> {
-  //   let rawData = draftToHtml(convertToRaw(editorState.getCurrentContent()));
-  // }, [editorState])
+
+  const [title, setTitle] = useState('untitled');
+
   useEffect(() => {
     setEditorState(EditorState.createWithContent(ContentState.createFromBlockArray(
       convertFromHTML(noteId ? notesObj[noteId].content : '')
     )))
   }, [])
-  
+
   useEffect(() => {
     const rawData = draftToHtml(convertToRaw(editorState.getCurrentContent()));
     const autoSave = setTimeout(async () => {
@@ -53,7 +51,7 @@ const ControlledEditor = ({ noteId }) => {
     e.preventDefault();
     const rawData = draftToHtml(convertToRaw(editorState.getCurrentContent()));
     const data = {
-      title: 'untitled',
+      title,
       content: rawData,
       noteBookId: 1,      // needs to turn dynamic with notebook
       userId: user.id          // grab from session value
@@ -65,7 +63,13 @@ const ControlledEditor = ({ noteId }) => {
     <div className="editor">
       {notesObj[noteId]?.content}
       <header className="editor-header">
-        Rich Text Editor Example
+        <input
+          className='title-input'
+          type="text"
+          placeholder="Title goes here..."
+          value={title}
+          onChange={(e) => setTitle(e.target.value)} />
+        <button className="y-button" onClick={handleSubmit} style={{ fontSize: '20px' }}>SUBMIT</button>
       </header>
       <Editor
         editorState={editorState}
@@ -74,7 +78,7 @@ const ControlledEditor = ({ noteId }) => {
         toolbarClassName="toolbar-class"
         onEditorStateChange={onEditorStateChange}
       />
-      <button onClick={handleSubmit}></button>
+
     </div>
 
   )

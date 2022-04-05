@@ -1,14 +1,23 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faEllipsis, faCircleExclamation, faTrash, faClock, faUpRightAndDownLeftFromCenter, faTag, faBook } from '@fortawesome/free-solid-svg-icons';
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import './index.css';
 import ControlledEditor from '../RichTxtEditor';
 
 
+
 const NewNote = () => {
+    const ref = useRef();
+    const scrollToTop = () => {
+        ref.current?.scrollIntoView({ behavior: "smooth" })
+      }
+      useEffect(() => {
+        scrollToTop()
+      }, []);
     return (
         <div className='single-note-wrapper'>
+            <div ref={ref}></div>
             <div className='single-note'>
                 <div className='single-note-header'>
                     <div className='single-note-header-button-box'>

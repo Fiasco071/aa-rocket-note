@@ -5,6 +5,7 @@ import { faStar, faEllipsis, faCircleExclamation, faTrash, faClock, faUpRightAnd
 import UpdateFormEditor from '../RichTxtEditor/updateFormEditor';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteOneNote } from '../../store/noteReducer';
+import { useRef, useEffect } from 'react';
 
 
 
@@ -13,6 +14,7 @@ const NoteDetail = () => {
     const dispatch = useDispatch();
     const notesObj = useSelector(state => state.notes.entries);
     const history = useHistory();
+    const scrolltop = useRef(null);
     ///below will need to be queried and matched and data initialized
     
     // //////////////
@@ -26,6 +28,12 @@ const NoteDetail = () => {
     //     setTitle(notesObj[noteId]?.title);
     //     setContent(converted);
     // }, [noteId])
+    const scrollToTop = () => {
+        scrolltop.current?.scrollIntoView({ behavior: "smooth" })
+      }
+      useEffect(() => {
+        scrollToTop()
+      }, []);
 
     const handleDelete = (id) => {
         dispatch(deleteOneNote(noteId));
@@ -34,6 +42,7 @@ const NoteDetail = () => {
 
     return (
         <div className='single-note-wrapper'>
+            <div ref={scrolltop}></div>
             <div className='single-note'>
                 <div className='single-note-header'>
                     <div className='single-note-header-button-box'>

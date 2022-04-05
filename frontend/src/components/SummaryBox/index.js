@@ -1,6 +1,6 @@
 import { useState } from 'react';
 //import { useHistory  } from "react-router-dom";
-import NotebookSlider from '../ContentBox/NotebookSlider';
+import NotebookSlider from '../NotebookSlider';
 
 
 const SummaryBox = () => {

@@ -12,17 +12,12 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import DigitalClock from './components/DigitalClock';
 
-
-
-window.addEventListener('DOMContentLoaded', () => {
-  let scrollbarset = document.getElementById('mainBox')
-  scrollbarset.scrollTop = scrollbarset.scrollHeight;
-});
-
 function App() {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+
+  
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
