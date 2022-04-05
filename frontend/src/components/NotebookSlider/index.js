@@ -18,13 +18,14 @@ const NotebookSlider = () => {
     }, [])
 
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         setShowCreateMenu(false);
         const data = {
             name: notebookName,
             userId: user.id
         }
-        dispatch(createNewNotebook(data))
+        await dispatch(createNewNotebook(data))
+        history.push('/')
     }
 
     const handleDelete = (e,id) => {

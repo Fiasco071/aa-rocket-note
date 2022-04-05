@@ -9,10 +9,12 @@ import draftToHtml from 'draftjs-to-html';
 //import htmlToDraft from 'html-to-draftjs';
 import { ScratchNoteContext } from '../../context/ScratchNoteContext';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { createNewNote } from '../../store/noteReducer';
 
 const ControlledEditor = ({ noteId }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const ScratchNoteCon = useContext(ScratchNoteContext);
   const notebooks = useSelector(state => state.notebooks.notebooks);
   const notesObj = useSelector(state => state.notes.entries);
@@ -58,7 +60,8 @@ const ControlledEditor = ({ noteId }) => {
       noteBookId: notebook,      // needs to turn dynamic with notebook
       userId: user.id          // grab from session value
     }
-    await dispatch(createNewNote(data));
+    const newNote = await dispatch(createNewNote(data));
+    history.push(`/notes/${newNote.id}`)
   };
 
   return (
