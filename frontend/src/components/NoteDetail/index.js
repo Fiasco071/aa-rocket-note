@@ -49,7 +49,7 @@ const NoteDetail = () => {
                         
                         <FontAwesomeIcon icon={faStar} />
                         <FontAwesomeIcon icon={faCircleExclamation} />
-                        <FontAwesomeIcon icon={faTrash} 
+                        <FontAwesomeIcon className="delete-icon" icon={faTrash} 
                         onClick={handleDelete}
                         />
                         <FontAwesomeIcon icon={faEllipsis} />

@@ -7,7 +7,8 @@ import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
-import {useParams} from 'react-router-dom';
+import {useParams, useHistory} from 'react-router-dom';
+import { deleteOneNote } from '../../store/noteReducer';
 
 /// gonna use this to covert queried string into displayable info.
 /// however lets also consider displaying directly onto the richtext editor
@@ -15,6 +16,7 @@ import {useParams} from 'react-router-dom';
 
 const UpdateFormEditor = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const {noteId} = useParams();
   const notesObj = useSelector(state => state.notes.entries);
   const [editorState, setEditorState] = useState(EditorState.createWithContent(ContentState.createFromBlockArray(
@@ -47,6 +49,12 @@ const UpdateFormEditor = () => {
     await dispatch(updateNote(noteId, data));
   };
 
+  const handleDelete = (e,id) => {
+    e.stopPropagation();
+    dispatch(deleteOneNote(id));
+    history.push('/')
+  };
+
   return (
     <div className="editor">
       <header className="editor-header">
@@ -56,6 +64,12 @@ const UpdateFormEditor = () => {
           placeholder="Title goes here..."
           value={title}
           onChange={(e) => setTitle(e.target.value)} />
+        <button
+          className='edit-button'
+          onClick={(e) => handleDelete(e,noteId)}
+        >
+          DELETE
+        </button>
         <button
           className='edit-button'
           onClick={handleSubmit}>
