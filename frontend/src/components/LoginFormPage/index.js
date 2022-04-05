@@ -27,9 +27,7 @@ function LoginForm() {
   const demoLogin = (e) => {
     e.preventDefault();
     setErrors([]);
-    let demoId = 'demo-lition';
-    let demoPassword = 'password';
-    return dispatch(sessionActions.login({ demoId, demoPassword })).catch(
+    return dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' })).catch(
       async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
