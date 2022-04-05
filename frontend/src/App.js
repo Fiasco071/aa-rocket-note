@@ -7,7 +7,7 @@ import ContentBox from './components/ContentBox';
 import Notes from './components/NotesNav';
 import NoteDetail from './components/NoteDetail';
 import NewNote from './components/NewNote'
-import notes from './mockData/notes.json';
+
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import DigitalClock from './components/DigitalClock';
@@ -46,11 +46,15 @@ function App() {
           </div>
         </Route>
         <Route path="/notes" exact>
-          <Notes notes={notes} />
+          <Notes />
+          <NewNote />
+        </Route>
+        <Route path="/notebooks/:noteBookId" exact>
+          <Notes />
           <NewNote />
         </Route>
         <Route path="/notes/:noteId">
-          <Notes notes={notes} />
+          <Notes />
           <NoteDetail />
         </Route>
         <Route>

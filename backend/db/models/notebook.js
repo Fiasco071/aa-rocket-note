@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER
   }, {});
   Notebook.associate = function(models) {
-    Notebook.hasMany(models.Note, {foreignKey : "noteBookId"})
+    Notebook.hasMany(models.Note, {foreignKey : "noteBookId", hooks: true,
+    onDelete: "cascade",})
     Notebook.belongsTo(models.User, {foreignKey : "userId"})
   };
   return Notebook;

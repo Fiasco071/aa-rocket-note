@@ -1,20 +1,21 @@
 import './index.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { fetchNotebooks, createNewNotebook } from '../../store/notebookReducer';
+import { fetchNotebooks, createNewNotebook, deleteOneNotebook } from '../../store/notebookReducer';
+import { useHistory } from 'react-router-dom';
 
 const NotebookSlider = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const user = useSelector(state => state.session.user)
     const notebooks = useSelector(state => state.notebooks.notebooks);
     const [showCreateMenu, setShowCreateMenu] = useState(false);
-    const [menuToggle, setMenuToggle] = useState(false);
     const [notebookName, setNotebookName] = useState('Notebook');
 
 
     useEffect(() => {
         dispatch(fetchNotebooks(user?.id))
-    }, [dispatch])
+    }, [])
 
 
     const handleSubmit = () => {
@@ -26,17 +27,27 @@ const NotebookSlider = () => {
         dispatch(createNewNotebook(data))
     }
 
+    const handleDelete = (e,id) => {
+        e.stopPropagation();
+        dispatch(deleteOneNotebook(id));
+        history.push('/')
+      };
 
     return (
         <div className="notebook-slider-box">
             <div className="notebook-slider">
                 {Object.values(notebooks).map((notebook) => (
-                    <div className="book1" key={notebook?.id}>
-                        <div className='notebook-info-box'>
+                    <div className="book1" key={notebook?.id} >
+                        <div 
+                        onClick={() => 
+                            history.push(`/notebooks/${notebook.id}`)
+                        }
+                        className='notebook-info-box'>
                             <p>{notebook?.name}</p>
                             <div>
                                 <p>4 Notes</p>
                                 <p>Last Updated</p>
+                                <div onClick={(e) => handleDelete(e,notebook?.id)}>x</div>
                             </div>
                         </div>
                         <div className='divider'></div>

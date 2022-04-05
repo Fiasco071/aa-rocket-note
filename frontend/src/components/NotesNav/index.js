@@ -1,23 +1,30 @@
 
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDownWideShort, faNoteSticky, faFilter } from '@fortawesome/free-solid-svg-icons';
-import { useHistory } from 'react-router-dom';
+import { faArrowDownWideShort, faNoteSticky, faFilter, faBook } from '@fortawesome/free-solid-svg-icons';
+import { useHistory,useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 
 const NotesNav = () => {
     const history = useHistory();
-
+    const { noteBookId } = useParams();
     const notesObj = useSelector(state => state.notes.entries);
-    const notes = Object.values(notesObj);
+    const notebookObj = useSelector(state => state.notebooks.notebooks);
+    
+    let notes;
+    if (noteBookId) {
+        notes = Object.values(notesObj).filter(note => +noteBookId === note.noteBookId);
+    } else {
+        notes = Object.values(notesObj);
+    }
 
     return (
         <div className="notes-nav-bar">
             <div className="notes-nav-control-box">
                 <div className="notes-nav-control-box-head">
-                    <FontAwesomeIcon icon={faNoteSticky} />
-                    <p className='notes-nav-text'>Notes</p>
+                    <FontAwesomeIcon icon={faBook} />
+                    <p className='notes-nav-text'>{notebookObj[noteBookId]?.name}</p>
                 </div>
                 <div className="notes-nav-control-box-buttons-box">
                     <div>

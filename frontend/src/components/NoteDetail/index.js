@@ -3,7 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faEllipsis, faCircleExclamation, faTrash, faClock, faUpRightAndDownLeftFromCenter, faTag, faBook } from '@fortawesome/free-solid-svg-icons';
 import UpdateFormEditor from '../RichTxtEditor/updateFormEditor';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { deleteOneNote } from '../../store/noteReducer';
 import { useRef, useEffect } from 'react';
 
@@ -12,7 +12,6 @@ import { useRef, useEffect } from 'react';
 const NoteDetail = () => {
     const { noteId } = useParams();
     const dispatch = useDispatch();
-    const notesObj = useSelector(state => state.notes.entries);
     const history = useHistory();
     const scrolltop = useRef(null);
     ///below will need to be queried and matched and data initialized
@@ -37,7 +36,7 @@ const NoteDetail = () => {
 
     const handleDelete = (id) => {
         dispatch(deleteOneNote(noteId));
-        history.push('/notes')
+        history.push('/notes/notebooks/')
       };
 
     return (

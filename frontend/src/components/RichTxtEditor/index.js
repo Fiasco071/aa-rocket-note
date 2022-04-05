@@ -14,6 +14,7 @@ import { createNewNote } from '../../store/noteReducer';
 const ControlledEditor = ({ noteId }) => {
   const dispatch = useDispatch();
   const ScratchNoteCon = useContext(ScratchNoteContext);
+  const notebooks = useSelector(state => state.notebooks.notebooks);
   const notesObj = useSelector(state => state.notes.entries);
   const user = useSelector(state => state.session.user);
   const [editorState, setEditorState] = useState(EditorState.createWithContent(ContentState.createFromBlockArray(
@@ -23,8 +24,9 @@ const ControlledEditor = ({ noteId }) => {
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState)
   }
-
+ 
   const [title, setTitle] = useState('untitled');
+  const [notebook, setNotebook] = useState(Object.values(notebooks)[0].id)
 
   useEffect(() => {
     setEditorState(EditorState.createWithContent(ContentState.createFromBlockArray(
@@ -53,7 +55,7 @@ const ControlledEditor = ({ noteId }) => {
     const data = {
       title,
       content: rawData,
-      noteBookId: 1,      // needs to turn dynamic with notebook
+      noteBookId: notebook,      // needs to turn dynamic with notebook
       userId: user.id          // grab from session value
     }
     await dispatch(createNewNote(data));
@@ -69,6 +71,13 @@ const ControlledEditor = ({ noteId }) => {
           placeholder="Title goes here..."
           value={title}
           onChange={(e) => setTitle(e.target.value)} />
+        <select
+          onChange={(e) => (setNotebook(e.target.value))}
+        >
+            {Object.values(notebooks).map(notebook => (
+              <option key={notebook.id} value={notebook.id}>{notebook.name}</option>
+            ))}
+        </select>
         <button className="y-button" onClick={handleSubmit} style={{ fontSize: '20px' }}>SUBMIT</button>
       </header>
       <Editor

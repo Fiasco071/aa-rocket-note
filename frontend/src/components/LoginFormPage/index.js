@@ -24,6 +24,20 @@ function LoginForm() {
     );
   };
 
+  const demoLogin = (e) => {
+    e.preventDefault();
+    setErrors([]);
+    let demoId = 'demo-lition';
+    let demoPassword = 'password';
+    return dispatch(sessionActions.login({ demoId, demoPassword })).catch(
+      async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      }
+    );
+  };
+
+
   const signUpLink = (e) => {
     e.preventDefault();
     history.push("/signup");
@@ -61,7 +75,7 @@ function LoginForm() {
             />
           </label>
         </div>
-        <button className="y-button" onClick={signUpLink} type="submit">Sign Up</button>
+        <button className="y-button" onClick={demoLogin} type="submit">DEMO</button>
         <button className="y-button" type="submit">Log In</button>
       </form>
       <div className='orbit-box'>

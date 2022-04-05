@@ -41,9 +41,6 @@ const NoteSlider = () => {
                     <div>
                         Notes
                     </div>
-                    <div>
-                        button1 button2
-                    </div>
                 </div>
                 <div className="note-slider-tags">
                     <p
