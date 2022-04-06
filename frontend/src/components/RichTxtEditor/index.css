@@ -36,3 +36,14 @@
     0 0 30px rgb(173, 233, 253),
     0 0 50px rgb(117, 220, 255);
   }
+
+  .notebook-select {
+    position: absolute;
+    top: 80px;
+    left: 800px;
+    background-color: #060c21;
+    border: 0.5 white solid;
+    height: 30px;
+    font-size: 25px;
+    border-radius: 5px;
+  }

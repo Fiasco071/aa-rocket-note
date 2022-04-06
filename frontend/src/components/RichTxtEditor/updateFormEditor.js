@@ -7,7 +7,7 @@ import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
-import {useParams, useHistory} from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { deleteOneNote } from '../../store/noteReducer';
 
 /// gonna use this to covert queried string into displayable info.
@@ -17,12 +17,15 @@ import { deleteOneNote } from '../../store/noteReducer';
 const UpdateFormEditor = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const {noteId} = useParams();
+  const { noteId } = useParams();
+  const user = useSelector(state => state.session.user);
   const notesObj = useSelector(state => state.notes.entries);
+  const notebooks = useSelector(state => state.notebooks.notebooks);
   const [editorState, setEditorState] = useState(EditorState.createWithContent(ContentState.createFromBlockArray(
-    htmlToDraft(noteId ? notesObj[noteId].content : '')
+    htmlToDraft(noteId ? notesObj[noteId]?.content : '')
   )))
   const [title, setTitle] = useState(notesObj[noteId]?.title);
+  const [notebook, setNotebook] = useState(notebooks[notesObj[noteId]?.noteBookId]?.id)
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState)
   }
@@ -33,23 +36,24 @@ const UpdateFormEditor = () => {
     )))
 
     setTitle(notesObj[noteId]?.title);
-  },[noteId])
+    setNotebook(notebooks[notesObj[noteId]?.noteBookId]?.id)
+  }, [noteId])
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const rawData = draftToHtml(convertToRaw(editorState.getCurrentContent()));
+    const rawData = draftToHtml(convertToRaw(editorState?.getCurrentContent()));
     const data = {
       id: notesObj[noteId].id,
       title,
       content: rawData,
-      noteBookId: 1,      // needs to turn dynamic with notebook
-      userId: 10          // grab from session value
+      noteBookId: notebook,      // needs to turn dynamic with notebook
+      userId: user.id          // grab from session value
     }
     await dispatch(updateNote(noteId, data));
   };
 
-  const handleDelete = (e,id) => {
+  const handleDelete = (e, id) => {
     e.stopPropagation();
     dispatch(deleteOneNote(id));
     history.push('/')
@@ -64,9 +68,18 @@ const UpdateFormEditor = () => {
           placeholder="Title goes here..."
           value={title}
           onChange={(e) => setTitle(e.target.value)} />
+        <select
+          className='notebook-select'
+          value={notebook}
+          onChange={(e) => (setNotebook(e.target.value))}
+        >
+          {Object.values(notebooks).map(notebook => (
+            <option key={notebook.id} value={notebook.id}>{notebook.name}</option>
+          ))}
+        </select>
         <button
           className='edit-button'
-          onClick={(e) => handleDelete(e,noteId)}
+          onClick={(e) => handleDelete(e, noteId)}
         >
           DELETE
         </button>

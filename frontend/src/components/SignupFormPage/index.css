@@ -1,0 +1,79 @@
+.signUp-box {
+    width: 450px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(15, 15, 31);
+    box-shadow: 0 0 10px rgb(230, 248, 250), 0 0 30px rgb(191, 241, 247), 0 0 60px rgb(132, 240, 252);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.signUp-box > h2 {
+    text-align: center;
+    color: white;
+}
+
+.signUp-box > form > ul {
+    color: crimson;
+    height: 140px;
+}
+
+.signUp-box > form > div {
+    margin-left: 20px;
+}
+
+.input-box-fields-signup {
+    margin-left: 95px;
+    color: white;
+    text-transform:uppercase;
+    font-weight: bolder;
+}
+
+.sign-up-input1{
+    margin-left: 153px;
+    background-color: rgb(234, 247, 248);
+    color:black;
+    font-weight: bold;
+    border-radius: 5px;
+    padding-left:10px;
+}
+
+.sign-up-input2{
+    margin-left: 111px;
+    background-color: rgb(234, 247, 248);
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    padding-left:10px;
+}
+.sign-up-input3{
+    margin-left: 112px;
+    background-color: rgb(56, 56, 56);
+    border-radius: 5px;
+    padding-left:10px;
+}
+.sign-up-input4{
+    margin-left: 33px;
+    background-color: rgb(56, 56, 56);
+    border-radius: 5px;
+    padding-left:10px;
+}
+
+.signup-button {
+    border-radius: 5px;
+    background-color: transparent;
+    border: 0.5px white solid;
+    color: white;
+    padding: 5px 10px;
+    font-size: 20px;
+    margin-left: 330px;
+    margin-top: 10px;
+}
+
+.signup-button:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    box-shadow: 0 0 10px rgb(243, 249, 253),0 0 30px rgb(199, 228, 248),0 0 60px rgb(129, 205, 255);
+}

@@ -71,7 +71,7 @@
     font-weight: 900;
     margin: 5px 0 0 220px;
     font-size: 1.2em;
-    width: 150px;
+    width: 100px;
 }
 
 .y-button:hover {
@@ -85,4 +85,15 @@
     z-index:-1; 
     top:-120px;
     left: -150px;
+}
+
+.demo-button {
+    position: relative;
+    left:-100px;
+}
+
+.login-button {
+    position: relative;
+    top: -44px;
+    left: 30px;
 }

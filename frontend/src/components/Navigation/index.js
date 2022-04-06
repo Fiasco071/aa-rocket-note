@@ -7,6 +7,7 @@ import { faHome, faStar, faNoteSticky, faBook, faSquareCheck, faTag, faUserGroup
 import { useSelector } from "react-redux";
 import LoginFormModal from '../LoginFormModal'
 import ProfileButton from './ProfileButton';
+import SignUpFormModal from '../SignUpFormModal';
 
 
 const Navigation = ({isLoaded}) => {
@@ -22,7 +23,7 @@ const Navigation = ({isLoaded}) => {
         sessionLinks = (
             <>
                 <LoginFormModal />
-                <NavLink to="/signup">Sign Up</NavLink>
+                <SignUpFormModal />
             </>
         );
     }

@@ -26,7 +26,7 @@ const ControlledEditor = ({ noteId }) => {
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState)
   }
- 
+
   const [title, setTitle] = useState('untitled');
   const [notebook, setNotebook] = useState(Object.values(notebooks)[0]?.id)
 
@@ -75,11 +75,12 @@ const ControlledEditor = ({ noteId }) => {
           value={title}
           onChange={(e) => setTitle(e.target.value)} />
         <select
+          className='notebook-select'
           onChange={(e) => (setNotebook(e.target.value))}
         >
-            {Object.values(notebooks).map(notebook => (
-              <option key={notebook.id} value={notebook.id}>{notebook.name}</option>
-            ))}
+          {Object.values(notebooks).map(notebook => (
+            <option key={notebook.id} value={notebook.id}>{notebook.name}</option>
+          ))}
         </select>
         <button className="y-button" onClick={handleSubmit} style={{ fontSize: '20px' }}>SUBMIT</button>
       </header>

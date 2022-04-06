@@ -23,7 +23,7 @@ const NotesNav = () => {
         <div className="notes-nav-bar">
             <div className="notes-nav-control-box">
                 <div className="notes-nav-control-box-head">
-                    <FontAwesomeIcon icon={faBook} />
+                    <FontAwesomeIcon icon={faNoteSticky} />
                     <p className='notes-nav-text'>{notebookObj[noteBookId]?.name}</p>
                 </div>
                 <div className="notes-nav-control-box-buttons-box">

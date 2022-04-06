@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import Navigation from "./components/Navigation"
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import ContentBox from './components/ContentBox';
 import Notes from './components/NotesNav';
 import NoteDetail from './components/NoteDetail';
@@ -15,6 +15,7 @@ import DigitalClock from './components/DigitalClock';
 function App() {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  const history = useHistory();
   const [isLoaded, setIsLoaded] = useState(false);
 
   
@@ -30,9 +31,7 @@ function App() {
         <Navigation isLoaded={isLoaded} />
       </div>
       <Switch>
-        <Route path="/signup">
-          <SignupFormPage />
-        </Route>
+
         <Route path="/" exact>
           <div className='main-content-box'>
             <div className='main-image-box' />

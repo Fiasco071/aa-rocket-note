@@ -73,8 +73,8 @@ function LoginForm() {
             />
           </label>
         </div>
-        <button className="y-button" onClick={demoLogin} type="submit">DEMO</button>
-        <button className="y-button" type="submit">Log In</button>
+        <button className="demo-button y-button" onClick={demoLogin} type="submit">DEMO</button>
+        <button className="login-button y-button" type="submit">Log In</button>
       </form>
       <div className='orbit-box'>
         <Orbits />
