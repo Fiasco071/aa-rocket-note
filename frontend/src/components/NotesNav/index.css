@@ -89,7 +89,16 @@
     font-size: 0.7em;
 }
 
-.filter-icon {
-    
+.notebook-nav-select {
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    background-color: transparent;
 }
 
+.notebook-nav-select > option {
+    background-color: black;
+}
+.notebook-nav-select > option:nth-child(1) {
+    background-color: green;
+}
