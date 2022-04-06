@@ -18,10 +18,10 @@ async function create(name) {
     return notebook;
 }
 
-async function update(id, name) {
+async function update(id, payload) {
     await Notebook.update(
         {
-            name: name
+            name: payload.name
         },
         {
             where: { id },
@@ -29,7 +29,7 @@ async function update(id, name) {
             plain: true,
         }
     );
-    return details.id;
+    return payload;
 }
 
 async function deleteNotebook(id) {

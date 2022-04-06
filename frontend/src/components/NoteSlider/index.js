@@ -1,22 +1,15 @@
 import "./index.css"
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchNotes } from "../../store/noteReducer";
+import { useSelector } from "react-redux";
+
 
 
 const NoteSlider = () => {
-    const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
-    // console.log(user)
     const notesObj = useSelector(state => state.notes.entries);
     const notes = Object.values(notesObj).slice(-4);
 
-    useEffect(() => {
-        if (user) {
-            dispatch(fetchNotes(user.id));
-        }
-    }, [dispatch, user]);
 
     const [notesfilterClicked, setNotesFilterClicked] = useState('Recent');
 

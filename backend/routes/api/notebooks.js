@@ -27,7 +27,7 @@ router.delete(
     '/:id',
     asyncHandler(async (req, res) => {
         const note = await notebooksRepository.deleteNotebook(req.params.id);
-        return note.id;
+        res.status(204).end();
     })
 );
 module.exports = router;

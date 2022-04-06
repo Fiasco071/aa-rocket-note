@@ -7,15 +7,12 @@ import ContentBox from './components/ContentBox';
 import Notes from './components/NotesNav';
 import NoteDetail from './components/NoteDetail';
 import NewNote from './components/NewNote'
-
-import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import DigitalClock from './components/DigitalClock';
 
 function App() {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-  const history = useHistory();
   const [isLoaded, setIsLoaded] = useState(false);
 
   

@@ -75,13 +75,6 @@
     text-shadow: 0 0 10px rgb(249, 253, 207), 0 0 40px rgb(166, 172, 105), 0 0 100px rgb(86, 88, 61);
 }
 
-.notebook-info-box.add-box > p:nth-child(1) {
-    font-size: 80px;
-    position: relative;
-    left: 15px;
-    top: 0px;
-}
-
 .notebook-info-box.add-box > p:nth-child(2) {
     position: absolute;
     top: 110px;
@@ -128,9 +121,153 @@
     box-shadow: 0 0 10px rgb(255, 165, 165), 0 0 30px rgb(255, 101, 101);
 }
 
+.notebook-delete-icon {
+    padding: 5px 5px;
+    color: crimson;
+    background-color: #070708;
+    border: 3px crimson solid;
+    border-radius: 5px;
+    position:relative;
+    left:15px;
+    font-size: 15px;
+    box-shadow: 0 0 10px rgb(255, 165, 165), 0 0 30px rgb(255, 101, 101);
+}
+
+.notebook-edit-icon {
+    padding: 5px 5px;
+    color: rgb(252, 248, 36);
+    background-color: #070708;
+    border: 3px solid rgb(252, 248, 36);
+    border-radius: 5px;
+    position:relative;
+    left:15px;
+    font-size: 15px;
+    box-shadow: 0 0 10px rgb(252, 248, 36), 0 0 30px rgb(78, 77, 13);
+}
+
 .add-book > .divider {
     top: -212px;
 }
 .add-book > div.divider2 {
     top: -436px;
+}
+
+.notebook-create-button > p:nth-child(1) {
+    font-size: 80px;
+    position: relative;
+    left: 15px;
+    top: 25px;
+}
+
+.notebook-create-dropdown {
+    box-sizing: border-box;
+    position:absolute;
+    top: 30px;
+    left: -36px;
+    width: 150px;
+    z-index: 3;
+    background-color: #060c21;
+    border-radius: 5px;
+    padding: 10px 5px;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgb(255, 255, 220),  0 0 40px rgb(85, 85, 32);
+}
+
+.notebook-create-dropdown > form > input {
+    width: 139px;
+    color: black;
+    margin: 0;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.notebook-create-dropdown > form > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.notebook-create-dropdown > form > div > button {
+    font-family: 'Poppins', sans-serif;
+    padding: 5px 10px;
+    margin: 10px 0 0 0;
+    background-color: transparent;
+    border: 1.5px solid rgb(187, 250, 226);
+    border-radius: 5px;
+    color: rgb(187, 250, 226);
+    box-shadow: 0 0 10px rgb(187, 250, 226);
+    font-size: 12px;
+}
+.notebook-create-dropdown > form > div > p {
+    margin: 10px 0 0 0;
+    font-family: 'Poppins', sans-serif;
+    padding: 5px 10px;
+    border: 1.5px solid rgb(247, 180, 156);
+    border-radius: 5px;
+    color: rgb(247, 180, 156);
+    box-shadow: 0 0 10px rgb(247, 180, 156);
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+.notebook-update-dropdown {
+    box-sizing: border-box;
+    position:absolute;
+    top: 0px;
+    left: -100px;
+    width: 150px;
+    z-index: 3;
+    background-color: #060c21;
+    border-radius: 5px;
+    padding: 10px 5px;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgb(255, 255, 220),  0 0 40px rgb(85, 85, 32);
+}
+.notebook-update-dropdown > form > input {
+    width: 139px;
+    color: black;
+    margin: 0;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.notebook-update-dropdown > form > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.notebook-update-dropdown > form > div > button {
+    font-family: 'Poppins', sans-serif;
+    padding: 5px 10px;
+    margin: 10px 0 0 0;
+    background-color: transparent;
+    border: 1.5px solid rgb(187, 250, 226);
+    border-radius: 5px;
+    color: rgb(187, 250, 226);
+    box-shadow: 0 0 10px rgb(187, 250, 226);
+    font-size: 12px;
+}
+.notebook-update-dropdown > form > div > p {
+    margin: 10px 0 0 0;
+    font-family: 'Poppins', sans-serif;
+    padding: 5px 10px;
+    border: 1.5px solid rgb(247, 180, 156);
+    border-radius: 5px;
+    color: rgb(247, 180, 156);
+    box-shadow: 0 0 10px rgb(247, 180, 156);
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+.menu-close-button {
+    color:grey;
+    text-shadow: 0 0 10px white, 0 0 20px rgb(248, 164, 164);
+    position: absolute;
+    top:-25.5px;
+    left:18px;
 }
