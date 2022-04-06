@@ -12,12 +12,12 @@ const NotesNav = () => {
     const notesObj = useSelector(state => state.notes.entries);
     const notebookObj = useSelector(state => state.notebooks.notebooks);
     
-    let notes;
-    if (noteBookId) {
-        notes = Object.values(notesObj).filter(note => +noteBookId === note.noteBookId);
-    } else {
-        notes = Object.values(notesObj);
-    }
+    // let notes;
+    // if (noteBookId) {
+    //     notes = Object.values(notesObj).filter(note => +noteBookId === note.noteBookId);
+    // } else {
+    //     notes = Object.values(notesObj);
+    // }
 
     return (
         <div className="notes-nav-bar">
@@ -28,7 +28,7 @@ const NotesNav = () => {
                 </div>
                 <div className="notes-nav-control-box-buttons-box">
                     <div>
-                        <p> {`${notes.length} notes`} </p>
+                        <p> {`${Object.values(notesObj).length} notes`} </p>
                     </div>
                     <div className='notes-nav-control-box-buttons'>
                         <FontAwesomeIcon icon={faArrowDownWideShort} />
@@ -36,7 +36,7 @@ const NotesNav = () => {
                     </div>
                 </div>
             </div>
-            {notes.map((note) => (
+            {Object.values(notesObj).map((note) => (
                 <div
                     className="note"
                     key={note.id}

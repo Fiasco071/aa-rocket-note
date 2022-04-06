@@ -1,8 +1,9 @@
 import './index.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { fetchNotebooks, createNewNotebook, deleteOneNotebook } from '../../store/notebookReducer';
+import { fetchNotebooks, createNewNotebook } from '../../store/notebookReducer';
 import { useHistory } from 'react-router-dom';
+import NotebookMenuButton from './NotebookMenuButton';
 
 const NotebookSlider = () => {
     const dispatch = useDispatch();
@@ -15,8 +16,9 @@ const NotebookSlider = () => {
 
     useEffect(() => {
         dispatch(fetchNotebooks(user?.id))
-    }, [])
+    }, [dispatch])
 
+    /// re think this.....
 
     const handleSubmit = async () => {
         setShowCreateMenu(false);
@@ -25,30 +27,24 @@ const NotebookSlider = () => {
             userId: user.id
         }
         await dispatch(createNewNotebook(data))
-        history.push('/')
     }
-
-    const handleDelete = (e,id) => {
-        e.stopPropagation();
-        dispatch(deleteOneNotebook(id));
-        history.push('/')
-      };
 
     return (
         <div className="notebook-slider-box">
             <div className="notebook-slider">
                 {Object.values(notebooks).map((notebook) => (
                     <div className="book1" key={notebook?.id} >
-                        <div 
-                        onClick={() => 
-                            history.push(`/notebooks/${notebook.id}`)
-                        }
-                        className='notebook-info-box'>
-                            <p>{notebook?.name}</p>
+                        <NotebookMenuButton notebookId={notebook?.id}   />
+                        <div
+                            className='notebook-info-box'>
+                            <p onClick={() =>
+                                history.push(`/notebooks/${notebook?.id}`)
+                            }>{notebook?.name}</p>
                             <div>
                                 <p>4 Notes</p>
                                 <p>Last Updated</p>
-                                <div onClick={(e) => handleDelete(e,notebook?.id)}>x</div>
+                                {/* <div onClick={(e) => handleDelete(e,notebook?.id)}>x</div> */}
+
                             </div>
                         </div>
                         <div className='divider'></div>

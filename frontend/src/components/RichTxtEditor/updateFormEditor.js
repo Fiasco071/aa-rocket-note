@@ -9,6 +9,8 @@ import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 import { useParams, useHistory } from 'react-router-dom';
 import { deleteOneNote } from '../../store/noteReducer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 /// gonna use this to covert queried string into displayable info.
 /// however lets also consider displaying directly onto the richtext editor
@@ -50,7 +52,7 @@ const UpdateFormEditor = () => {
       noteBookId: notebook,      // needs to turn dynamic with notebook
       userId: user.id          // grab from session value
     }
-    await dispatch(updateNote(noteId, data));
+    dispatch(updateNote(noteId, data));
   };
 
   const handleDelete = (e, id) => {
@@ -68,26 +70,33 @@ const UpdateFormEditor = () => {
           placeholder="Title goes here..."
           value={title}
           onChange={(e) => setTitle(e.target.value)} />
-        <select
-          className='notebook-select'
-          value={notebook}
-          onChange={(e) => (setNotebook(e.target.value))}
-        >
-          {Object.values(notebooks).map(notebook => (
-            <option key={notebook.id} value={notebook.id}>{notebook.name}</option>
-          ))}
-        </select>
-        <button
-          className='edit-button'
-          onClick={(e) => handleDelete(e, noteId)}
-        >
-          DELETE
-        </button>
-        <button
-          className='edit-button'
-          onClick={handleSubmit}>
-          EDIT
-        </button>
+        <div className='note-button-box'>
+          <div>
+              <FontAwesomeIcon icon={faBook} />
+              <select
+                className='notebook-select'
+                value={notebook}
+                onChange={(e) => (setNotebook(e.target.value))}
+              >
+                {Object.values(notebooks).map(notebook => (
+                  <option key={notebook.id} value={notebook.id}>{notebook.name}</option>
+                ))}
+              </select>
+          </div>
+          <div>
+            <button
+              className='edit-button'
+              onClick={handleSubmit}>
+              SAVE
+            </button>
+            <button
+              className='edit-button'
+              onClick={(e) => handleDelete(e, noteId)}
+            >
+              DELETE
+            </button>
+          </div>
+        </div>
       </header>
       <Editor
         editorState={editorState}

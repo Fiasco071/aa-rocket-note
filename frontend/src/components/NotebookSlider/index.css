@@ -14,8 +14,9 @@
 }
 .notebook-info-box {
     position: relative;
+    top:-10px;
     left: 50px;
-    height: 100%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -25,7 +26,7 @@
     position: relative;
     height: 230px;
     width: 20px;
-    top: -230px;
+    top: -236px;
     background-color: #181922;
     border-radius: 5px 0 0 5px;
 }
@@ -33,7 +34,7 @@
 .divider2 {
     position: relative;
     left: 20px;
-    top: -460px;
+    top: -463px;
     height: 230px;
     width: 5px;
     background-color: rgb(66, 76, 85);
@@ -93,4 +94,43 @@
     top: 140px;
     left: -15px;
     font-size: 25px;
+}
+
+.notebook-menu-button {
+    position:relative;
+    left: 100px;
+    color:white;
+    font-size: 20px;
+    padding-left: 30px;
+}
+
+.book1 > button:nth-child(1) {
+    position: relative;
+    left: 50px;
+}
+
+.notebook-dropdown-menu {
+    position: absolute;
+    color: black;
+    left:12px;
+    z-index: 2;
+}
+
+.notebook-dropdown-menu > .notebook-delete-icon {
+    padding: 5px 5px;
+    color: crimson;
+    background-color: #070708;
+    border: 3px crimson solid;
+    border-radius: 5px;
+    position:relative;
+    left:15px;
+    font-size: 15px;
+    box-shadow: 0 0 10px rgb(255, 165, 165), 0 0 30px rgb(255, 101, 101);
+}
+
+.add-book > .divider {
+    top: -212px;
+}
+.add-book > div.divider2 {
+    top: -436px;
 }

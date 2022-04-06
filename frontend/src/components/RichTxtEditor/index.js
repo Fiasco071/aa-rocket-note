@@ -4,13 +4,12 @@ import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './index.css';
 import draftToHtml from 'draftjs-to-html';
-/// gonna use this to covert queried string into displayable info.
-/// however lets also consider displaying directly onto the richtext editor
-//import htmlToDraft from 'html-to-draftjs';
 import { ScratchNoteContext } from '../../context/ScratchNoteContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createNewNote } from '../../store/noteReducer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 const ControlledEditor = ({ noteId }) => {
   const dispatch = useDispatch();
@@ -74,15 +73,22 @@ const ControlledEditor = ({ noteId }) => {
           placeholder="Title goes here..."
           value={title}
           onChange={(e) => setTitle(e.target.value)} />
-        <select
-          className='notebook-select'
-          onChange={(e) => (setNotebook(e.target.value))}
-        >
-          {Object.values(notebooks).map(notebook => (
-            <option key={notebook.id} value={notebook.id}>{notebook.name}</option>
-          ))}
-        </select>
-        <button className="y-button" onClick={handleSubmit} style={{ fontSize: '20px' }}>SUBMIT</button>
+        <div className='note-button-box'>
+          <div>
+            <FontAwesomeIcon icon={faBook} />
+            <select
+              className='notebook-select'
+              onChange={(e) => (setNotebook(e.target.value))}
+            >
+              {Object.values(notebooks).map(notebook => (
+                <option key={notebook.id} value={notebook.id}>{notebook.name}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <button className="edit-button" onClick={handleSubmit} >CREATE</button>
+          </div>
+        </div>
       </header>
       <Editor
         editorState={editorState}

@@ -13,7 +13,7 @@
     padding: 1rem;
   }
   .editor-class {
-    background-color:#060913;
+    background-color:#060c21;
     color: white;
     padding: 1rem;
   }
@@ -25,25 +25,81 @@
   .title-input {
     margin-top: 5px;
     width: 600px;
-    height: 60px;
+    height: 80px;
+    padding-left: 10px;
     background-color: #060c21;
     display: flex;
     align-items: center;
-    font-size: 25px;
+    font-size: 40px;
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-shadow: 0 0 10px rgb(239, 251, 255),
-    0 0 30px rgb(173, 233, 253),
-    0 0 50px rgb(117, 220, 255);
+    0 0 20px rgb(104, 217, 255),
+    0 0 30px rgb(37, 122, 150);
+    text-decoration: underline;
   }
 
   .notebook-select {
-    position: absolute;
-    top: 80px;
-    left: 800px;
     background-color: #060c21;
-    border: 0.5 white solid;
     height: 30px;
     font-size: 25px;
     border-radius: 5px;
+    border: none;
+    text-shadow: 0 0 10px rgb(239, 251, 255),
+    0 0 20px rgb(104, 217, 255),
+    0 0 30px rgb(37, 122, 150);
+  }
+
+  div.rdw-editor-toolbar.toolbar-class {
+    background-color: #060c21;
+    border:none;
+  }
+
+  div.rdw-editor-toolbar.toolbar-class > button {
+    background-color: #060c21;
+  }
+
+  .note-button-box {
+    margin-right: 25px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid rgb(221, 248, 255);
+    border-radius: 5px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+  }
+  .note-button-box > div {
+    display:flex;
+    align-items: center;
+  }
+
+  .note-button-box > div:nth-child(2) {
+    display:flex;
+    justify-content: space-around;
+    margin: 5px 0;
+  }
+
+  .note-button-box > div:nth-child(2) > button {
+    color:white;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 0.5px white solid;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 5px 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .note-button-box > div:nth-child(2) > button:nth-child(1) {
+    color:rgb(184, 233, 255);
+    border: 0.5px solid rgb(175, 236, 255);
+    box-shadow: 0 0 10px rgb(175, 236, 255), 0 0 20px rgb(33, 73, 85);
+  }
+  .note-button-box > div:nth-child(2) > button:nth-child(2) {
+    color:rgb(248, 89, 41);
+    border: 0.5px solid rgb(248, 89, 41);
+    box-shadow: 0 0 10px rgb(248, 89, 41), 0 0 20px rgb(77, 26, 10);
   }
