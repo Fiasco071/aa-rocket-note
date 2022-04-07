@@ -21,7 +21,8 @@ async function update(id, details) {
   await Note.update(
     {
       title: details.title,
-      content: details.content
+      content: details.content,
+      noteBookId: details.noteBookId
     },
     {
       where: { id },

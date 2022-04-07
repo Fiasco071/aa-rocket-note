@@ -3,6 +3,7 @@ import { csrfFetch } from '../store/csrf';
 const LOAD_NOTES = 'notes/loadNotes';
 const ADD_NOTE = 'notes/addNote';
 const REMOVE_NOTE = 'notes/removeNote';
+const DUMP_DATA = 'notes/dumpData';
 
 export const loadNotes = (notes) => {
     return {
@@ -23,6 +24,12 @@ export const deleteNote = (id) => {
     return {
         type: REMOVE_NOTE,
         id
+    }
+}
+
+export const reset = () => {
+    return {
+        type: DUMP_DATA
     }
 }
 
@@ -72,6 +79,12 @@ export const deleteOneNote = (id) => async (dispatch) => {
     }
 };
 
+
+export const resetStoreNote = () => dispatch => {
+    dispatch(reset());
+}
+
+
 const initialState = { entries: {}, isLoading: true };
 
 const noteReducer = (state = initialState, action) => {
@@ -94,6 +107,12 @@ const noteReducer = (state = initialState, action) => {
             const newState = { ...state };
             const entries = { ...state.entries }
             delete entries[action.id];
+            newState.entries = entries;
+            return newState;
+        }
+        case DUMP_DATA: {
+            const newState = {};
+            const entries = {}
             newState.entries = entries;
             return newState;
         }

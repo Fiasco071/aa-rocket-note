@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateNote } from '../../store/noteReducer';
 import './index.css';
@@ -20,6 +20,7 @@ const UpdateFormEditor = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { noteId } = useParams();
+  const ref = useRef();
   const user = useSelector(state => state.session.user);
   const notesObj = useSelector(state => state.notes.entries);
   const notebooks = useSelector(state => state.notebooks.notebooks);
@@ -27,7 +28,7 @@ const UpdateFormEditor = () => {
     htmlToDraft(noteId ? notesObj[noteId]?.content : '')
   )))
   const [title, setTitle] = useState(notesObj[noteId]?.title);
-  const [notebook, setNotebook] = useState(notebooks[notesObj[noteId]?.noteBookId]?.id)
+  const [notebook, setNotebook] = useState()
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState)
   }
@@ -41,19 +42,31 @@ const UpdateFormEditor = () => {
     setNotebook(notebooks[notesObj[noteId]?.noteBookId]?.id)
   }, [noteId])
 
+  const addClass = () => {
+    ref.current.classList.add('toggle-hidden')
+  }
+  const removeClass = () => {
+    ref.current.classList.remove('toggle-hidden')
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const rawData = draftToHtml(convertToRaw(editorState?.getCurrentContent()));
     const data = {
-      id: notesObj[noteId].id,
+      id: noteId,
       title,
       content: rawData,
-      noteBookId: notebook,      // needs to turn dynamic with notebook
-      userId: user.id          // grab from session value
+      noteBookId: notebook,     
+      userId: user.id          
     }
+    console.log(data);
     dispatch(updateNote(noteId, data));
+    removeClass()
+    setTimeout(() => {
+      addClass();
+    }, 1500)
   };
+  
 
   const handleDelete = (e, id) => {
     e.stopPropagation();
@@ -72,16 +85,16 @@ const UpdateFormEditor = () => {
           onChange={(e) => setTitle(e.target.value)} />
         <div className='note-button-box'>
           <div>
-              <FontAwesomeIcon icon={faBook} />
-              <select
-                className='notebook-select'
-                value={notebook}
-                onChange={(e) => (setNotebook(e.target.value))}
-              >
-                {Object.values(notebooks).map(notebook => (
-                  <option key={notebook.id} value={notebook.id}>{notebook.name}</option>
-                ))}
-              </select>
+            <FontAwesomeIcon icon={faBook} />
+            <select
+              className='notebook-select'
+              value={notebook}
+              onChange={(e) => (setNotebook(e.target.value))}
+            >
+              {Object.values(notebooks).map(notebook => (
+                <option key={notebook.id} value={notebook.id}>{notebook.name}</option>
+              ))}
+            </select>
           </div>
           <div>
             <button
@@ -105,7 +118,7 @@ const UpdateFormEditor = () => {
         toolbarClassName="toolbar-class"
         onEditorStateChange={onEditorStateChange}
       />
-
+      <p ref={ref} className='save-message toggle-hidden'>Note saved...</p>
     </div>
 
   )

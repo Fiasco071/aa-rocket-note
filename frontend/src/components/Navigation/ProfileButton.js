@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import {resetStoreNote} from '../../store/noteReducer';
+import {resetStoreNotebook} from '../../store/notebookReducer';
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -25,7 +27,11 @@ function ProfileButton({ user }) {
 
   const logout = (e) => {
     e.preventDefault();
+    dispatch(resetStoreNote());
+    dispatch(resetStoreNotebook());
     dispatch(sessionActions.logout());
+    
+    
   };
 
   return (

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDownWideShort, faNoteSticky, faFilter, faBook } from '@fortawesome/free-solid-svg-icons';
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 const NotesNav = () => {
@@ -13,16 +13,26 @@ const NotesNav = () => {
     const notesObj = useSelector(state => state.notes.entries);
     const notebooks = useSelector(state => state.notebooks.notebooks);
     const [notebook, setNotebook] = useState('All')
+    const [notebookList, setNotebookList] = useState();
+    
+    useEffect(() => {
+        if (noteBookId) {
+            setNotebookList(Object.values(notesObj).filter(note => +noteBookId === note.noteBookId));
+            setNotebook(notebooks[noteBookId]?.id)
+        } else {
+            setNotebookList(Object.values(notesObj));
+            setNotebook('All');
+        }
+    },[noteBookId]);
 
-    let notes;
-    if (noteBookId) {
-        notes = Object.values(notesObj).filter(note => +noteBookId === note.noteBookId);
-        // setNotebook(Object.values(notesObj)[noteBookId])
-    } else {
-        notes = Object.values(notesObj);
+
+    const redirect = (e) => {
+        if (notebook === 'All') {
+            history.push('/notes')
+        } else {
+            history.push(`/notebooks/${e.target.value}`)
+        }
     }
-
-    console.log()
 
     return (
         <div className="notes-nav-bar">
@@ -32,17 +42,22 @@ const NotesNav = () => {
                     <select
                         className='notebook-nav-select'
                         value={notebook}
+                        onClick={redirect}
                         onChange={(e) => (setNotebook(e.target.value))}
                     >
                         <option value='All'>All</option>
                         {Object.values(notebooks).map(notebook => (
-                            <option key={notebook.id} value={notebook.id}>{notebook.name}</option>
+                            <option 
+                                key={notebook.id} 
+                                value={notebook.id}
+                                
+                            >{notebook.name}</option>
                         ))}
                     </select>
                 </div>
                 <div className="notes-nav-control-box-buttons-box">
                     <div>
-                        <p> {`${Object.values(notesObj).length} notes`} </p>
+                        <p> {`${notebookList?.length} notes`} </p>
                     </div>
                     <div className='notes-nav-control-box-buttons'>
                         <FontAwesomeIcon icon={faArrowDownWideShort} />
@@ -50,7 +65,7 @@ const NotesNav = () => {
                     </div>
                 </div>
             </div>
-            {notes.map((note) => (
+            {notebookList?.map((note) => (
                 <div
                     className="note"
                     key={note.id}

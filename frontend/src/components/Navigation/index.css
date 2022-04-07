@@ -123,3 +123,8 @@ FontAwesomeIcon {
 .profile-dropdown > li:nth-child(3) {
     margin-left:40px;
 }
+
+.nav-wrapper {
+    position: sticky;
+    top:1px;
+}

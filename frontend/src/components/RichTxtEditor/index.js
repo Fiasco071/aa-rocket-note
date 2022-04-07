@@ -56,8 +56,8 @@ const ControlledEditor = ({ noteId }) => {
     const data = {
       title,
       content: rawData,
-      noteBookId: notebook,      // needs to turn dynamic with notebook
-      userId: user.id          // grab from session value
+      noteBookId: notebook,  
+      userId: user.id          
     }
     const newNote = await dispatch(createNewNote(data));
     history.push(`/notes/${newNote.id}`)
