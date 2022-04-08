@@ -3,10 +3,19 @@ import LoginFormModal from '../LoginFormModal';
 import SignUpFormModal from '../SignUpFormModal';
 import titletextimgback from '../../assets/img/ganpan.png';
 import titletextimgfront from '../../assets/img/ganpan2.png';
+import { useEffect, useRef } from 'react';
 
 const SplashPage = () => {
+const ref = useRef(null);
+const scrollToTop = () => {
+    ref.current?.scrollIntoView()
+  }
+  useEffect(() => {
+    scrollToTop()
+  }, []);
+
     return (
-        <div className='splash-page-wrapper'>
+        <div ref={ref} className='splash-page-wrapper'>
             <div className='front-cloud'>
                 <div  style={{zIndex:1}} className='cloudbunch-outline'>
                     <div  style={{zIndex:1}} className='cloud-one'>
