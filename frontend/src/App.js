@@ -31,19 +31,19 @@ function App() {
         <Navigation isLoaded={isLoaded} />
       </div>
 
-   
+      <Switch>
         <Route path="/" exact>
           {user ? <Redirect to='/home' /> : <SplashPage />}
         </Route>
+        <ProtectedRoute path="/home" sessionUser={user} />
         {(user) ?
           <>
-        <Switch>
-          <ProtectedRoute path="/home" sessionUser={user} />
-            <Route path="/notes">
+          <Switch>
+            <Route path="/notes" exact>
               <Notes />
               <NewNote />
             </Route>
-            <Route path="/notebooks/:noteBookId">
+            <Route path="/notebooks/:noteBookId" >
               <Notes />
               <NewNote />
             </Route>
@@ -51,12 +51,13 @@ function App() {
               <Notes />
               <NoteDetail />
             </Route>
-            <Route>
-              <h1 style={{ color: "white", fontSize: "3em", position: "absolute", left: "700px", top: "300px", }}>Currently Under Construction</h1>
-            </Route>
-         </Switch>
+            <Route >
+          <h1 style={{ color: "white", fontSize: "3em", position: "absolute", left: "700px", top: "300px", }}>Currently Under Construction</h1>
+        </Route>
+          </Switch>
           </>
           : <Redirect to="/" />}
+      </Switch>
     </div>
   );
 }
