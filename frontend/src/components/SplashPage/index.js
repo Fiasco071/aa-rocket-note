@@ -3,20 +3,21 @@ import LoginFormModal from '../LoginFormModal';
 import SignUpFormModal from '../SignUpFormModal';
 import titletextimgback from '../../assets/img/ganpan.png';
 import titletextimgfront from '../../assets/img/ganpan2.png';
+import astronaut from '../../assets/img/astronaut.png';
 import { useEffect, useRef } from 'react';
 
 const SplashPage = () => {
-const ref = useRef(null);
-const scrollToTop = () => {
-    ref.current?.scrollIntoView()
-  }
-  useEffect(() => {
-    scrollToTop()
-  }, []);
+    const ref = useRef(null);
+    const scrollToTop = () => {
+        ref.current?.scrollIntoView()
+    }
+    useEffect(() => {
+        scrollToTop()
+    }, []);
 
     return (
         <div ref={ref} className='splash-page-wrapper'>
-            <div className='front-cloud'>
+            {/* <div className='front-cloud'>
                 <div  style={{zIndex:1}} className='cloudbunch-outline'>
                     <div  style={{zIndex:1}} className='cloud-one'>
                         <div style={{zIndex:1}} className='cloud-one-one'></div>
@@ -180,7 +181,7 @@ const scrollToTop = () => {
                     </div>
                 </div>
 
-            </div>
+            </div> */}
 
             <div className='planet'></div>
             <div className='login-register-box'>
@@ -188,10 +189,25 @@ const scrollToTop = () => {
                 <SignUpFormModal />
             </div>
             <div className='title-text-container'>
-                <img className='titletextfront' src={titletextimgfront}></img>
-                <img className='titletextback' src={titletextimgback}></img>
+                <img className='titletextfront' src={titletextimgfront} alt={titletextimgfront}></img>
+                <img className='titletextback' src={titletextimgback} alt={titletextimgback}></img>
+                <img className='astronautImg' src={astronaut} alt={astronaut} />
             </div>
             <div className='planet'>
+                <ul className='stars'>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
             <div className='rocket'>
                 <div className='rocket-body'>
