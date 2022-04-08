@@ -38,6 +38,8 @@ function App() {
         <ProtectedRoute path="/home" sessionUser={user} />
         {(user) ?
           <>
+
+          {/* double switch here... is this a bad method??????? */}
           <Switch>
             <Route path="/notes" exact>
               <Notes />

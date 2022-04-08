@@ -39,7 +39,6 @@ const NotesNav = () => {
         e.stopPropagation();
         document.querySelectorAll('.note').forEach(note => note.classList.remove('selected-note'))
         e.target.classList.add('selected-note');
-        console.log(id);
         history.push(`/notes/${id}`);
     }
 

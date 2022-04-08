@@ -18,6 +18,8 @@
     word-wrap: break-word;
     height:100vw;
     padding: 5px 10px;
+    position: sticky;
+    top:1px;
 }
 .notes-content-box {
     width: 100%;

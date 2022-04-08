@@ -209,6 +209,14 @@ const SplashPage = () => {
                     <li></li>
                 </ul>
             </div>
+            <div>
+                <ul className='small-planet-one'>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
             <div className='rocket'>
                 <div className='rocket-body'>
                     <div className='body'></div>

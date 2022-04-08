@@ -10,7 +10,7 @@ import ControlledEditor from '../RichTxtEditor';
 const NewNote = () => {
     const ref = useRef();
     const scrollToTop = () => {
-        ref.current?.scrollIntoView({ behavior: "smooth" })
+        ref.current?.scrollIntoView()
       }
       useEffect(() => {
         scrollToTop()

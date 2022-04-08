@@ -35,7 +35,7 @@ const UpdateFormEditor = () => {
 
   useEffect(() => {
     setEditorState(EditorState.createWithContent(ContentState.createFromBlockArray(
-      htmlToDraft(noteId ? notesObj[noteId]?.content : '')
+      htmlToDraft(noteId ? notesObj[noteId]?.content : '<></>')
     )))
 
     setTitle(notesObj[noteId]?.title);
@@ -59,7 +59,6 @@ const UpdateFormEditor = () => {
       noteBookId: notebook,     
       userId: user.id          
     }
-    console.log(data);
     dispatch(updateNote(noteId, data));
     removeClass()
     setTimeout(() => {
@@ -91,8 +90,8 @@ const UpdateFormEditor = () => {
               value={notebook}
               onChange={(e) => (setNotebook(e.target.value))}
             >
-              {Object.values(notebooks).map(notebook => (
-                <option key={notebook.id} value={notebook.id}>{notebook.name}</option>
+              {Object.values(notebooks)?.map(notebook => (
+                <option key={notebook?.id} value={notebook?.id}>{notebook?.name}</option>
               ))}
             </select>
           </div>

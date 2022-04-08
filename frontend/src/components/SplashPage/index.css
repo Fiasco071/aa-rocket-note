@@ -137,13 +137,25 @@
 .planet {
     height: 1000px;
     width: 1000px;
-    background-color: rgb(153, 53, 100);;
+    border: 20px solid rgb(143, 20, 96);
+    background-color: rgb(173, 35, 185);;
     z-index: 0;
     position: relative;
     top: calc(60%);
    left: calc(24%);
     border-radius: 50%;
    /* animation: spin 5s linear infinite; */
+}
+
+.planet:after {
+    content: '';
+    background-color: #db6dc9;
+    height: 950px;
+    width: 950px;
+    top: calc(100% - 975px);
+   left: calc(24% - 215px);
+    border-radius: 50%;
+    position: absolute;
 }
 
 .stars {
@@ -495,6 +507,45 @@
 }
 
 
+.small-planet-one {
+    list-style:none;
+}
+.small-planet-one  > li:first-child {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(48, 88, 150);
+    border: 10px solid rgb(191, 246, 253);
+    position: absolute;
+    top: calc(100% - 817px);
+    left: calc(100% - 365px);
+    box-shadow: 0 0 10px rgb(195, 219, 252) , 0 0 30px rgb(120, 176, 255), 0 0 100px rgb(59, 141, 255);
+    z-index: 3;
+}
+
+
+
+.small-planet-one  > li:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(195, 219, 252);
+    border-radius: 50%;
+    position: absolute;
+    top: calc(100% - 832px);
+    left: calc(100% - 377px);
+}
+
+.small-planet-one  > li:nth-child(4) {
+    width: 148px;
+    height: 370px;
+    background: linear-gradient(180deg, transparent 10%, rgb(195, 219, 252) 100%);
+    transform: rotate(70deg) scaleX(-1);
+    position: absolute;
+    top: calc(100% - 1001px);
+    left: calc(100% - 213px);
+    animation: astrotrail 3s linear infinite;
+}
+
 @keyframes bounce {
     0% { transform: translate(0px, 0px)}
     50% { transform: translate(0px, 4px)}
@@ -505,6 +556,30 @@
     50% { transform: scale(1.5); background:transparent; }
     51% { transform: scale(0.8); }
     50% { transform: scale(1); }
+}
+
+@keyframes astrotrail {
+    0% {
+        background: linear-gradient(180deg, transparent 10%, rgb(195, 219, 252) 100%);
+    }
+    10% {
+        background: linear-gradient(180deg, transparent 30%, rgb(195, 219, 252) 100%);
+    }
+    20% {
+        background: linear-gradient(180deg, transparent 20%, rgb(195, 219, 252) 100%);
+    }
+    30% {
+        background: linear-gradient(180deg, transparent 10%, rgb(195, 219, 252) 100%);
+    }
+    40% {
+        background: linear-gradient(180deg, transparent 20%, rgb(195, 219, 252) 100%);
+    }
+    50% {
+        background: linear-gradient(180deg, transparent 30%, rgb(195, 219, 252) 100%);
+    }
+    75% {
+        background: linear-gradient(180deg, transparent 15%, rgb(195, 219, 252) 100%);
+    }
 }
 
 @keyframes exhaust {
