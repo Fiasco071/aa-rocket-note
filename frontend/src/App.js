@@ -42,7 +42,7 @@ function App() {
               <Notes />
               <NewNote />
             </Route>
-            <Route path="/notebooks/:noteBookId" exact>
+            <Route path="/notebooks/:noteBookId">
               <Notes />
               <NewNote />
             </Route>
@@ -52,9 +52,9 @@ function App() {
             </Route>
           </>
           : <Redirect to="/" />}
-            <Route>
-              <h1 style={{ color: "white", fontSize: "3em", position: "absolute", left: "700px", top: "300px", }}>Currently Under Construction</h1>
-            </Route>
+        <Route>
+          <h1 style={{ color: "white", fontSize: "3em", position: "absolute", left: "700px", top: "300px", }}>Currently Under Construction</h1>
+        </Route>
       </Switch>
     </div>
   );

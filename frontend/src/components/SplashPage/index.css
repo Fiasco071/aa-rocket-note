@@ -1,10 +1,3 @@
-.splash-page-wrapper {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-}
-
-
 
 .cloud-one-one {
     width:400px;
@@ -104,15 +97,17 @@
 
 .cloudbunch > div > div {
     z-index: 1;
-    background-color: rgb(136, 36, 194);
+    background-color: rgb(95, 72, 228);
 }
 
 
 .cloudbunchtwo >div > div {
-    background-color: rgb(172, 22, 172);
+    background-color: rgb(135, 97, 241);
 }
 .front-cloud {
     z-index: 1;
+    position: relative;
+    top: -200px;
 }
 
 .back-cloud {
@@ -136,6 +131,286 @@
 .back-cloud > .cloudbunchtwo > div > div{
     background-color: rgb(39, 19, 37);
     z-index: 0;
+}
+
+
+.planet {
+    height: 800px;
+    width: 100%;
+    background-color: rgb(153, 53, 100);;
+    z-index: 0;
+    position: relative;
+    top: calc(55%);
+   left: calc(0%);
+   clip-path: circle(50% at 50% 100%);
+}
+
+.splash-page-wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.planet-main {
+    height: 1600px;
+    width: 1600px;
+    background-color: rgb(90, 45, 94);
+    clip-path: circle(50% at 50% 100%);
+    position: relative;
+    top: 450px;
+}
+
+.planet-shadow {
+    height: 1700px;
+    width: 1700px;
+    background-color: rgb(59, 39, 61);
+    clip-path: circle(50% at 50% 100%);
+    position: absolute;
+    top: -290px;
+    left:190px;
+}
+
+.spot {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(32, 23, 32);
+}
+
+
+.rocket {
+    position:absolute;
+    top: 20%;
+    width: 80px;
+    left: calc(50% - 60px);
+}
+
+.rocket .rocket-body {
+    width: 80px;
+    left: calc(50% -50px);
+    animation: bounce 0.5s infinite
+}
+
+.rocket .rocket-body .body {
+    background-color: #dadada;
+    height: 180px;
+    left: calc(50%- 50px);
+    border-radius: 100% 100% 50% 50%;
+    border-top: 5px solid #f5f5f5;
+    z-index: 1;
+}
+
+.rocket .rocket-body::before {
+    content: '';
+    position: absolute;
+    left:calc(50% - 24px);
+    top: calc(100%) ;
+    width: 48px;
+    height: 13px;
+    bottom: -13px;
+    background: linear-gradient(to right top, #8360c3, #2ebf91);
+    border-radius: 0 0 60% 60%;
+    z-index: 1;
+}
+
+.rocket .window {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #1b2e2c;
+    left: calc(50% - 25px);
+    top: 40px;
+    border:5px solid #b4b2b2;
+}
+
+.rocket .window::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height:10px;
+    border-radius: 50%;
+    top: 20%;
+    left: 20%;
+    background: #fff;
+}
+
+.rocket .fin {
+    position: absolute;
+    z-index: -1;
+    height: 55px;
+    width: 50px;
+    background: linear-gradient(to right top, #8360c3, #2ebf91);
+}
+
+
+.rocket .fin-left {
+    left: -30px;
+    top: calc(100% - 55px);
+    border-radius: 80% 0 0 20%;
+}
+
+.rocket .fin-right {
+    right: -30px;
+    top: calc(100% - 55px);
+    border-radius: 0 80% 20% 0;
+}
+
+.exhaust-flame {
+    position: absolute;
+    clip-path: ellipse(25% 66% at 50% 0%);
+    top: 90%;
+    width: 60px;
+    background: linear-gradient(180deg, transparent 10%, #f1e757 100%);
+    height: 150px;
+    left: calc(50% - 30px);
+    z-index: -1;
+    animation: exhaust 2s infinite;
+}
+
+
+.rocket .exhaust-fumes li {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #f5f5f5;
+    list-style: none;
+    border-radius: 100%;
+    animation: fumes 5s infinite
+}
+
+
+.rocket .exhaust-fumes li:first-child {
+    width: 200px;
+    height: 200px;
+    bottom: -300px;
+    animation: fumes 5s infinite; 
+}
+
+.rocket .exhaust-fumes li:nth-child(2){
+    width: 150px;
+    height: 150px;
+    top: 260px;
+    left: -120px;
+    animation: fumes 3.2s infinite;
+}
+
+.rocket .exhaust-fumes li:nth-child(2){
+    width: 150px;
+    height: 150px;
+    top: 260px;
+    left: -120px;
+    animation: fumes 5s infinite;
+}
+
+.rocket .exhaust-fumes li:nth-child(2){
+    width: 150px;
+    height: 150px;
+    top: 260px;
+    left: -120px;
+    animation: fumes 3.2s infinite;
+}
+
+.rocket .exhaust-fumes li:nth-child(3){
+    width: 120px;
+    height: 120px;
+    top: 330px;
+    left: -40px;
+    animation: fumes 3s 1s infinite;
+}
+
+.rocket .exhaust-fumes li:nth-child(4){
+    width: 100px;
+    height: 100px;
+    left: -170px;
+    top: 380px;
+    animation: fumes 4s 2s infinite;
+}
+
+.rocket .exhaust-fumes li:nth-child(5){
+    width: 130px;
+    height: 130px;
+    left: -120px;
+    top: 350px;
+    animation: fumes 5s infinite;
+}
+
+.rocket .exhaust-fumes li:nth-child(6){
+    width: 200px;
+    height: 200px;
+    left: -60px;
+    top: 280px;
+    animation: fumes2 10s infinite;
+}
+
+.rocket .exhaust-fumes li:nth-child(7){
+    width: 100px;
+    height: 100px;
+    left: -100px;
+    top: 320px;
+}
+
+.rocket .exhaust-fumes li:nth-child(8){
+    width: 110px;
+    height: 110px;
+    left: 70px;
+    top: 340px;
+}
+.rocket .exhaust-fumes li:nth-child(9){
+    width: 90px;
+    height: 90px;
+    left: 200px;
+    top: 380px;
+    animation: fumes 20s infinite;
+}
+
+.login-register-box {
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    position: absolute;
+    top: calc(88%);
+    left: calc(32%);
+    z-index: 1;
+}
+
+.titletextfront {
+    position: absolute;
+    z-index: 5;
+    left:10px;
+}
+.titletextback {
+    position: absolute;
+    z-index: 4;
+}
+
+.title-text-container {
+    position: absolute;
+    top: calc(5%);
+    left: calc(2%);
+}
+
+@keyframes bounce {
+    0% { transform: translate(0px, 0px)}
+    50% { transform: translate(0px, 4px)}
+    100% { transform: translate(0px, 0px)}
+  }
+
+@keyframes fumes {
+    50% { transform: scale(1.5); background:transparent; }
+    51% { transform: scale(0.8); }
+    50% { transform: scale(1); }
+}
+
+@keyframes exhaust {
+    0% {
+        background: linear-gradient(180deg, transparent 10%, #e4e264 100%);
+    }
+    50% {
+        background: linear-gradient(180deg, transparent 8%,  #f1e75b 100%);
+    }
+    75% {
+        background: linear-gradient(180deg, transparent 12%,  #e4e264 100%);
+    }
 }
 
 @keyframes wobble {
@@ -164,4 +439,10 @@
       80% { transform: translate(1px, -2px) rotate(-1deg); }
       90% { transform: translate(-1px, -1px) rotate(1deg); }
       100% { transform: translate(-3px, 3px) rotate(1deg); }
+  }
+
+  @keyframes fumes2 {
+      50% {
+          transform: scale(1.1);
+      }
   }

@@ -21,14 +21,13 @@ const Navigation = ({ isLoaded }) => {
         );
     } else {
         sessionLinks = (
-            <div style={{display:"flex"}}>
-                <LoginFormModal />
-                <SignUpFormModal />
-            </div>
+            <></>
         );
     }
     return (
         <div className='nav-wrapper'>
+            {(user) && (
+                <>
             <div>
                 <div className='nav-profile-head-box'>
                     <div className='nav-profileImg-box'>
@@ -36,8 +35,6 @@ const Navigation = ({ isLoaded }) => {
                     {isLoaded && sessionLinks}
                 </div>
             </div>
-            {(user) && (
-                <>
 
                     <div>
                         <div>

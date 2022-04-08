@@ -10,19 +10,21 @@ const ScratchPad = () => {
     const [value, onChange] = useState(new Date());
 
 
+    // useEffect(() => {
+    //     const autoSave = setInterval(async () => {
+    //         if (scratchNote !== '') {
+    //             await ScratchNoteCon.setScratchNoteSaved(scratchNote);
+    //         }
+    //     }, 10000);
+
+    //     return () => {
+    //         clearInterval(autoSave);
+    //     };
+    // }, [scratchNote]);
+
     useEffect(() => {
-        const autoSave = setInterval(async () => {
-            if (scratchNote !== '') {
-                await ScratchNoteCon.setScratchNoteSaved(scratchNote);
-            }
-        }, 10000);
-
-        return () => {
-            clearInterval(autoSave);
-        };
-    }, [scratchNote]);
-
-
+        console.log(value);
+    },[value])
 
 
     return (

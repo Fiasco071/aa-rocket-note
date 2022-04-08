@@ -31,9 +31,10 @@ function NotebookCreateMenu() {
     //         setShowMenu(false);
     //     };
 
-    //     //document.addEventListener('click', closeMenu);
-
-    //     return () => document.removeEventListener("click", closeMenu);
+    //     document.querySelector('.notebook-slider-box').addEventListener('click', closeMenu)
+    //     return () => {
+    //       document.querySelector('.notebook-slider-box').removeEventListener("click", closeMenu);
+    //     }
     // }, [showMenu]);
 
     return (

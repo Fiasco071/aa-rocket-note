@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 const NotesNav = () => {
     const history = useHistory();
     const { noteBookId } = useParams();
+    const { noteId } = useParams();
     const notesObj = useSelector(state => state.notes.entries);
     const notebooks = useSelector(state => state.notebooks.notebooks);
     const [notebook, setNotebook] = useState('All')
@@ -23,7 +24,7 @@ const NotesNav = () => {
             setNotebookList(Object.values(notesObj));
             setNotebook('All');
         }
-    },[noteBookId]);
+    },[noteBookId, noteId]);
 
 
     const redirect = (e) => {
@@ -32,6 +33,14 @@ const NotesNav = () => {
         } else {
             history.push(`/notebooks/${e.target.value}`)
         }
+    }
+
+    const noteClick = (e, id) => {
+        e.stopPropagation();
+        document.querySelectorAll('.note').forEach(note => note.classList.remove('selected-note'))
+        e.target.classList.add('selected-note');
+        console.log(id);
+        history.push(`/notes/${id}`);
     }
 
     return (
@@ -67,11 +76,9 @@ const NotesNav = () => {
             </div>
             {notebookList?.map((note) => (
                 <div
-                    className="note"
+                    className={note.id === +noteId ? 'note selected-note' : 'note'}
                     key={note.id}
-                    onClick={() => {
-                        history.push(`/notes/${note.id}`)
-                    }}
+                    onClick={e => noteClick(e, note.id)}
                 >
                     <p className='note-title-text'>{note.title}</p>
                     <p className='note-content-text'>{note.content.slice(0, 80)}</p>

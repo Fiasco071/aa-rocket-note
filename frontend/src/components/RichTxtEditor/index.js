@@ -18,6 +18,7 @@ const ControlledEditor = ({ noteId }) => {
   const notebooks = useSelector(state => state.notebooks.notebooks);
   const notesObj = useSelector(state => state.notes.entries);
   const user = useSelector(state => state.session.user);
+  const [errors, setErrors] = useState([]);
   const [editorState, setEditorState] = useState(EditorState.createWithContent(ContentState.createFromBlockArray(
     convertFromHTML(noteId ? notesObj[noteId].content : '')
   )))
@@ -52,21 +53,39 @@ const ControlledEditor = ({ noteId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors([]);
+
     const rawData = draftToHtml(convertToRaw(editorState.getCurrentContent()));
     const data = {
       title,
       content: rawData,
-      noteBookId: notebook,  
-      userId: user.id          
+      noteBookId: notebook,
+      userId: user.id
     }
-    const newNote = await dispatch(createNewNote(data));
-    history.push(`/notes/${newNote.id}`)
+    const newNote = dispatch(createNewNote(data))
+    .then((value) => {
+      history.push(`/notes/${value.id}`);
+    })
+    .catch(
+      async (res) => {
+        const data = await res.json();
+        if (data && data.errors) {
+          setErrors(data.errors);
+        }}
+    );
   };
 
   return (
     <div className="editor">
       {notesObj[noteId]?.content}
       <header className="editor-header">
+        <div className='error-message-box'>
+          <ul>
+            {errors.map((error, idx) => (
+              <li key={idx}>{error}</li>
+            ))}
+          </ul>
+        </div>
         <input
           className='title-input'
           type="text"

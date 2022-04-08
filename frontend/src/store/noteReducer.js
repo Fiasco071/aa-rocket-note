@@ -61,7 +61,7 @@ export const updateNote = (id, payload) => async dispatch => {
     })
     if(response.ok){
       const updateNote = await response.json()
-      dispatch(addNote(updateNote)) //action passed in
+      dispatch(addNote(updateNote))
       return updateNote
     }
     }

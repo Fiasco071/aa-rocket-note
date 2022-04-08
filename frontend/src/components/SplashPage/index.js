@@ -1,4 +1,8 @@
 import './index.css';
+import LoginFormModal from '../LoginFormModal';
+import SignUpFormModal from '../SignUpFormModal';
+import titletextimgback from '../../assets/img/ganpan.png';
+import titletextimgfront from '../../assets/img/ganpan2.png';
 
 const SplashPage = () => {
     return (
@@ -167,6 +171,38 @@ const SplashPage = () => {
                     </div>
                 </div>
 
+            </div>
+
+            <div className='planet'></div>
+            <div className='login-register-box'>
+                <LoginFormModal />
+                <SignUpFormModal />
+            </div>
+            <div className='title-text-container'>
+                <img className='titletextfront' src={titletextimgfront}></img>
+                <img className='titletextback' src={titletextimgback}></img>
+            </div>
+            <div className='planet'>
+            </div>
+            <div className='rocket'>
+                <div className='rocket-body'>
+                    <div className='body'></div>
+                    <div className='fin fin-left'></div>
+                    <div className='fin fin-right'></div>
+                    <div className='window'></div>
+                </div>
+                <div class='exhaust-flame'></div>
+                <ul className='exhaust-fumes'>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
         </div>
     );

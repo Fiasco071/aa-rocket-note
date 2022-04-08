@@ -2,22 +2,35 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
 const NoteRepository = require('../../db/notesRepository');
- const { requireAuth } = require('../../utils/auth');
+const { check } = require('express-validator');
+const { handleValidationErrors } = require('../../utils/validation');
 
-router.get('/:userId', requireAuth, asyncHandler(async (req, res) => {
+const noteValidator = [
+    check("title")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide a value for Title")
+    .isLength({ max: 50 })
+    .withMessage("Title must not be more than 50 characters long"),
+    check("content")
+    .isLength({ max: 2000 })
+    .withMessage("Topic Type must not be more than 2000 characters long"),
+    handleValidationErrors
+];
+
+
+router.get('/:userId', asyncHandler(async (req, res) => {
     const response = await NoteRepository.list(req.params.userId);
     return res.json(response);
 }));
 
 
-router.post('/', asyncHandler(async (req, res) => {
-    /// req.body will be changed to a redux value that will be pulled from useSelector and dispatch and thunk acition creator
+router.post('/', noteValidator, asyncHandler(async (req, res) => {
     const newNote = await NoteRepository.create(req.body);
     return res.json(newNote);
 }));
 
 router.put(
-    '/:id',
+    '/:id', noteValidator,
     asyncHandler(async (req, res) => {
         const id = await NoteRepository.update(req.params.id, req.body);
         const note = await NoteRepository.one(req.params.id);
