@@ -6,8 +6,8 @@
 Rocket Notes is a clone of Evernotes. Rocket notes is where you can save all your important thoughts in an organized way!
    
 ### 
-   - How to use our application
-   - []()Features
+   - [How to use our application](#How to use our application)
+   - - [Features](#Features)
 
 <h2>Technologies Used</h2>
    
