@@ -99,5 +99,6 @@ Below is the step-by-step to install and initiate the program.
    
  - Create/Read/View/Delete Notes
  - Create/Read/View/Delete Notebooks
+ - Rich Text Editor
    
  [Back to top](#top)
