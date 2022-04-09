@@ -4,12 +4,12 @@
 
 <h2> About </h2>
 Rocket Notes is a clone of Evernotes. Rocket notes is where you can save all your important thoughts in an organized way!
-   
-### 
-   - [How to use our application](#How to use our application)
-   - - [Features](#Features)
 
-<h2>Technologies Used</h2>
+   - [Technologies Used](#tech)
+   - [How to use our application](#howto)
+   - [Features](#features)
+
+<h2>Technologies Used</h2> <a name="tech"></a>
    
    ![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/expressjs.svg)
    ![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/git.svg)
@@ -21,7 +21,7 @@ Rocket Notes is a clone of Evernotes. Rocket notes is where you can save all you
    ![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/expressjs.svg)
 
    
-##How to use our application
+##How to use our application <a name="howto"></a>
  
 Below is the step-by-step to install and initiate the program.
   
@@ -93,8 +93,9 @@ Below is the step-by-step to install and initiate the program.
             webpack 5.70.0 compiled successfully in 215 ms
    
    
-##Features
+   <h2> Features </h2> <a name="features"></a>
    
    Logged in users can do the following...
-         * Create/Read/View/Delete Notes
-         * Create/Read/View/Delete Notebooks
+   
+     - Create/Read/View/Delete Notes
+     - Create/Read/View/Delete Notebooks
