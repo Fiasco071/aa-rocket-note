@@ -21,8 +21,10 @@ Rocket Notes is a clone of Evernotes. Rocket notes is where you can save all you
    ![alt text](https://github.com/Workshape/tech-icons/blob/master/icons/expressjs.svg)
 
    
-##How to use our application <a name="howto"></a>
+   
+   <h2>How to use our application </h2><a name="howto"></a>
  
+   
 Below is the step-by-step to install and initiate the program.
   
   1. git clone https://github.com/Fiasco071//aa-rocket-note.git
