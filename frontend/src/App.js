@@ -2,13 +2,11 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import Navigation from "./components/Navigation"
-import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
-import ContentBox from './components/ContentBox';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Notes from './components/NotesNav';
 import NoteDetail from './components/NoteDetail';
 import NewNote from './components/NewNote'
 import * as sessionActions from "./store/session";
-import DigitalClock from './components/DigitalClock';
 import ProtectedRoute from './ProtectedRoute';
 import SplashPage from './components/SplashPage'
 
@@ -26,11 +24,9 @@ function App() {
   return isLoaded && (
 
     <div className="App" id="mainBox">
-
       <div className="nav-bar">
         <Navigation isLoaded={isLoaded} />
       </div>
-
       <Switch>
         <Route path="/" exact>
           {user ? <Redirect to='/home' /> : <SplashPage />}

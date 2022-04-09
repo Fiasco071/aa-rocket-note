@@ -15,7 +15,7 @@ textarea:focus {
 }
 
 .scratchpad-title {
-    margin: 0;
+    margin: 00px 0 0 0;
 }
 
 .scratchpad-head-box {
@@ -32,7 +32,10 @@ textarea:focus {
 }
 
 .calendar-box {
-    margin: 10px 0 0 50px;    
+    margin: 15px 0 0 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .react-calendar {
     width: 350px;

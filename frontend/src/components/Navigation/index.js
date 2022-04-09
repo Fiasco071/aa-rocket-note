@@ -3,11 +3,10 @@ import { NavLink } from 'react-router-dom'
 import { useState } from 'react';
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faStar, faNoteSticky, faBook, faSquareCheck, faTag, faUserGroup, faTrash, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faNoteSticky } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from "react-redux";
-import LoginFormModal from '../LoginFormModal'
 import ProfileButton from './ProfileButton';
-import SignUpFormModal from '../SignUpFormModal';
+
 
 
 const Navigation = ({ isLoaded }) => {
@@ -29,13 +28,8 @@ const Navigation = ({ isLoaded }) => {
             {(user) && (
                 <>
             <div>
-                <div className='nav-profile-head-box'>
-                    <div className='nav-profileImg-box'>
-                    </div>
-                    {isLoaded && sessionLinks}
-                </div>
             </div>
-
+{/* 
                     <div>
                         <div>
                             <input type="text" placeholder='Search Bar...' />
@@ -50,23 +44,26 @@ const Navigation = ({ isLoaded }) => {
                                 <option>Option 3</option>
                             </select>
                         </div>
-                    </div>
+                    </div> */}
 
                     <nav>
+                        {/* <p className='menu-text'>MENU</p> */}
+                    {isLoaded && sessionLinks}
                         <NavLink
                             className="nav-links"
                             to="/"
                             onClick={() => setLinkClicked('home')}
                         >
                             {linkClicked === 'home' && (
-                                <FontAwesomeIcon
-                                    icon={faCaretRight}
-                                    className="nav-link"
-                                />
+                                <></>
+                                // <FontAwesomeIcon
+                                //     icon={faCaretRight}
+                                //     className="nav-link"
+                                // />
                             )}
-                            <FontAwesomeIcon icon={faHome} /> Home
+                            <FontAwesomeIcon icon={faHome} />
                         </NavLink>
-                        <NavLink
+                        {/* <NavLink
                             className="nav-links"
                             to="/shortcuts"
                             onClick={() => setLinkClicked('shortCuts')}
@@ -78,21 +75,22 @@ const Navigation = ({ isLoaded }) => {
                                 />
                             )}
                             <FontAwesomeIcon icon={faStar} /> Shortcuts
-                        </NavLink>
+                        </NavLink> */}
                         <NavLink
                             className="nav-links"
                             to="/notes"
                             onClick={() => setLinkClicked('notes')}
                         >
                             {linkClicked === 'notes' && (
-                                <FontAwesomeIcon
-                                    icon={faCaretRight}
-                                    className="nav-link"
-                                />
+                                <></>
+                                // <FontAwesomeIcon
+                                //     icon={faCaretRight}
+                                //     className="nav-link"
+                                // />
                             )}
-                            <FontAwesomeIcon icon={faNoteSticky} /> Notes
+                            <FontAwesomeIcon icon={faNoteSticky} />
                         </NavLink>
-                        <NavLink
+                        {/* <NavLink
                             className="nav-links"
                             to="/tasks"
                             onClick={() => setLinkClicked('tasks')}
@@ -104,8 +102,8 @@ const Navigation = ({ isLoaded }) => {
                                 />
                             )}
                             <FontAwesomeIcon icon={faSquareCheck} /> Tasks
-                        </NavLink>
-                        <NavLink
+                        </NavLink> */}
+                        {/* <NavLink
                             className="nav-links"
                             to="/notesbooks"
                             onClick={() => setLinkClicked('noteBooks')}
@@ -116,7 +114,7 @@ const Navigation = ({ isLoaded }) => {
                                     className="nav-link"
                                 />
                             )}
-                            <FontAwesomeIcon icon={faBook} /> Notebooks
+                            <FontAwesomeIcon icon={faBook} />
                         </NavLink>
                         <NavLink
                             className="nav-links"
@@ -129,9 +127,9 @@ const Navigation = ({ isLoaded }) => {
                                     className="nav-link"
                                 />
                             )}
-                            <FontAwesomeIcon icon={faTag} /> Tags
-                        </NavLink>
-                        <NavLink
+                            <FontAwesomeIcon icon={faTag} />
+                        </NavLink> */}
+                        {/* <NavLink
                             className="nav-links"
                             to="/shared"
                             onClick={() => setLinkClicked('shared')}
@@ -153,7 +151,7 @@ const Navigation = ({ isLoaded }) => {
                                 <FontAwesomeIcon icon={faCaretRight} className="nav-link selected" />
                             )}
                             <FontAwesomeIcon icon={faTrash} /> Trash
-                        </NavLink>
+                        </NavLink> */}
                     </nav>
                 </>
             )}

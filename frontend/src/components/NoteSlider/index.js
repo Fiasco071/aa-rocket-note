@@ -8,8 +8,13 @@ import { useSelector } from "react-redux";
 const NoteSlider = () => {
     const user = useSelector(state => state.session.user);
     const notesObj = useSelector(state => state.notes.entries);
-    const notes = Object.values(notesObj).slice(-4);
+    const notes = Object.values(notesObj).slice(-6);
 
+    // most recently updated note list 
+            // grabs the date information from store -> Date class it -> sort by later
+    let revListNotes = Object.values(notesObj).sort((a,b) =>  new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
+
+    let revListNotesDisplayList = revListNotes.slice(-6);
 
     const [notesfilterClicked, setNotesFilterClicked] = useState('Recent');
 
@@ -19,12 +24,18 @@ const NoteSlider = () => {
     const handleClickR = () => {
         setNotesFilterClicked('Recent')
         const div = ref.current;
-        div.classList.toggle('appear');
+        setTimeout(() => {
+            div.classList.remove('appear');
+        },500)
+        div.classList.add('appear');
     }
     const handleClickS = () => {
         setNotesFilterClicked('Suggested')
         const div = ref.current;
-        div.classList.toggle('appear');
+        setTimeout(() => {
+            div.classList.remove('appear');
+        },500)
+        div.classList.add('appear');
     }
 
     return notes && (
@@ -65,7 +76,23 @@ const NoteSlider = () => {
                         ))
                     )}
                     {/* Gonna need to repeat above with different filtering rule */}
-
+                    {notesfilterClicked === 'Suggested' && notes.length > 0 && (
+                        revListNotesDisplayList.map((note) => (
+                            <div key={note?.id} className="note-card" onClick={() => {
+                                history.push(`/notes/${note?.id}`)
+                            }}>
+                                <div>
+                                    <h2 className="card-title">{note?.title}</h2>
+                                </div>
+                                <div className="note-card-content-box">
+                                    <p>{note?.content}</p>
+                                </div>
+                                <div>
+                                    <p className="note-card-createAt-text">{note?.createAt}</p>
+                                </div>
+                            </div>
+                        ))
+                    )}
 
                     <div
                         className="note-card-add"

@@ -5,7 +5,7 @@ const DigitalClock = () => {
     const [time, setTime] = useState(new Date());
 
     useEffect(() => {
-        const interval = setInterval(() => {
+        setInterval(() => {
             setTime(new Date());
         }, 1000);
     }, [])
@@ -23,7 +23,7 @@ const DigitalClock = () => {
 
     let month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(time);
     let day = time.getDate() < 10 ? `0${time.getDate()}` : time.getDate();
-    let dayWeek = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(time);
+    let dayWeek = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(time).slice(0,3);
     let year = time.getFullYear();
     return (
         <div className="digital-clock">

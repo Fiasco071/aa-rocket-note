@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   Note.associate = function(models) {
     Note.belongsTo(models.User, {foreignKey: "userId"})
     Note.belongsTo(models.Notebook, {foreignKey: "noteBookId"})
+    Note.hasMany(models.Tag, {foreignKey: "noteId"})
   };
   return Note;
 };

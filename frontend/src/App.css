@@ -15,11 +15,6 @@
   margin-left: 1em;
 }
 
-.nav-bar {
-  height:100%;
-  position: sticky;
-  top: 1px;
-}
 
 .main-content-box {
   width:100%;
@@ -92,4 +87,10 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(100, 108, 143);
+}
+
+.title-text-container-main {
+  position: absolute;
+  top: calc(0% - 260px);
+  left: calc(0% + 50px)
 }

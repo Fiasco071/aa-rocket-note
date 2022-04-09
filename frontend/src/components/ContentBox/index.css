@@ -4,7 +4,7 @@
 }
 .box {
     position: relative;
-    width: 900px;
+    width: 1290px;
     height: 360px;
     display: flex;
     justify-content: center;
@@ -14,12 +14,12 @@
 }
 
 .container .box:nth-child(2){
-    width: 450px;
+    width: 400px;
     height: 360px;
 }
 
 .container .box:nth-child(3){
-    width: 1430px;
+    width: 1770px;
     height: 360px;
 }
 
@@ -85,4 +85,9 @@ border-radius: 10px;
     100% {
         filter: hue-rotate(360deg);
     }
+}
+
+.clock-box {
+    position: absolute;
+    left: calc(85.5%)
 }

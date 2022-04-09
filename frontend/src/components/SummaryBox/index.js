@@ -1,21 +1,31 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 //import { useHistory  } from "react-router-dom";
 import NotebookSlider from '../NotebookSlider';
 
 
 const SummaryBox = () => {
     const [notesfilterClicked, setNotesFilterClicked] = useState('Notebooks');
-    //let history = useHistory (); 
+    // const ref = useRef(null);
 
+    // const handleClickR = (slider) => {
+    //     setNotesFilterClicked(slider)
+    //     const div = ref.current;
+    //     setTimeout(() => {
+    //         div.classList.remove('appear');
+    //     },500)
+    //     div.classList.add('appear');
+    // }
+
+    
     return (
         <div className="box">
             <div className="content">
                 <div className="note-slider-header">
                     <div>
-                        Notes
+                        Quick Access
                     </div>
                     <div>
-                        button1 button2
+                        
                     </div>
                 </div>
                 <div className="note-slider-tags">

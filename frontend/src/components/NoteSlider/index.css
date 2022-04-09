@@ -7,7 +7,7 @@
 .note-slider-header {
     display:flex;
     justify-content: space-between;
-    margin-top: 0px;
+    margin-top: 5px;
     text-shadow: 0 0 10px rgb(146, 248, 218), 0 0 40px rgb(65, 235, 192), 0 0 100px rgb(30, 119, 104);
 }
 

@@ -139,7 +139,7 @@
     width: 1000px;
     border: 20px solid rgb(143, 20, 96);
     background-color: rgb(173, 35, 185);;
-    z-index: 0;
+    z-index: 1;
     position: relative;
     top: calc(60%);
    left: calc(24%);

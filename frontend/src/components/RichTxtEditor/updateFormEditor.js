@@ -40,7 +40,7 @@ const UpdateFormEditor = () => {
 
     setTitle(notesObj[noteId]?.title);
     setNotebook(notebooks[notesObj[noteId]?.noteBookId]?.id)
-  }, [noteId])
+  }, [noteId,notebooks,notesObj])
 
   const addClass = () => {
     ref.current.classList.add('toggle-hidden')
@@ -56,8 +56,8 @@ const UpdateFormEditor = () => {
       id: noteId,
       title,
       content: rawData,
-      noteBookId: notebook,     
-      userId: user.id          
+      noteBookId: notebook,
+      userId: user.id
     }
     dispatch(updateNote(noteId, data));
     removeClass()
@@ -65,13 +65,36 @@ const UpdateFormEditor = () => {
       addClass();
     }, 1500)
   };
-  
+
 
   const handleDelete = (e, id) => {
     e.stopPropagation();
     dispatch(deleteOneNote(id));
     history.push('/')
   };
+
+  // useEffect(() => {
+  //   const autoSave = setTimeout( async() => {
+  //     const rawData = draftToHtml(convertToRaw(editorState?.getCurrentContent()));
+  //   const data = {
+  //     id: noteId,
+  //     title,
+  //     content: rawData,
+  //     noteBookId: notebook,
+  //     userId: user.id
+  //   }
+  //   dispatch(updateNote(noteId, data));
+  //     removeClass()
+  //   setTimeout(() => {
+  //     addClass();
+  //   }, 1500)
+  //   }, 10000);
+
+  //   // return () => {
+  //   //   clearInterval(autoSave);
+  //   // };
+  // }, [editorState]);
+
 
   return (
     <div className="editor">

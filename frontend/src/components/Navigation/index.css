@@ -1,16 +1,13 @@
 nav>.nav-links {
     margin: 5px 10px 10px 5px;
-    color: rgb(253, 253, 253);
+    color: rgb(0, 0, 0);
     text-decoration: none;
     text-shadow: 0 0 10px rgb(146, 248, 218), 0 0 40px rgb(65, 235, 192), 0 0 100px rgb(30, 119, 104);
 }
 
 nav {
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 240px;
-    background-color: 060c21;
+    width: 340px;
     font-size: 1.0em;
     padding-left: 10px;
 }
@@ -41,9 +38,7 @@ select {
     margin-left: 15px;
 }
 
-.nav-link {
-    margin: 0 5px;
-}
+
 
 a:hover {
     position: relative;
@@ -74,9 +69,6 @@ a:hover {
     }
 }
 
-FontAwesomeIcon {
-    margin: 5px 0;
-}
 
 .nav-profileImg-box {
     height: 25px;
@@ -107,9 +99,10 @@ FontAwesomeIcon {
     flex-direction: column;
     align-items: flex-start;
     background-color: #132327;
-    top: 30px;
-    left: 45px;
+    top: -30px;
+    left: 85px;
     padding: 5px 10px;
+    color: white;
     list-style: none;
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(231, 246, 255),0 0 30px rgb(185, 228, 255),0 0 50px rgb(146, 213, 255);
@@ -124,7 +117,54 @@ FontAwesomeIcon {
     margin-left:40px;
 }
 
-.nav-wrapper {
-    position: sticky;
-    top:1px;
+
+.nav-wrapper{
+    background-color: transparent;
+    height: 400px;
+    position: fixed;
+    left: calc(42%);
+    top: calc(96.5%);
+    z-index: 1;
+    /* border: 10px solid rgb(255, 255, 255); */
+}
+.nav-wrapper:hover {
+    top: calc(80%);
+}
+
+nav {
+    background: rgba(255, 255, 255, 0.7);
+    height: 120px;
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 5px rgb(39, 39, 39);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu-text {
+    font-weight: bolder;
+    font-size: 25px;
+    position: absolute;
+    top: -35px;
+}
+
+.nav-links > svg {
+    margin: 0 5px;
+    font-size: 45px;
+    color: rgb(26, 34, 39);
+}
+
+.nav-link {
+    margin: 0 5px;
+    font-size: 45px;
+    color: rgb(26, 34, 39);
+    margin: 5px 10px 10px 5px;
+}
+
+.nav-link:hover {
+    position: relative;
+    top:-2px;
+    left:1px;
 }

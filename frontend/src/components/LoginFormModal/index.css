@@ -2,10 +2,12 @@
     background-color: transparent;
     color: white;
     border-radius: 5px;
-    border: 0.5px white solid;
+    border: 4px white solid;
+    background: linear-gradient(90deg, purple, rgb(127, 127, 255));
     padding: 5px 3px;
     width: 200px;
     font-size: 40px;
+    font-weight: bolder;
 }
 
 .nav-register-button:hover {

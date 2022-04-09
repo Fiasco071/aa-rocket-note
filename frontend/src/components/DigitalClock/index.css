@@ -3,7 +3,6 @@
     font-family: 'Poppins', sans-serif;
     border: 2px solid rgb(236, 206, 255);
     border-radius: 5px;
-  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +11,7 @@
         0 0 20px #f4c5fc,
         0 0 40px #f4adff;
         box-shadow: 0 0 10px #f6d2fc;
-    padding-top:5px;
+    padding: 5px 10px;
 }
 
 .clock-date-bar {
