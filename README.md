@@ -95,7 +95,7 @@ Below is the step-by-step to install and initiate the program.
    
    <h2> Features </h2> <a name="features"></a>
    
-   Logged in users can do the following...
+ Logged in users can do the following...
    
-     - Create/Read/View/Delete Notes
-     - Create/Read/View/Delete Notebooks
+ - Create/Read/View/Delete Notes
+ - Create/Read/View/Delete Notebooks
