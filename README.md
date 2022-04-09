@@ -1,4 +1,4 @@
-<h1 align="center"> :rocket: RocketNotes 🚀 </h1>
+<h1 align="center"> :rocket: RocketNotes 🚀 </h1> <a name="top"> </a>
 
 <h5 align="center">  By: <a href="https://github.com/Fiasco071">Steve Choi</a> - <a href="https://rocket-note-app.herokuapp.com/"><i>Live site</i></h5>
 
@@ -99,3 +99,5 @@ Below is the step-by-step to install and initiate the program.
    
  - Create/Read/View/Delete Notes
  - Create/Read/View/Delete Notebooks
+   
+ [Back to top](#top)
