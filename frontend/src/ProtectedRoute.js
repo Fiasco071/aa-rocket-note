@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { /*useState, useEffect*/ } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import ContentBox from './components/ContentBox';
 import DigitalClock from './components/DigitalClock';
@@ -8,16 +8,19 @@ import titletextimgfront from '../src/assets/img/ganpan2.png';
 
 const ProtectedRoute = ({ sessionUser }) => {
   const user = useSelector(state => state.session.user);
-  const time = new Date();
-  const [greetMessage, setGreetMessage] = useState();
+  let greetMessage;
+  let time = new Date();
 
-  useEffect(() => {
-    if (time.getHours() < 11) {
-      setGreetMessage('Good morning, ')
-    } else if (time.getHours() >= 12 && time.getHours() < 16) {
-      setGreetMessage('Good afternoon, ')
-    } else setGreetMessage('Good evening, ')
-  }, [])
+
+  if (time.getHours() < 12) {
+    greetMessage = 'Good morning, ';
+  } else if (time.getHours() >= 12 && time.getHours() <= 16) {
+    greetMessage =  'Good afternoon, ';
+  } else if (time.getHours() > 16)
+  greetMessage =  'Good evening, ';
+
+  // useEffect(() => {
+  // },[])
 
   return (
     <Route {...sessionUser}>

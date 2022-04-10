@@ -1,3 +1,25 @@
+@font-face {
+    font-family: "Rooster";
+    src: local("Rooster"),
+     url("../../assets/font/Rooster.ttf") format("truetype");
+    font-weight: bold;
+    }
+.app-title-logo-box {
+    position: absolute;
+    left: calc(2%);
+    top: calc( 1%);
+}
+
+.app-title-logo-box > .app-title-logo-text {
+    font-family: "Rooster";
+    color: white;
+    font-size: 190px;
+    margin: 0;
+    padding: 0;
+    text-shadow: -13px 5px 2px rgb(83, 83, 83);
+
+}
+
 
 .cloud-one-one {
     width:400px;

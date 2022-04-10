@@ -1,10 +1,8 @@
 import './index.css';
 import LoginFormModal from '../LoginFormModal';
 import SignUpFormModal from '../SignUpFormModal';
-import titletextimgback from '../../assets/img/ganpan.png';
-import titletextimgfront from '../../assets/img/ganpan2.png';
-import astronaut from '../../assets/img/astronaut.png';
 import { useEffect, useRef } from 'react';
+import '../../assets/font/Rooster.ttf';
 
 const SplashPage = () => {
     const ref = useRef(null);
@@ -17,6 +15,9 @@ const SplashPage = () => {
 
     return (
         <div ref={ref} className='splash-page-wrapper'>
+            <div className='app-title-logo-box'>
+                <p className='app-title-logo-text'>Rocket Note</p>
+            </div>
             {/* <div className='front-cloud'>
                 <div  style={{zIndex:1}} className='cloudbunch-outline'>
                     <div  style={{zIndex:1}} className='cloud-one'>
@@ -186,13 +187,14 @@ const SplashPage = () => {
             <div className='planet'></div>
             <div className='login-register-box'>
                 <LoginFormModal />
+
                 <SignUpFormModal />
             </div>
-            <div className='title-text-container'>
+            {/* <div className='title-text-container'>
                 <img className='titletextfront' src={titletextimgfront} alt={titletextimgfront}></img>
                 <img className='titletextback' src={titletextimgback} alt={titletextimgback}></img>
                 <img className='astronautImg' src={astronaut} alt={astronaut} />
-            </div>
+            </div> */}
             <div className='planet'>
                 <ul className='stars'>
                     <li></li>

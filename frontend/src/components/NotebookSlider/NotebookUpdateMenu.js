@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { updateNotebook } from '../../store/notebookReducer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -22,7 +22,7 @@ function NotebookUpdateMenu({ notebookId }) {
 
 
         dispatch(updateNotebook(notebookId, data))
-            .then((value) => {
+            .then(() => {
                 setShowMenu(false);
                 setErrors([]);
             })

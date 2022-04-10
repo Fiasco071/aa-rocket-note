@@ -1,7 +1,7 @@
 
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDownWideShort, faNoteSticky, faFilter, faBook } from '@fortawesome/free-solid-svg-icons';
+import { /*faArrowDownWideShort, faFilter,*/ faBook } from '@fortawesome/free-solid-svg-icons';
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
@@ -24,8 +24,7 @@ const NotesNav = () => {
             setNotebookList(Object.values(notesObj));
             setNotebook('All');
         }
-    },[noteBookId, noteId]);
-
+    },[notesObj, noteId, noteBookId, notebooks]);
 
     const redirect = (e) => {
         if (notebook === 'All') {
@@ -68,8 +67,8 @@ const NotesNav = () => {
                         <p> {`${notebookList?.length} notes`} </p>
                     </div>
                     <div className='notes-nav-control-box-buttons'>
-                        <FontAwesomeIcon icon={faArrowDownWideShort} />
-                        <FontAwesomeIcon className="filter-icon" icon={faFilter} />
+                        {/* <FontAwesomeIcon icon={faArrowDownWideShort} />
+                        <FontAwesomeIcon className="filter-icon" icon={faFilter} /> */}
                     </div>
                 </div>
             </div>

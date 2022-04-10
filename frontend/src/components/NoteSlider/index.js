@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 
 const NoteSlider = () => {
-    const user = useSelector(state => state.session.user);
+    // const user = useSelector(state => state.session.user);
     const notesObj = useSelector(state => state.notes.entries);
     const notes = Object.values(notesObj).slice(-6);
 

@@ -1,12 +1,12 @@
 import './index.css';
-import React, { useState, useEffect, useContext } from 'react';
-import { ScratchNoteContext } from '../../context/ScratchNoteContext';
+import React, { useState } from 'react';
+//import { ScratchNoteContext } from '../../context/ScratchNoteContext';
 import Calendar from 'react-calendar';
 
 
 const ScratchPad = () => {
-    const [scratchNote, setScratchNote] = useState('');
-    const ScratchNoteCon = useContext(ScratchNoteContext);
+    // const [scratchNote, setScratchNote] = useState('');
+    // const ScratchNoteCon = useContext(ScratchNoteContext);
     const [value, onChange] = useState(new Date());
 
 
@@ -22,9 +22,9 @@ const ScratchPad = () => {
     //     };
     // }, [scratchNote]);
 
-    useEffect(() => {
-        console.log(value);
-    },[value])
+    // useEffect(() => {
+    //     console.log(value);
+    // },[value])
 
 
     return (

@@ -28,6 +28,9 @@ function App() {
       <div className="nav-bar">
         <Navigation isLoaded={isLoaded} />
       </div>
+      <div className='dev-box'>
+          <a className="dev-link" href='https://github.com/Fiasco071/'>Developer</a>
+      </div>
       <Switch>
         <Route path="/" exact>
           {user ? <Redirect to='/home' /> : <SplashPage />}

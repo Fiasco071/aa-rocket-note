@@ -7,8 +7,6 @@
     font-size: calc(10px + 2vmin);
     color: white;
     text-align: center;
-    position: sticky;
-    left : 1px;
   }
 
   .wrapper-class {
@@ -23,8 +21,11 @@
   .toolbar-class {
     background-color: #060c21;
     border:none;
-    position: sticky;
-    top : 1px;
+    color: black;
+  }
+
+  .rdw-image-modal > div > input {
+    color:  black;
   }
 
   .title-input {
@@ -139,7 +140,7 @@
     font-size: 15px;
     color: crimson;
     position: absolute;
-    top:60px;
+    top:90px;
   } 
 
   .tag-input-box {

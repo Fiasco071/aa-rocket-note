@@ -10,7 +10,7 @@ import htmlToDraft from 'html-to-draftjs';
 import { useParams, useHistory } from 'react-router-dom';
 import { deleteOneNote } from '../../store/noteReducer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBook, faTag } from '@fortawesome/free-solid-svg-icons';
+import { faBook, /*faTag*/ } from '@fortawesome/free-solid-svg-icons';
 
 /// gonna use this to covert queried string into displayable info.
 /// however lets also consider displaying directly onto the richtext editor
