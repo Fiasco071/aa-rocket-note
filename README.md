@@ -1,9 +1,9 @@
-<h1 align="center"> :rocket: RocketNotes 🚀 </h1> <a name="top"> </a>
+<h1 align="center"> :rocket: Rocket Note 🚀 </h1> <a name="top"> </a>
 
 <h5 align="center">  By: <a href="https://github.com/Fiasco071">Steve Choi</a> - <a href="https://rocket-note-app.herokuapp.com/"><i>Live site</i></h5>
 
 <h2> About </h2>
-Rocket Notes is a clone of Evernotes. Rocket notes is where you can save all your important thoughts in an organized way!
+Rocket Note is a clone of Evernotes. Rocket notes is where you can save all your important thoughts in an organized way!
 
    - [Technologies Used](#tech)
    - [How to use our application](#howto)
