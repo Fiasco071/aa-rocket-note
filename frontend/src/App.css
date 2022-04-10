@@ -113,6 +113,6 @@
   left: calc(0% + 50px)
 }
 
-.dev-link:hover {
-
+.app-title-logo-box.landing {
+  top: calc(0%  - 300px);
 }
