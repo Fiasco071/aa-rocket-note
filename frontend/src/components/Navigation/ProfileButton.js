@@ -32,7 +32,7 @@ function ProfileButton({ user }) {
     e.preventDefault();
     dispatch(resetStoreNote());
     dispatch(resetStoreNotebook());
-    await dispatch(sessionActions.logout());
+    dispatch(sessionActions.logout());
   };
 
   return (

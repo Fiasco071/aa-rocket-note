@@ -10,7 +10,7 @@ import htmlToDraft from 'html-to-draftjs';
 import { useParams, useHistory } from 'react-router-dom';
 import { deleteOneNote } from '../../store/noteReducer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faTag } from '@fortawesome/free-solid-svg-icons';
 
 /// gonna use this to covert queried string into displayable info.
 /// however lets also consider displaying directly onto the richtext editor
@@ -24,6 +24,7 @@ const UpdateFormEditor = () => {
   const user = useSelector(state => state.session.user);
   const notesObj = useSelector(state => state.notes.entries);
   const notebooks = useSelector(state => state.notebooks.notebooks);
+  const [errors, setErrors] = useState([]);
   const [editorState, setEditorState] = useState(EditorState.createWithContent(ContentState.createFromBlockArray(
     htmlToDraft(noteId ? notesObj[noteId]?.content : '')
   )))
@@ -40,7 +41,7 @@ const UpdateFormEditor = () => {
 
     setTitle(notesObj[noteId]?.title);
     setNotebook(notebooks[notesObj[noteId]?.noteBookId]?.id)
-  }, [noteId,notebooks,notesObj])
+  }, [noteId, notebooks, notesObj])
 
   const addClass = () => {
     ref.current.classList.add('toggle-hidden')
@@ -51,6 +52,7 @@ const UpdateFormEditor = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors([]);
     const rawData = draftToHtml(convertToRaw(editorState?.getCurrentContent()));
     const data = {
       id: noteId,
@@ -59,11 +61,21 @@ const UpdateFormEditor = () => {
       noteBookId: notebook,
       userId: user.id
     }
-    dispatch(updateNote(noteId, data));
-    removeClass()
-    setTimeout(() => {
-      addClass();
-    }, 1500)
+    dispatch(updateNote(noteId, data))
+      .then((value) => {
+        removeClass()
+        setTimeout(() => {
+          addClass();
+        }, 1500)
+      })
+      .catch(
+        async (res) => {
+          const data = await res.json();
+          if (data && data.errors) {
+            setErrors(data.errors);
+          }
+        }
+      );
   };
 
 
@@ -72,6 +84,13 @@ const UpdateFormEditor = () => {
     dispatch(deleteOneNote(id));
     history.push('/')
   };
+
+  // const tagSubmit = (e, id) => {
+  //   e.stopPropagation();
+  //   //dispatch tag create thunk
+
+  //   //dispatch note load thunk
+  // }
 
   // useEffect(() => {
   //   const autoSave = setTimeout( async() => {
@@ -99,6 +118,13 @@ const UpdateFormEditor = () => {
   return (
     <div className="editor">
       <header className="editor-header">
+        <div className='error-message-box'>
+          <ul>
+            {errors.map((error, idx) => (
+              <li key={idx}>{error}</li>
+            ))}
+          </ul>
+        </div>
         <input
           className='title-input'
           type="text"
@@ -118,6 +144,7 @@ const UpdateFormEditor = () => {
               ))}
             </select>
           </div>
+
           <div>
             <button
               className='edit-button'
@@ -132,6 +159,14 @@ const UpdateFormEditor = () => {
             </button>
           </div>
         </div>
+        {/* <div className='tag-input-box'>
+          <form>
+            <FontAwesomeIcon icon={faTag} />
+            <input
+              placeholder='Add a tag...'
+            />
+          </form>
+        </div> */}
       </header>
       <Editor
         editorState={editorState}

@@ -136,8 +136,24 @@
   }
 
   .error-message-box {
-    font-size: 20px;
+    font-size: 15px;
     color: crimson;
     position: absolute;
-    top:100px;
+    top:60px;
   } 
+
+  .tag-input-box {
+    position: absolute;
+    top:calc(0% - 20px);
+    left: calc(50%);
+  }
+
+  .tag-input-box > form > input {
+    background: transparent;
+    color: white;
+    font-weight: bold;
+  }
+
+  .tag-input-box > form > svg {
+    font-size: 15px;
+  }

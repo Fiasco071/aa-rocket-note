@@ -103,6 +103,7 @@ const ControlledEditor = ({ noteId }) => {
   //   //   clearInterval(autoSave);
   //   // };
   // }, [editorState]);
+  console.log(errors[0]);
 
   return (
     <div className="editor">

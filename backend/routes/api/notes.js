@@ -8,12 +8,12 @@ const { handleValidationErrors } = require('../../utils/validation');
 const noteValidator = [
     check("title")
     .exists({ checkFalsy: true })
-    .withMessage("Please provide a value for Title")
+    .withMessage("Please provide a value for Title.")
     .isLength({ max: 50 })
-    .withMessage("Title must not be more than 50 characters long"),
+    .withMessage("Title must not be more than 50 characters long."),
     check("content")
     .isLength({ max: 2000 })
-    .withMessage("Topic Type must not be more than 2000 characters long"),
+    .withMessage("Content must not be more than 2000 characters long."),
     handleValidationErrors
 ];
 

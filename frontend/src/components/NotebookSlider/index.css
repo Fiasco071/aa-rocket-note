@@ -271,3 +271,25 @@
     top:-25.5px;
     left:18px;
 }
+
+
+
+.nb-error-message-box  > ul > li {
+    position: absolute;
+    left: -10px;
+    width: 160px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 5px;
+    margin: 0;
+}
+
+
+.nb-error-message-box  > ul > li > p  {
+    margin: 0;
+    padding: 0;
+    color:crimson;
+    font-weight: bold;
+    font-size: 12px;
+    animation: blink 2s linear infinite;
+}

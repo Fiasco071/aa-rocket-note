@@ -9,6 +9,7 @@ import NewNote from './components/NewNote'
 import * as sessionActions from "./store/session";
 import ProtectedRoute from './ProtectedRoute';
 import SplashPage from './components/SplashPage'
+import SplashPageTwo from './components/SplashPageTwo';
 
 function App() {
   const user = useSelector(state => state.session.user);
@@ -51,6 +52,7 @@ function App() {
             </Route>
             <Route >
           <h1 style={{ color: "white", fontSize: "3em", position: "absolute", left: "700px", top: "300px", }}>Currently Under Construction</h1>
+          <SplashPageTwo/>
         </Route>
           </Switch>
           </>

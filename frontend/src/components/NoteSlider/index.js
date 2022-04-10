@@ -1,5 +1,5 @@
 import "./index.css"
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -48,13 +48,14 @@ const NoteSlider = () => {
                 </div>
                 <div className="note-slider-tags">
                     <p
+                        on
                         className={notesfilterClicked === 'Recent' ? 'selectedFilter' : null}
                         onClick={handleClickR}
-                    >Recent</p>
+                    >In Order</p>
                     <p
                         className={notesfilterClicked === 'Suggested' ? 'selectedFilter' : null}
                         onClick={handleClickS}
-                    >Suggested</p>
+                    >Recent</p>
                 </div>
 
                 <div ref={ref} className="note-slider">

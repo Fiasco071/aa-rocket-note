@@ -29,22 +29,22 @@ const SummaryBox = () => {
                     </div>
                 </div>
                 <div className="note-slider-tags">
-                    <p
+                    {/* <p
                         className={notesfilterClicked=== 'Tasks' ? 'selectedFilter' : null}
                         onClick={() => setNotesFilterClicked('Tasks')}
                     >Tasks</p>
                     <p
                         className={notesfilterClicked=== 'Shortcuts' ? 'selectedFilter' : null}
                         onClick={() => setNotesFilterClicked('Shortcuts')}
-                    >Shortcuts</p>
+                    >Shortcuts</p> */}
                     <p
                         className={notesfilterClicked=== 'Notebooks' ? 'selectedFilter' : null}
                         onClick={() => setNotesFilterClicked('Notebooks')}
                     >Notebooks</p>
-                    <p
+                    {/* <p
                         className={notesfilterClicked=== 'Tags' ? 'selectedFilter' : null}
                         onClick={() => setNotesFilterClicked('Tags')}
-                    >Tags</p>
+                    >Tags</p> */}
                 </div>
 
                 <div className="note-slider">

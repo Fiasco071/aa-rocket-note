@@ -4,14 +4,14 @@ import { updateNotebook } from '../../store/notebookReducer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWrench } from '@fortawesome/free-solid-svg-icons';
 
-function NotebookUpdateMenu({notebookId}) {
+function NotebookUpdateMenu({ notebookId }) {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user)
     const notebooks = useSelector(state => state.notebooks.notebooks)
     const [showMenu, setShowMenu] = useState(false);
     const [notebookName, setNotebookName] = useState(notebooks[notebookId].name);
+    const [errors, setErrors] = useState([]);
 
-console.log(notebooks[notebookId].name);
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -19,8 +19,21 @@ console.log(notebooks[notebookId].name);
             name: notebookName,
             userId: user.id
         }
+
+
         dispatch(updateNotebook(notebookId, data))
-        setShowMenu(false);
+            .then((value) => {
+                setShowMenu(false);
+                setErrors([]);
+            })
+            .catch(
+                async (res) => {
+                    const data = await res.json();
+                    if (data && data.errors) {
+                        setErrors(data.errors);
+                    }
+                }
+            );
     }
 
     const openMenu = () => {
@@ -42,7 +55,7 @@ console.log(notebooks[notebookId].name);
 
     return (
         <div className="notebook-update-button">
-             <FontAwesomeIcon className='notebook-edit-icon' icon={faWrench} onClick={openMenu}/>
+            <FontAwesomeIcon className='notebook-edit-icon' icon={faWrench} onClick={openMenu} />
             {showMenu && (
                 <div className='notebook-update-dropdown'>
                     <form onSubmit={handleSubmit}>
@@ -55,6 +68,13 @@ console.log(notebooks[notebookId].name);
                             <p onClick={() => setShowMenu(false)}>cancel</p>
                         </div>
                     </form>
+                    <div className='nb-error-message-box'>
+                        <ul>
+                            {errors.map((error, idx) => (
+                                <li key={idx}><p>{error}</p></li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             )}
         </div>

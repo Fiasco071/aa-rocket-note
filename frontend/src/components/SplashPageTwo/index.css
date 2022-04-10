@@ -1,0 +1,120 @@
+.holo-floater {
+    width: 500px;
+    height: 500px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: calc(30%);
+    left: calc(40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card {
+    position: absolute;
+    top: 100px;
+    width: 100px;
+    height: 70px;
+    margin-top: 70px;
+    background-image: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: float 1s infinite alternate;
+}
+
+.holo {
+    width: 150px;
+    height: 15px;
+    background-color: rgba(0,255,255, .35);
+    border-radius: 100%;
+    filter: blur(2.5px);
+    transform: perspective(100px) rotateX(-30deg);
+    transform-style: preserve-3d;
+    animation: holographic 1.5s infinite alternate;
+    backface-visibility: hidden;
+    animation-duration: .75s;
+  opacity: .5;
+    box-shadow: 0 -75px 5px rgba(0, 255, 255, 0.15),
+        0 -1px 2px rgba(0, 255, 255, .5),
+        0 -45px 5px rgba(0, 255, 255, .15),
+        0 -2px 3px rgba(0, 255, 255, .5),
+        0 -3px 4px rgba(0, 255, 255, .5),
+        0 -4px 6px rgba(0, 255, 255, .5),
+        0 -5px 10px rgba(0, 255, 255, .75),
+        0 -7px 20px rgba(0, 255, 255, .75),
+        0 -10px 30px rgba(0, 255, 255, .75),
+        0 -15px 40px rgba(0, 255, 255, .75),
+        0 -25px 50px rgba(0, 255, 255, .75),
+        0 -35px 60px rgba(0, 255, 255, .85),
+        0 -45px 70px rgba(0, 255, 255, .95),
+        0 -65px 80px rgba(0, 255, 255, 1),
+        0 -75px 90px rgba(0, 255, 255, 1);
+}
+
+
+.holo:after {
+    position: absolute;
+  left: -10px;
+  right: -10px;
+  content: "";
+  height: 10px;
+  background-color: rgba(0,255,255, .5);
+  border-radius: 100%;
+  filter: blur(2.5px);
+
+}
+
+@keyframes float {
+    from {
+        will-change: unset;
+        transform: translateY(-10px)
+    }
+
+    to {
+        will-change: transform;
+        transform: translateY(-30px)
+    }
+}
+
+@keyframes holographic {
+    from {
+        will-change: box-shadow;
+        box-shadow:
+            0 -75px 5px rgba(0, 255, 255, .15),
+            0 -1px 2px rgba(0, 255, 255, .5),
+            0 -45px 5px rgba(0, 255, 255, .15),
+            0 -2px 3px rgba(0, 255, 255, .5),
+            0 -3px 4px rgba(0, 255, 255, .5),
+            0 -4px 6px rgba(0, 255, 255, .5),
+            0 -5px 10px rgba(0, 255, 255, .75),
+            0 -7px 20px rgba(0, 255, 255, .75),
+            0 -10px 30px rgba(0, 255, 255, .75),
+            0 -15px 40px rgba(0, 255, 255, .75),
+            0 -25px 50px rgba(0, 255, 255, .75),
+            0 -35px 60px rgba(0, 255, 255, .85),
+            0 -45px 70px rgba(0, 255, 255, .95),
+            0 -65px 80px rgba(0, 255, 255, 1),
+            0 -75px 90px rgba(0, 255, 255, 1)
+        ;
+    }
+
+    to {
+        will-change: unset;
+        box-shadow: 0 -75px 5px rgba(0, 255, 255, 0.15),
+            0 -1px 2px rgba(0, 255, 255, .5),
+            0 -45px 5px rgba(0, 255, 255, .15),
+            0 -2px 3px rgba(0, 255, 255, .5),
+            0 -3px 4px rgba(0, 255, 255, .5),
+            0 -4px 6px rgba(0, 255, 255, .5),
+            0 -5px 10px rgba(0, 255, 255, .75),
+            0 -7px 20px rgba(0, 255, 255, .75),
+            0 -10px 30px rgba(0, 255, 255, .75),
+            0 -15px 40px rgba(0, 255, 255, .75),
+            0 -25px 50px rgba(0, 255, 255, .75),
+            0 -35px 60px rgba(0, 255, 255, .85),
+            0 -45px 70px rgba(0, 255, 255, .95),
+            0 -65px 80px rgba(0, 255, 255, 1),
+            0 -75px 90px rgba(0, 255, 255, 1);
+    }
+}

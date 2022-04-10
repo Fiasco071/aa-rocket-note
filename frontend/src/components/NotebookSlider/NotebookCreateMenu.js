@@ -7,6 +7,7 @@ function NotebookCreateMenu() {
     const user = useSelector(state => state.session.user)
     const [showMenu, setShowMenu] = useState(false);
     const [notebookName, setNotebookName] = useState('Notebook');
+    const [errors, setErrors] = useState([]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -15,8 +16,20 @@ function NotebookCreateMenu() {
             name: notebookName,
             userId: user.id
         }
+
         dispatch(createNewNotebook(data))
-        setShowMenu(false);
+            .then((value) => {
+                setShowMenu(false);
+                setErrors([]);
+            })
+            .catch(
+                async (res) => {
+                    const data = await res.json();
+                    if (data && data.errors) {
+                        setErrors(data.errors);
+                    }
+                }
+            );
     }
 
     const openMenu = () => {
@@ -52,6 +65,13 @@ function NotebookCreateMenu() {
                             <p onClick={() => setShowMenu(false)}>cancel</p>
                         </div>
                     </form>
+                    <div className='nb-error-message-box'>
+                        <ul>
+                            {errors.map((error, idx) => (
+                                <li key={idx}><p>{error}</p></li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             )}
         </div>

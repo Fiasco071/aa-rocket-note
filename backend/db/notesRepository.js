@@ -1,9 +1,12 @@
-const { Note } = require("./models");
+const { Note, Tag } = require("./models");
 
 async function list(userId) {
   return await Note.findAll({
     where: {
       userId
+    }, 
+    include: {
+      model: Tag
     }
   });
 }

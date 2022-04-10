@@ -107,6 +107,7 @@ a:hover {
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(231, 246, 255),0 0 30px rgb(185, 228, 255),0 0 50px rgb(146, 213, 255);
     padding: 5px 20px 5px 20px;
+    z-index: 2;
 }
 
 .profile-dropdown > li {
@@ -124,7 +125,7 @@ a:hover {
     position: fixed;
     left: calc(42%);
     top: calc(96.5%);
-    z-index: 1;
+    z-index: 2;
     /* border: 10px solid rgb(255, 255, 255); */
 }
 .nav-wrapper:hover {
@@ -132,7 +133,7 @@ a:hover {
 }
 
 nav {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(189, 189, 189, 0.7);
     height: 120px;
     width: 300px;
     border-radius: 20px;
@@ -153,14 +154,16 @@ nav {
 .nav-links > svg {
     margin: 0 5px;
     font-size: 45px;
-    color: rgb(26, 34, 39);
+    color: rgb(52, 124, 168);
+    filter: drop-shadow( 0 0 10px rgb(198, 221, 255));
 }
 
 .nav-link {
     margin: 0 5px;
     font-size: 45px;
-    color: rgb(26, 34, 39);
+    color: rgb(30, 50, 63);
     margin: 5px 10px 10px 5px;
+    filter: drop-shadow( 0 0 10px rgb(198, 221, 255));
 }
 
 .nav-link:hover {
