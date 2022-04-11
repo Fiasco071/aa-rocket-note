@@ -3,19 +3,26 @@ import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { /*faArrowDownWideShort, faFilter,*/ faBook } from '@fortawesome/free-solid-svg-icons';
 import { useHistory, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
-
+import { fetchNotes } from '../../store/noteReducer';
 
 const NotesNav = () => {
     const history = useHistory();
+    const dispatch = useDispatch();
     const { noteBookId } = useParams();
     const { noteId } = useParams();
+    const user = useSelector(state => state.session.user)
     const notesObj = useSelector(state => state.notes.entries);
     const notebooks = useSelector(state => state.notebooks.notebooks);
     const [notebook, setNotebook] = useState('All')
     const [notebookList, setNotebookList] = useState();
     
+    useEffect(() => {
+        dispatch(fetchNotes(user.id))
+    }, [dispatch, user])
+
+
     useEffect(() => {
         if (noteBookId) {
             setNotebookList(Object.values(notesObj).filter(note => +noteBookId === note.noteBookId));

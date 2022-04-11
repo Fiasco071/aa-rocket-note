@@ -65,7 +65,6 @@ export const updateNote = (id, payload) => async dispatch => {
       return updateNote
     }
     }
-    
 
 
 

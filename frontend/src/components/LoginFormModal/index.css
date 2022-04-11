@@ -3,15 +3,54 @@
     color: white;
     border-radius: 5px;
     border: 4px white solid;
-    background: linear-gradient(90deg, purple, rgb(127, 127, 255));
+    background: linear-gradient(30deg, rgb(168, 16, 92), rgb(77, 136, 245));
     padding: 5px 3px;
     width: 200px;
     font-size: 40px;
     font-weight: bolder;
+    box-shadow: 0 0 10px rgb(182, 216, 255), 0 0 40px rgb(158, 203, 255), 0 0 80px rgb(32, 73, 107) ;
 }
 
 .nav-register-button:hover {
     color: black;
     background-color: white;
     box-shadow: 0 0 10px white, 0 0 20px white;
+    animation: neonFlow 3s linear infinite;
+}
+
+
+@keyframes neonFlow {
+    0% {
+        background: linear-gradient(30deg, rgb(168, 16, 92), rgb(77, 136, 245));
+    }
+    10% {
+        background: linear-gradient(60deg, rgb(168, 16, 92), rgb(77, 136, 245));
+    }
+    20% {
+        background: linear-gradient(90deg, rgb(168, 16, 92), rgb(77, 136, 245));
+    }
+    30% {
+        background: linear-gradient(1200deg, rgb(168, 16, 92), rgb(77, 136, 245));
+    }
+    40% {
+        background: linear-gradient(150deg, rgb(168, 16, 92), rgb(77, 136, 245));
+    }
+    50% {
+        background: linear-gradient(180deg, rgb(168, 16, 92), rgb(77, 136, 245));
+    }
+    60% {
+        background: linear-gradient(210deg, rgb(168, 16, 92), rgb(77, 136, 245));
+    }
+    70% {
+        background: linear-gradient(240deg, rgb(168, 16, 92), rgb(77, 136, 245));
+    }
+    80% {
+        background: linear-gradient(270deg, rgb(168, 16, 92), rgb(77, 136, 245));
+    }
+    90% {
+        background: linear-gradient(300deg, rgb(168, 16, 92), rgb(77, 136, 245));
+    }
+    100% {
+        background: linear-gradient(330deg, rgb(168, 16, 92), rgb(77, 136, 245));
+    }
 }

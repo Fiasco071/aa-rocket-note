@@ -104,9 +104,14 @@
 
 .notebook-dropdown-menu {
     position: absolute;
-    color: black;
+    color: white;
     left:12px;
     z-index: 2;
+    width: 200px;
+    height: 100px;
+    padding: 55px 0 0 0;
+    top: -10px; 
+    /* background-color: white; */
 }
 
 .notebook-dropdown-menu > .notebook-delete-icon {
@@ -215,7 +220,7 @@
 .notebook-update-dropdown {
     box-sizing: border-box;
     position:absolute;
-    top: 0px;
+    top: 30px;
     left: -100px;
     width: 150px;
     z-index: 3;

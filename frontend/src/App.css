@@ -16,7 +16,7 @@
 }
 
 .dev-box {
-  background-color: rgba(80, 80, 80, 0.5);
+  background-color: rgba(122, 122, 122, 0.5);
   height: 25px;
   position: fixed;
   top:calc(100% - 30px);
@@ -27,7 +27,7 @@
 }
 
 .dev-box > a {
-  color: rgb(24, 26, 39);
+  color: rgb(221, 221, 221);
   text-transform: uppercase;
   margin: 0;
   padding: 0;

@@ -25,7 +25,7 @@ const UpdateFormEditor = () => {
   const notesObj = useSelector(state => state.notes.entries);
   const notebooks = useSelector(state => state.notebooks.notebooks);
   const [errors, setErrors] = useState([]);
-  const [editorState, setEditorState] = useState(EditorState.createWithContent(ContentState.createFromBlockArray(
+  const [editorState, setEditorState] = useState(EditorState?.createWithContent(ContentState?.createFromBlockArray(
     htmlToDraft(noteId ? notesObj[noteId]?.content : '')
   )))
   const [title, setTitle] = useState(notesObj[noteId]?.title);
@@ -35,7 +35,7 @@ const UpdateFormEditor = () => {
   }
 
   useEffect(() => {
-    setEditorState(EditorState.createWithContent(ContentState.createFromBlockArray(
+    setEditorState(EditorState?.createWithContent(ContentState?.createFromBlockArray(
       htmlToDraft(noteId ? notesObj[noteId]?.content : '<></>')
     )))
 

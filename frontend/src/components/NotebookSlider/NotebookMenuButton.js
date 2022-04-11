@@ -17,19 +17,17 @@ function NotebookMenuButton({notebookId}) {
     setShowNotebookMenu(true);
   };
 
-  // useEffect(() => {
-  //       if (!showNotebookMenu) return;
+  useEffect(() => {
+        if (!showNotebookMenu) return;
 
-  //       const closeMenu = () => {
-  //         setShowNotebookMenu(false);
-  //       };
+        const closeMenu = () => {
+          setShowNotebookMenu(false);
+        };
 
-  //       // document.addEventListener('click', closeMenu);
-  //       document.querySelector('.notebook-slider-box').addEventListener('click', closeMenu)
-  //       return () => {
-  //         document.querySelector('.notebook-slider-box').removeEventListener("click", closeMenu);
-  //       }
-  //   }, [showNotebookMenu]);
+        document.querySelector('.notebook-dropdown-menu')?.addEventListener('mouseleave', closeMenu);
+
+        return () => document.querySelector('.notebook-dropdown-menu')?.removeEventListener("mouseleave", closeMenu);
+    }, [showNotebookMenu]);
 
   const handleDelete = (e, id) => {
     e.stopPropagation();

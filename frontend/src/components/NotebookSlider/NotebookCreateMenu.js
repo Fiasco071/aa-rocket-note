@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { createNewNotebook } from '../../store/notebookReducer';
 
@@ -37,18 +37,17 @@ function NotebookCreateMenu() {
         setShowMenu(true);
     };
 
-    // useEffect(() => {
-    //     if (!showMenu) return;
+    useEffect(() => {
+        if (!showMenu) return;
 
-    //     const closeMenu = () => {
-    //         setShowMenu(false);
-    //     };
+        const closeMenu = () => {
+            setShowMenu(false);
+        };
 
-    //     document.querySelector('.notebook-slider-box').addEventListener('click', closeMenu)
-    //     return () => {
-    //       document.querySelector('.notebook-slider-box').removeEventListener("click", closeMenu);
-    //     }
-    // }, [showMenu]);
+        document.querySelector('.notebook-create-dropdown')?.addEventListener('mouseleave', closeMenu);
+
+        return () => document.querySelector('.notebook-create-dropdown')?.removeEventListener("mouseleave", closeMenu);
+    }, [showMenu]);
 
     return (
         <div className="notebook-create-button">

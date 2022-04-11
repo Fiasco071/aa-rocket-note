@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { updateNotebook } from '../../store/notebookReducer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -41,17 +41,17 @@ function NotebookUpdateMenu({ notebookId }) {
         setShowMenu(true);
     };
 
-    // useEffect(() => {
-    //     if (!showMenu) return;
+    useEffect(() => {
+        if (!showMenu) return;
 
-    //     const closeMenu = () => {
-    //         setShowMenu(false);
-    //     };
+        const closeMenu = () => {
+            setShowMenu(false);
+        };
 
-    //     document.addEventListener('click', closeMenu);
+        document.querySelector('.notebook-update-dropdown')?.addEventListener('mouseleave', closeMenu);
 
-    //     return () => document.removeEventListener("click", closeMenu);
-    // }, [showMenu]);
+        return () => document.querySelector('.notebook-update-dropdown')?.removeEventListener("mouseleave", closeMenu);
+    }, [showMenu]);
 
     return (
         <div className="notebook-update-button">
