@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 const ContentBox = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    document.title = 'Rocket Notes';
+    document.title = 'Rocket Note';
   }, []);
   const user = useSelector(state => state.session.user)
   const pageBottomRef = useRef(null)

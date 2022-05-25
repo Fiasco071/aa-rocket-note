@@ -1,14 +1,6 @@
 const { Tag } = require("./models");
 const note = require("./models/note");
 
-async function list(userId) {
-    return await Tag.findAll({
-        where: {
-            userId
-        }
-    })
-}
-
 async function one(id) {
     return await Tag.findByPk(id)
 }
@@ -38,7 +30,6 @@ async function deleteTag(id) {
   }
   
   module.exports = {
-    list,
     create,
     one,
     update,

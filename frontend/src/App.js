@@ -38,7 +38,6 @@ function App() {
         <ProtectedRoute path="/home" sessionUser={user} />
         {(user) ?
           <>
-
           {/* double switch here... is this a bad method??????? */}
           <Switch>
             <Route path="/notes" exact>
@@ -52,6 +51,9 @@ function App() {
             <Route path="/notes/:noteId">
               <Notes />
               <NoteDetail />
+            </Route>
+            <Route path="/test">
+              
             </Route>
             <Route >
           <h1 style={{ color: "white", fontSize: "3em", position: "absolute", left: "700px", top: "300px", }}>Currently Under Construction</h1>
